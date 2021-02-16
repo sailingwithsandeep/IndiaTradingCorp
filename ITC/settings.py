@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'admin_reorder',
     'products',
 ]
 
@@ -49,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'admin_reorder.middleware.ModelAdminReorder',
 ]
 
 ROOT_URLCONF = 'ITC.urls'
@@ -68,6 +70,23 @@ TEMPLATES = [
         },
     },
 ]
+ADMIN_REORDER = (
+    # Keep original label and models
+    'sites',
+
+    # Rename app
+
+
+    # Reorder app models
+
+
+    {'app': 'auth', 'models': ('auth.User',)},
+
+    {'app': 'products', 'models': ('products.Category', 'products.Subcategory',
+                                   'products.Products', 'products.Email_Newsletter', 'products.Slider')},
+
+
+)
 
 WSGI_APPLICATION = 'ITC.wsgi.application'
 

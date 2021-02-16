@@ -11,3 +11,9 @@ class EmailForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(EmailForm, self).__init__(*args, **kwargs)
+
+    def clean_email(self):
+        emailAddress = self.cleaned_data.get('emailAddress')
+        if emailAddress and Email_Newsletter.objects.filter(emailAddress=emailAddress).exists():
+            raise forms.ValidationError(u'Email addresses must be unique.')
+        return emailAddress
