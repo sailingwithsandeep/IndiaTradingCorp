@@ -8,5 +8,12 @@ from django.http import HttpResponseRedirect
 
 
 class HomePage(TemplateView):
-    pass
-   # template_name = "index.html"
+
+    template_name = "index.html"
+    context_object_name = 'slider'
+
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['slider'] = Slider.objects.all().order_by('id')[:3]
+        return context

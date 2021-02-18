@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'admin_reorder',
+    'bootstrap4',
     'products',
 ]
 
@@ -83,7 +84,7 @@ ADMIN_REORDER = (
     {'app': 'auth', 'models': ('auth.User',)},
 
     {'app': 'products', 'models': ('products.Category', 'products.Subcategory',
-                                   'products.Products', 'products.Email_Newsletter', 'products.Slider')},
+                                   'products.Products', 'products.Email_Newsletter', 'products.Slider', )},
 
 
 )
@@ -134,7 +135,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 MEDIA_URL = '/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')

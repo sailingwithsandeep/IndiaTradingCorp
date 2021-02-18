@@ -18,6 +18,10 @@ class Category(models.Model):
     categoryImg.allow_tags = True
     categoryImg.short_description = 'Image'
 
+    class Meta:
+        verbose_name = "Category"
+        verbose_name_plural = "Categories"
+
 
 class Subcategory(models.Model):
     subCategoryName = models.CharField(max_length=256, unique=True)
@@ -31,6 +35,10 @@ class Subcategory(models.Model):
 
     subCategoryImg.allow_tags = True
     subCategoryImg.short_description = 'Image'
+
+    class Meta:
+        verbose_name = "Subcategory"
+        verbose_name_plural = "Subcategories"
 
 
 class Products(models.Model):
@@ -50,12 +58,31 @@ class Products(models.Model):
     def __str__(self):
         return self.productName
 
+    class Meta:
+        verbose_name = "Product"
+        verbose_name_plural = "Products"
+
 
 class Slider(models.Model):
-    pass
-    # 3 image dynamic slider on homepage page
+    Name = models.CharField(max_length=255,blank=True)
+    Description = models.CharField(max_length=255,blank=True)
+    sliderImage = models.ImageField(upload_to='slider/', unique=True)
+
+    def sliderImg(self):
+        return format_html('<img href="{0}" src="{0}" width="150" height="150" />'.format(self.sliderImage.url))
+
+    sliderImg.allow_tags = True
+    sliderImg.short_description = 'Image'
+
+    class Meta:
+        verbose_name = "Slider"
+        verbose_name_plural = "Slider"
 
 
 class Email_Newsletter(models.Model):
     emailAddress = models.EmailField(max_length=256, unique=True)
     date = models.DateTimeField(default=now, editable=False)
+
+    class Meta:
+        verbose_name = "Email_Newsletter"
+        verbose_name_plural = "Email_Newsletter"

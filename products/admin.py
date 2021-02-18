@@ -20,8 +20,8 @@ class Product_admin(admin.ModelAdmin):
 
 
 @admin.register(Slider)
-class Silder_admin(admin.ModelAdmin):
-    pass
+class sliderImage_admin(admin.ModelAdmin):
+    list_display = ['Name', 'Description', 'sliderImage', 'sliderImg']
 
 
 @admin.register(Email_Newsletter)
