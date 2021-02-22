@@ -9,6 +9,7 @@
 __pycache__
 ITC/__pycache__/
 products/__pycache__/
+products/migrations/__pycache__/
 MANIFEST
 dist/
 docs/_build/
