@@ -1,0 +1,6 @@
+asgiref==3.3.1
+bootstrap4==0.1.0
+Django==3.1.7
+django-modeladmin-reorder==0.3.1
+pytz==2021.1
+sqlparse==0.4.1
