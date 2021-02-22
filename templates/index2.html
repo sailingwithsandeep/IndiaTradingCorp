@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+<!-- HOME -->
+{% block content %}
+<div id="home">
+  <!-- container -->
+  <div class="container">
+    <!-- home wrap -->
+    <div class="home-wrap">
+      <!-- home slick -->
+      <div id="home-slick">
+        {% for slider in slider %}
+        <!-- banner -->
+        <div class="banner banner-1">
+          <img
+            src="{{ slider.sliderImage.url }}"
+            alt="Hi"
+            style="height: 600px"
+          />
+          <div class="banner-caption text-center">
+            <h1>{{ slider.Name }}</h1>
+            <h3 class="white-color font-weak">{{ slider.Description }}</h3>
+          </div>
+        </div>
+        <!-- /banner -->
+        {% endfor %}
+      </div>
+      <!-- /home slick -->
+    </div>
+    <!-- /home wrap -->
+  </div>
+  <!-- /container -->
+</div>
+<!-- /HOME -->
+{% endblock content %}

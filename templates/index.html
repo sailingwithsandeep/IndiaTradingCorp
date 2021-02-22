@@ -1,35 +1,257 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
 
-<!-- HOME -->
-{% block content %}
-<div id="home">
-  <!-- container -->
-  <div class="container">
-    <!-- home wrap -->
-    <div class="home-wrap">
-      <!-- home slick -->
-      <div id="home-slick">
-        {% for slider in slider %}
-        <!-- banner -->
-        <div class="banner banner-1">
-          <img
-            src="{{ slider.sliderImage.url }}"
-            alt="Hi"
-            style="height: 600px"
-          />
-          <div class="banner-caption text-center">
-            <h1>{{ slider.Name }}</h1>
-            <h3 class="white-color font-weak">{{ slider.Description }}</h3>
-          </div>
-        </div>
-        <!-- /banner -->
-        {% endfor %}
-      </div>
-      <!-- /home slick -->
+<div id="rev_slider_one_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="mask-showcase" data-source="gallery">
+    <!-- START REVOLUTION SLIDER 5.4.1 fullscreen mode -->
+    <div id="rev_slider_three" class="rev_slider fullscreenbanner" data-version="5.4.1">
+        <ul>
+            <li>
+                <img src="https://via.placeholder.com/1920x810.png" data-bgcolor='rgba(255,255,255,0)' style='' alt="" data-bgposition="50% 50%" data-bgfit="auto" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+            </li>
+            <li>
+                <img src="https://via.placeholder.com/1920x810.png" data-bgcolor='rgba(255,255,255,0)' style='' alt="" data-bgposition="50% 50%" data-bgfit="auto" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+            </li>
+            <li>
+                <img src="https://via.placeholder.com/1920x810.png" data-bgcolor='rgba(255,255,255,0)' style='' alt="" data-bgposition="50% 50%" data-bgfit="auto" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+            </li>
+        </ul>
+        <div class="tp-bannertimer" style="height: 10px; background: rgba(0, 0, 0, 0);"></div>
     </div>
-    <!-- /home wrap -->
-  </div>
-  <!-- /container -->
 </div>
-<!-- /HOME -->
+
+<section id="services" class="service-v5">
+    <div class="container">
+        <!-- <div class="row mt--70 justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="serv-box s1 v5 bg-s1 md-mb-30">
+                    <a href="it-services.html" class="overlay"></a>
+                    <div class="icon-main"><span class="flaticon-tablet"></span></div>
+                    <div class="content-box">
+                        <h5>Custom Software Development</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="serv-box s1 v5 bg-s2 md-mb-30">
+                    <a href="web-development.html" class="overlay"></a>
+                    <div class="icon-main"><span class="flaticon-report"></span></div>
+                    <div class="content-box">
+                        <h5>Outsoursing Development</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="serv-box s1 v5 bg-s3">
+                    <a href="mobile-development.html" class="overlay"></a>
+                    <div class="icon-main"><span class="flaticon-ui"></span></div>
+                    <div class="content-box">
+                        <h5>Software Product Development</h5>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="space-110"></div>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="ot-heading">
+                    <span>our services</span>
+                    <h2 class="main-heading">We Offer a Wide <br>Range of Products</h2>
+                    <div class="space-30"></div>
+                    <p>India Trading Corporation promises quality exports and an enriching experience of trading on international platforms by providing a wide range of products like different blends of spices including grains. Also have varieties of fabric
+                        and for manufacturing industries we offer automotive products like Hydraulic fittings, Water fittings and CNC and VMC Machining services.</p>
+                </div>
+            </div>
+        </div>
+        <div class="space-30"></div>
+        <!-- <div class="row">
+            <div class="col-lg-4 col-md-6 mb-30">
+                <div class="icon-box-s2 s2 border-s1 bg bg1 text-center">
+                    <div class="icon-main"><span class="flaticon-code"></span></div>
+                    <div class="content-box">
+                        <h5><a href="web-development.html">Web Development</a></h5>
+                        <p>We carry more than just good coding skills. Our experience makes us stand out from other web development.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-30">
+                <div class="icon-box-s2 s2 border-s1 bg bg2 text-center">
+                    <div class="icon-main"><span class="flaticon-app"></span></div>
+                    <div class="content-box">
+                        <h5><a href="mobile-development.html">Mobile Development</a></h5>
+                        <p>Create complex enterprise software, ensure reliable software integration, modernise your legacy system.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-30">
+                <div class="icon-box-s2 s2 border-s1 bg bg3 text-center">
+                    <div class="icon-main"><span class="flaticon-monitor"></span></div>
+                    <div class="content-box">
+                        <h5><a href="it-services.html">UI/UX Design</a></h5>
+                        <p>Build the product you need on time with an experienced team that uses a clear and effective design.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-30 mb-md-0">
+                <div class="icon-box-s2 s2 border-s1 bg bg4 text-center">
+                    <div class="icon-main"><span class="flaticon-browser"></span></div>
+                    <div class="content-box">
+                        <h5><a href="it-services.html">QA & Testing</a></h5>
+                        <p>Turn to our experts to perform comprehensive, multi-stage testing and auditing of your software.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-30 mb-md-0">
+                <div class="icon-box-s2 s2 border-s1 bg bg5 text-center">
+                    <div class="icon-main"><span class="flaticon-report-1"></span></div>
+                    <div class="content-box">
+                        <h5><a href="it-services.html">IT Counsultancy</a></h5>
+                        <p>Trust our top minds to eliminate workflow pain points, implement new tech, and consolidate app.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="icon-box-s2 s2 border-s1 bg bg6 text-center">
+                    <div class="icon-main"><span class="flaticon-best"></span></div>
+                    <div class="content-box">
+                        <h5><a href="it-services.html">Dedicated Team</a></h5>
+                        <p>Over the past decade, our customers succeeded by leveraging Intellectsoft’s process of building, motivating.</p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</section>
+
+<section id="products" class="service-v4">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="ot-heading">
+                    <span class="text-primary-light">our products</span>
+                    <h2 class="main-heading text-white">Introducing the Main <br>Categories of Products</h2>
+                </div>
+                <div class="space-20"></div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 mb-lg-0">
+                <img src="https://via.placeholder.com/601x520.png" alt="">
+                <a class="text-white" href="#">
+                    <div class="serv-box s1 v4">
+                        <div class="content-box">
+                            <h5>Agriculture
+                            </h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 mb-lg-0">
+                <img src="https://via.placeholder.com/601x520.png" alt="">
+                <a class="text-white" href="#">
+                    <div class="serv-box s1 v4">
+                        <div class="content-box">
+                            <h5>Fabric</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 mb-lg-0">
+                <img src="https://via.placeholder.com/601x520.png" alt="">
+                <a class="text-white" href="#">
+                    <div class="serv-box s1 v4">
+                        <div class="content-box">
+                            <h5>Hardware</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="network">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="ot-heading text-center">
+                    <span>our network</span>
+                    <h2 class="main-heading">We are Trusted <br>Worldwide Connections</h2>
+                    <div class="space-30"></div>
+                    <p>We encourage global trading of quality goods by exporting Indian culture of purity. In the international market, India Trading Corporation has an evolving identity and has a wide as well as experienced exporting network which includes
+                        Countries of Africa,Dubai,Australia and Bangladesh also.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="space-35"></div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="ot-testimonials">
+                    <div class="owl-carousel owl-theme testimonial-inner ot-testimonials-slider">
+                        <div class="testi-item">
+                            <div class="layer1"></div>
+                            <div class="layer2">
+                                <div class="t-head flex-middle">
+                                    <img src="https://via.placeholder.com/90x90.png" alt="Emilia Clarke" class="lazyloaded" data-ll-status="loaded">
+                                    <div class="tinfo">
+                                        <h6>SoftTech,</h6>
+                                        <span>Manager of Company</span>
+                                    </div>
+                                </div>
+                                <div class="ttext">
+                                    "Patience. Infinite patience. No shortcuts. Very well thought out and articulate communication. Clear milestones, deadlines and fast work. Even if the client is being careless. The best part...always solving problems with great original ideas!."
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testi-item">
+                            <div class="layer1"></div>
+                            <div class="layer2">
+                                <div class="t-head flex-middle">
+                                    <img src="https://via.placeholder.com/90x90.png" alt="Emilia Clarke" class="lazyloaded" data-ll-status="loaded">
+                                    <div class="tinfo">
+                                        <h6>Moonkle LTD,</h6>
+                                        <span>Client of Company</span>
+                                    </div>
+                                </div>
+                                <div class="ttext">
+                                    "Very well thought out and articulate communication. Clear milestones, deadlines and fast work. Patience. Infinite patience. No shortcuts. Even if the client is being careless. The best part...always solving problems with great original ideas!."
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testi-item">
+                            <div class="layer1"></div>
+                            <div class="layer2">
+                                <div class="t-head flex-middle">
+                                    <img src="https://via.placeholder.com/90x90.png" alt="Emilia Clarke" class="lazyloaded" data-ll-status="loaded">
+                                    <div class="tinfo">
+                                        <h6>SoftTech,</h6>
+                                        <span>Manager of Company</span>
+                                    </div>
+                                </div>
+                                <div class="ttext">
+                                    "Patience. Infinite patience. No shortcuts. Very well thought out and articulate communication. Clear milestones, deadlines and fast work. Even if the client is being careless. The best part...always solving problems with great original ideas!."
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testi-item">
+                            <div class="layer1"></div>
+                            <div class="layer2">
+                                <div class="t-head flex-middle">
+                                    <img src="https://via.placeholder.com/90x90.png" alt="Emilia Clarke" class="lazyloaded" data-ll-status="loaded">
+                                    <div class="tinfo">
+                                        <h6>Moonkle LTD,</h6>
+                                        <span>Client of Company</span>
+                                    </div>
+                                </div>
+                                <div class="ttext">
+                                    "Very well thought out and articulate communication. Clear milestones, deadlines and fast work. Patience. Infinite patience. No shortcuts. Even if the client is being careless. The best part...always solving problems with great original ideas!."
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock content %}
