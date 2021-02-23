@@ -1,22 +1,66 @@
 {% extends 'base.html' %} {% block content %}
+<div id="home">
+		<!-- container -->
+		<div class="container">
+			<!-- home wrap -->
+			<div class="home-wrap">
+				<!-- home slick -->
+				<div id="home-slick">
 
-<div id="rev_slider_one_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="mask-showcase" data-source="gallery">
+                     {% for slider in slider %}
+                    <!-- banner -->
+					<div class="banner banner-1">
+						<img src="{{ slider.sliderImage.url }}" alt="" style="height: 450px">
+						<div class="banner-caption text-center">
+							<h1>{{ slider.Name }}  </h1>
+							<h3 class=" font-weak">{{ slider.Description }} </h3>
+							
+
+						</div>
+					</div>
+					<!-- /banner -->
+                    {% endfor %}
+
+				</div>
+				<!-- /home slick -->
+			</div>
+			<!-- /home wrap -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /HOME -->
+{% comment %} <div id="rev_slider_one_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="mask-showcase" data-source="gallery">
     <!-- START REVOLUTION SLIDER 5.4.1 fullscreen mode -->
     <div id="rev_slider_three" class="rev_slider fullscreenbanner" data-version="5.4.1">
         <ul>
             <li>
+                <div id="home-slick">
+                    {% for slider in slider %}
+                    <!-- banner -->
+                    <div class="banner banner-1">
+                      <img
+                        src="{{ slider.sliderImage.url }}"
+                        alt="Hi"
+                        style="height: 250px"
+                      />
+                      <div class="banner-caption text-center">
+                        <h1>{{ slider.Name }}</h1>
+                        <h3 class="white-color font-weak">{{ slider.Description }}</h3>
+                      </div>
+                    </div>
+                    <!-- /banner -->
+                    {% endfor %}
+            </li>
+            <!-- <li>
                 <img src="https://via.placeholder.com/1920x810.png" data-bgcolor='rgba(255,255,255,0)' style='' alt="" data-bgposition="50% 50%" data-bgfit="auto" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
             </li>
             <li>
                 <img src="https://via.placeholder.com/1920x810.png" data-bgcolor='rgba(255,255,255,0)' style='' alt="" data-bgposition="50% 50%" data-bgfit="auto" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
-            </li>
-            <li>
-                <img src="https://via.placeholder.com/1920x810.png" data-bgcolor='rgba(255,255,255,0)' style='' alt="" data-bgposition="50% 50%" data-bgfit="auto" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
-            </li>
+            </li> -->
         </ul>
         <div class="tp-bannertimer" style="height: 10px; background: rgba(0, 0, 0, 0);"></div>
     </div>
-</div>
+</div> {% endcomment %}
 
 <section id="services" class="service-v5">
     <div class="container">
