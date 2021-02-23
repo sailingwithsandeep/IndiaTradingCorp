@@ -1,38 +1,20 @@
 {% extends 'base.html' %} {% block content %}
 
-
 <div id="rev_slider_one_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="mask-showcase" data-source="gallery">
     <!-- START REVOLUTION SLIDER 5.4.1 fullscreen mode -->
     <div id="rev_slider_three" class="rev_slider fullscreenbanner" data-version="5.4.1">
         <ul>
             {% for slider in slider %}
             <li data-index="rs-7{{ forloop.counter0 }}" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-thumb="{{ slider.sliderImage.url }}"
-                data-rotate="0" data-saveperformance="off" data-title="" data-param1="1" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                data-rotate="0" data-saveperformance="off" data-title="" data-param1="1" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">               
 
-                <img src="{{ slider.sliderImage.url }}" data-bgcolor='rgba(255,255,255,0)' alt="{{ slider.Name }}" data-bgposition="50% 50%" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
-
-                <!-- LAYER 1  right image overlay dark-->
-
-
-                <!-- LAYER 3  Thin text title-->
-                {% comment %} <div class="tp-caption tp-resizeme slider-tag-line text-dark" id="slide-7{{ forloop.counter0 }}-layer-3" data-x="['left','left','left','left']" data-hoffset="['15','15','15','15']" data-y="['top','top','top','top']" data-voffset="['195','105','127','133']"
-                    data-fontsize="['24',20','0','0']" data-lineheight="['36','30','22','15']" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"delay":0,"speed":1000,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:50px;opacity:0;","ease":"power3.inOut"}]'
-                    data-textAlign="['left','left','left','left']">// End-to-end Application Services
-                </div> {% endcomment %}
+                <img src="{{ slider.sliderImage.url }}" data-bgcolor='rgba(255,255,255,0.5)' alt="{{ slider.Name }}" data-bgposition="50% 50%" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina >
 
                 <!-- LAYER 4  Bold Title -->
-                <div class="tp-caption tp-resizeme text-dark tp-big-text" id="slide-7{{ forloop.counter0 }}-layer-6" 
-                data-x="['left','left','left','left']" 
-                data-y="['top','top','top','top']" 
-                data-hoffset="['15','15','15','15']" 
-                data-voffset="['195','105','127','133']" 
-                data-fontsize="['72','60','48','30']" 
-                data-lineheight="['80','62','52','42']" data-whitespace="nowrap" 
-                data-type="text" 
-                data-responsive_offset="on" 
-                data-frames='[{"delay":500,"split":"chars","splitdelay":0.1,"speed":500,"frame":"0","from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:50px;z:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","ease":"power3.inOut"}]' 
-                data-textAlign="['left','left','left','left']">
-                {{ slider.Name }}
+                <div class="tp-caption tp-resizeme text-dark tp-big-text" id="slide-7{{ forloop.counter0 }}-layer-6" data-x="['left','left','left','left']" data-y="['top','top','top','top']" data-hoffset="['15','15','15','15']" data-voffset="['195','105','127','133']"
+                    data-fontsize="['72','60','48','30']" data-lineheight="['80','62','52','42']" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"delay":500,"split":"chars","splitdelay":0.1,"speed":500,"frame":"0","from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:50px;z:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","ease":"power3.inOut"}]'
+                    data-textAlign="['left','left','left','left']">
+                    {{ slider.Name }}
                 </div>
 
                 <!-- LAYER 5  Paragraph-->
@@ -40,24 +22,11 @@
                     data-lineheight="['30','34','32','28']" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"delay":1500,"speed":1000,"frame":"0","from":"x:150px;opacity:0;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:50px;opacity:0;","ease":"power3.inOut"}]'
                     data-textAlign="['left','left','left','left']">{{ slider.Description }}
                 </div>
-                <!-- LAYER 6  Read More-->
-                {% comment %} <div class="tp-caption rev-btn" id="slide-7{{ forloop.counter0 }}-layer-8" data-x="['left','left','left','left']" data-hoffset="['15','15','15','15']" data-y="['top','top','top','top']" data-voffset="['525','385','370','320']" data-width="none" data-height="none"
-                    data-whitespace="nowrap" data-type="button" data-responsive_offset="on" data-frames='[{"delay":3400,"speed":1000,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:50px;opacity:0;","ease":"power3.inOut"}]'
-                    data-textAlign="['center','center','center','center']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"><a href="it-services.html" class="octf-btn octf-btn-primary btn-slider btn-large">Learn More</a>
-                </div> {% endcomment %}
-            </li>
 
-            {% comment %} <li data-transition="boxslide" data-slotamount="3">
-              <img src="{{ slider.sliderImage.url }}" data-bgrepeat="no-repeat" data-bgfit="contain" data-bgposition="center center">
-              <div class="caption fade big_white"  data-x="400" data-y="100" data-speed="700" data-start="1700" data-easing="easeOutBack">KICKSTART YOUR WEBSITE</div>
-              <div class="caption fade big_orange"  data-x="400" data-y="142" data-speed="500" data-start="1900" data-easing="easeOutBack">WITH SLIDER REVOLUTION!</div>
-              <div class="caption fade medium_grey"  data-x="510" data-y="210" data-speed="300" data-start="100">UNLIMITED TRANSITIONS</div> {% endcomment %}
+            </li>
             {% endfor %}
-            <!-- <li>
-                <img src="https://via.placeholder.com/1920x810.png" data-bgcolor='rgba(255,255,255,0)' style='' alt="" data-bgposition="50% 50%" data-bgfit="auto" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
-            </li> -->
         </ul>
-        <div class="tp-bannertimer" style="height: 10px; background: rgba(0, 0, 0, 0);"></div>
+        <div class="tp-bannertimer" style="height: 10px; background: rgba(0, 0, 0, 0)"></div>
     </div>
 </div>
 
@@ -72,35 +41,37 @@
                         <h5>Custom Software Development</h5>
                     </div>
                 </div>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <div class="serv-box s1 v5 bg-s2 md-mb-30">
+            <a href="web-development.html" class="overlay"></a>
+            <div class="icon-main"><span class="flaticon-report"></span></div>
+            <div class="content-box">
+                <h5>Outsoursing Development</h5>
             </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="serv-box s1 v5 bg-s2 md-mb-30">
-                    <a href="web-development.html" class="overlay"></a>
-                    <div class="icon-main"><span class="flaticon-report"></span></div>
-                    <div class="content-box">
-                        <h5>Outsoursing Development</h5>
-                    </div>
-                </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6">
+        <div class="serv-box s1 v5 bg-s3">
+            <a href="mobile-development.html" class="overlay"></a>
+            <div class="icon-main"><span class="flaticon-ui"></span></div>
+            <div class="content-box">
+                <h5>Software Product Development</h5>
             </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="serv-box s1 v5 bg-s3">
-                    <a href="mobile-development.html" class="overlay"></a>
-                    <div class="icon-main"><span class="flaticon-ui"></span></div>
-                    <div class="content-box">
-                        <h5>Software Product Development</h5>
-                    </div>
-                </div>
-            </div>
-        </div> -->
+        </div>
+    </div>
+</div> -->
         <div class="space-110"></div>
         <div class="row">
             <div class="col-lg-12 text-center">
                 <div class="ot-heading">
                     <span>our services</span>
-                    <h2 class="main-heading">We Offer a Wide <br>Range of Products</h2>
+                    <h2 class="main-heading">We Offer a Wide <br />Range of Products</h2>
                     <div class="space-30"></div>
-                    <p>India Trading Corporation promises quality exports and an enriching experience of trading on international platforms by providing a wide range of products like different blends of spices including grains. Also have varieties of fabric
-                        and for manufacturing industries we offer automotive products like Hydraulic fittings, Water fittings and CNC and VMC Machining services.</p>
+                    <p>
+                        India Trading Corporation promises quality exports and an enriching experience of trading on international platforms by providing a wide range of products like different blends of spices including grains. Also have varieties of fabric and for manufacturing
+                        industries we offer automotive products like Hydraulic fittings, Water fittings and CNC and VMC Machining services.
+                    </p>
                 </div>
             </div>
         </div>
@@ -171,26 +142,27 @@
             <div class="col-lg-12 text-center">
                 <div class="ot-heading">
                     <span class="text-primary-light">our products</span>
-                    <h2 class="main-heading text-white">Introducing the Main <br>Categories of Products</h2>
+                    <h2 class="main-heading text-white">
+                        Introducing the Main <br />Categories of Products
+                    </h2>
                 </div>
                 <div class="space-20"></div>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4 mb-lg-0">
-                <img src="https://via.placeholder.com/601x520.png" alt="">
-                <a class="text-white" href="#">
+                <a class="text-white" href="/products">
+                    <img src="https://via.placeholder.com/601x520.png" alt="" />
                     <div class="serv-box s1 v4">
                         <div class="content-box">
-                            <h5>Agriculture
-                            </h5>
+                            <h5>Agriculture</h5>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4 mb-lg-0">
-                <img src="https://via.placeholder.com/601x520.png" alt="">
-                <a class="text-white" href="#">
+                <a class="text-white" href="/products">
+                    <img src="https://via.placeholder.com/601x520.png" alt="" />
                     <div class="serv-box s1 v4">
                         <div class="content-box">
                             <h5>Fabric</h5>
@@ -199,8 +171,8 @@
                 </a>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4 mb-lg-0">
-                <img src="https://via.placeholder.com/601x520.png" alt="">
-                <a class="text-white" href="#">
+                <a class="text-white" href="/products">
+                    <img src="https://via.placeholder.com/601x520.png" alt="" />
                     <div class="serv-box s1 v4">
                         <div class="content-box">
                             <h5>Hardware</h5>
@@ -218,10 +190,13 @@
             <div class="col-md-12">
                 <div class="ot-heading text-center">
                     <span>our network</span>
-                    <h2 class="main-heading">We are Trusted <br>Worldwide Connections</h2>
+                    <h2 class="main-heading">
+                        We are Trusted <br />Worldwide Connections
+                    </h2>
                     <div class="space-30"></div>
-                    <p>We encourage global trading of quality goods by exporting Indian culture of purity. In the international market, India Trading Corporation has an evolving identity and has a wide as well as experienced exporting network which includes
-                        Countries of Africa,Dubai,Australia and Bangladesh also.
+                    <p>
+                        We encourage global trading of quality goods by exporting Indian culture of purity. In the international market, India Trading Corporation has an evolving identity and has a wide as well as experienced exporting network which includes Countries of Africa,Dubai,Australia
+                        and Bangladesh also.
                     </p>
                 </div>
             </div>
@@ -235,7 +210,7 @@
                             <div class="layer1"></div>
                             <div class="layer2">
                                 <div class="t-head flex-middle">
-                                    <img src="https://via.placeholder.com/90x90.png" alt="Emilia Clarke" class="lazyloaded" data-ll-status="loaded">
+                                    <img src="https://via.placeholder.com/90x90.png" alt="Emilia Clarke" class="lazyloaded" data-ll-status="loaded" />
                                     <div class="tinfo">
                                         <h6>SoftTech,</h6>
                                         <span>Manager of Company</span>
@@ -250,7 +225,7 @@
                             <div class="layer1"></div>
                             <div class="layer2">
                                 <div class="t-head flex-middle">
-                                    <img src="https://via.placeholder.com/90x90.png" alt="Emilia Clarke" class="lazyloaded" data-ll-status="loaded">
+                                    <img src="https://via.placeholder.com/90x90.png" alt="Emilia Clarke" class="lazyloaded" data-ll-status="loaded" />
                                     <div class="tinfo">
                                         <h6>Moonkle LTD,</h6>
                                         <span>Client of Company</span>
@@ -265,7 +240,7 @@
                             <div class="layer1"></div>
                             <div class="layer2">
                                 <div class="t-head flex-middle">
-                                    <img src="https://via.placeholder.com/90x90.png" alt="Emilia Clarke" class="lazyloaded" data-ll-status="loaded">
+                                    <img src="https://via.placeholder.com/90x90.png" alt="Emilia Clarke" class="lazyloaded" data-ll-status="loaded" />
                                     <div class="tinfo">
                                         <h6>SoftTech,</h6>
                                         <span>Manager of Company</span>
@@ -280,7 +255,7 @@
                             <div class="layer1"></div>
                             <div class="layer2">
                                 <div class="t-head flex-middle">
-                                    <img src="https://via.placeholder.com/90x90.png" alt="Emilia Clarke" class="lazyloaded" data-ll-status="loaded">
+                                    <img src="https://via.placeholder.com/90x90.png" alt="Emilia Clarke" class="lazyloaded" data-ll-status="loaded" />
                                     <div class="tinfo">
                                         <h6>Moonkle LTD,</h6>
                                         <span>Client of Company</span>
