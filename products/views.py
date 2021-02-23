@@ -17,3 +17,15 @@ class HomePage(TemplateView):
         context = super().get_context_data(**kwargs)
         context['slider'] = Slider.objects.all().order_by('id')
         return context
+
+class ProductPage(TemplateView):
+
+    template_name = "product.html"
+    context_object_name = 'products'
+
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['products'] = Products.objects.all().order_by('id')
+        return context
+
