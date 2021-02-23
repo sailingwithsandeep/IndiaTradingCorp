@@ -13,12 +13,36 @@
     data-version="5.4.1"
   >
     <ul>
-      <li>
+      {% for slider in slider %}
+      <li
+        data-index="rs-7{{ forloop.counter0 }}"
+        data-transition="fade"
+        data-slotamount="default"
+        data-hideafterloop="0"
+        data-hideslideonmobile="off"
+        data-easein="default"
+        data-easeout="default"
+        data-masterspeed="300"
+        data-thumb="{{ slider.sliderImage.url }}"
+        data-rotate="0"
+        data-saveperformance="off"
+        data-title=""
+        data-param1="1"
+        data-param2=""
+        data-param3=""
+        data-param4=""
+        data-param5=""
+        data-param6=""
+        data-param7=""
+        data-param8=""
+        data-param9=""
+        data-param10=""
+        data-description=""
+      >
         <img
-          src="https://via.placeholder.com/1920x810.png"
+          src="{{ slider.sliderImage.url }}"
           data-bgcolor="rgba(255,255,255,0)"
-          style=""
-          alt=""
+          alt="{{ slider.Name }}"
           data-bgposition="50% 50%"
           data-bgfit="auto"
           data-bgrepeat="no-repeat"
@@ -26,35 +50,96 @@
           class="rev-slidebg"
           data-no-retina
         />
+
+        <!-- LAYER 1  right image overlay dark-->
+
+        <!-- LAYER 3  Thin text title-->
+        <div
+          class="tp-caption tp-resizeme slider-tag-line text-dark"
+          id="slide-70-layer-1"
+          data-x="['left','left','left','left']"
+          data-hoffset="['15','15','15','15']"
+          data-y="['top','top','top','top']"
+          data-voffset="['195','105','127','133']"
+          data-fontsize="['24',20','0','0']"
+          data-lineheight="['36','30','22','15']"
+          data-whitespace="nowrap"
+          data-type="text"
+          data-responsive_offset="on"
+          data-frames='[{"delay":0,"speed":1000,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:50px;opacity:0;","ease":"power3.inOut"}]'
+          data-textAlign="['left','left','left','left']"
+        >
+          // End-to-end Application Services
+        </div>
+
+        <!-- LAYER 4  Bold Title-->
+        <div
+          class="tp-caption tp-resizeme text-dark tp-big-text"
+          id="slide-70-layer-2"
+          data-x="['left','left','left','left']"
+          data-hoffset="['15','15','15','15']"
+          data-y="['top','top','top','top']"
+          data-voffset="['240','140','155','145']"
+          data-fontsize="['72','60','48','30']"
+          data-lineheight="['80','62','52','42']"
+          data-whitespace="nowrap"
+          data-type="text"
+          data-responsive_offset="on"
+          data-frames='[{"delay":500,"split":"chars","splitdelay":0.1,"speed":500,"frame":"0","from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:50px;z:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","ease":"power3.inOut"}]'
+          data-textAlign="['left','left','left','left']"
+        >
+          {{ slider.Name }}
+        </div>
+
+        <!-- LAYER 5  Paragraph-->
+        <div
+          class="tp-caption tp-resizeme text-dark"
+          id="slide-70-layer-3"
+          data-x="['left','left','left','left']"
+          data-hoffset="['15','15','15','15']"
+          data-y="['top','top','top','top']"
+          data-voffset="['420','279','271','235']"
+          data-fontsize="['18','18','22','16']"
+          data-lineheight="['30','34','32','28']"
+          data-whitespace="nowrap"
+          data-type="text"
+          data-responsive_offset="on"
+          data-frames='[{"delay":2900,"speed":1000,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:50px;opacity:0;","ease":"power3.inOut"}]'
+          data-textAlign="['left','left','left','left']"
+        >
+          {{ slider.Description }}
+        </div>
+        <!-- LAYER 6  Read More-->
+        <div
+          class="tp-caption rev-btn"
+          id="slide-70-layer-4"
+          data-x="['left','left','left','left']"
+          data-hoffset="['15','15','15','15']"
+          data-y="['top','top','top','top']"
+          data-voffset="['525','385','370','320']"
+          data-width="none"
+          data-height="none"
+          data-whitespace="nowrap"
+          data-type="button"
+          data-responsive_offset="on"
+          data-frames='[{"delay":3400,"speed":1000,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:50px;opacity:0;","ease":"power3.inOut"}]'
+          data-textAlign="['center','center','center','center']"
+          data-paddingtop="[0,0,0,0]"
+          data-paddingright="[0,0,0,0]"
+          data-paddingbottom="[0,0,0,0]"
+          data-paddingleft="[0,0,0,0]"
+        >
+          <a
+            href="it-services.html"
+            class="octf-btn octf-btn-primary btn-slider btn-large"
+            >Learn More</a
+          >
+        </div>
       </li>
-      <li>
-        <img
-          src="https://via.placeholder.com/1920x810.png"
-          data-bgcolor="rgba(255,255,255,0)"
-          style=""
-          alt=""
-          data-bgposition="50% 50%"
-          data-bgfit="auto"
-          data-bgrepeat="no-repeat"
-          data-bgparallax="off"
-          class="rev-slidebg"
-          data-no-retina
-        />
-      </li>
-      <li>
-        <img
-          src="https://via.placeholder.com/1920x810.png"
-          data-bgcolor="rgba(255,255,255,0)"
-          style=""
-          alt=""
-          data-bgposition="50% 50%"
-          data-bgfit="auto"
-          data-bgrepeat="no-repeat"
-          data-bgparallax="off"
-          class="rev-slidebg"
-          data-no-retina
-        />
-      </li>
+      {% endfor %}
+      <!-- <li>
+                <img src="https://via.placeholder.com/1920x810.png" data-bgcolor='rgba(255,255,255,0)' style='' alt="" data-bgposition="50% 50%" data-bgfit="auto" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+            </li> -->
     </ul>
     <div
       class="tp-bannertimer"
