@@ -1037,9 +1037,7 @@
         {% comment %} <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"> </script> {% endcomment %}
         {% comment %} <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css"> {% endcomment %}
         {% comment %} <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> {% endcomment %}        
-     
-        
-        <script src="{% static 'js/jquery.zoom.min.js' %}"></script>
+        {% comment %} <script src="{% static 'js/jquery.zoom.min.js' %}"></script> {% endcomment %}
         {% comment %} <script src="{% static 'js/main.js' %}"></script {% endcomment %}
 
         <script>
@@ -1052,7 +1050,7 @@
                     logo: 'images/logo.svg',
                     logo_size: [160, 75],
                     showProgress: true,
-                    showPercentage: true,
+                    showPercentage: true,                
                     text_colour: '#000000',
                     background: '#ffffff'
                 });

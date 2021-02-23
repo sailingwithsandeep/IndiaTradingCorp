@@ -13,6 +13,27 @@
                 sliderLayout: "fullwidth",
                 dottedOverlay: "none",
                 delay: 9000,
+
+                carousel: {
+
+                    maxVisibleItems: 3,
+                    space: 10,
+                    infinity: 'on',
+                    stretch: 'on',
+
+                    border_radius: '0px',
+                    horizontal_align: 'center',
+
+                    fadeout: 'off',
+                    vary_fade: 'off',
+
+                    vary_rotation: 'off',
+                    maxRotation: 0,
+
+                    vary_scale: 'off',
+                    minScale: 50
+
+                },
                 navigation: {
                     keyboardNavigation: "off",
                     keyboard_direction: "horizontal",
@@ -61,10 +82,11 @@
                         tmp: ''
                     }
                 },
+
                 responsiveLevels: [1240, 1024, 778, 480],
                 visibilityLevels: [1240, 1024, 778, 480],
                 gridwidth: [1200, 1024, 778, 480],
-                gridheight: [809, 768, 600, 567],
+                gridheight: [800, 768, 600, 567],
                 lazyType: "none",
                 parallax: {
                     type: "scroll",
