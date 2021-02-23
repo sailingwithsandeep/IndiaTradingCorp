@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
     <title>India Trading Corporation</title>
-    <link type="text/css" rel="stylesheet" href="{% static 'css/slick.css' %}" />
-    <link type="text/css" rel="stylesheet" href="{% static 'css/slick-theme.css' %}" />
 
 
-    <link type="text/css" rel="stylesheet" href="{% static 'css/nouislider.min.css' %}" />
+    {% comment %} <link type="text/css" rel="stylesheet" href="{% static 'css/slick.css' %}" /> {% endcomment %}
+    {% comment %} <link type="text/css" rel="stylesheet" href="{% static 'css/slick-theme.css' %}" /> {% endcomment %}
+    {% comment %} <link type="text/css" rel="stylesheet" href="{% static 'css/nouislider.min.css' %}" /> {% endcomment %}
+    {% comment %} <link rel="stylesheet" href="{% static 'css/style1.css' %}" /> {% endcomment %}
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
@@ -21,7 +22,6 @@
     <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" />
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/style1.css' %}" />
     <link rel="stylesheet" href="{% static 'css/royal-preload.css' %}" />
     
     <!-- REVOLUTION SLIDER CSS -->
@@ -1023,24 +1023,25 @@
         <script src="{%static 'js/header-mobile.js'%}"></script>
         <script src="{%static 'js/royal_preloader.min.js'%}"></script>
 
-<!-- REVOLUTION JS FILES -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"> </script>
+        <!-- REVOLUTION JS FILES -->
+        <script  src="{% static 'plugins/revolution/revolution/js/jquery.themepunch.tools.min.js' %}"></script>
+        <script  src="{% static 'plugins/revolution/revolution/js/jquery.themepunch.revolution.min.js' %}"></script>
 
-    <script  src="{% static 'plugins/revolution/revolution/js/jquery.themepunch.tools.min.js' %}"></script>
-    <script  src="{% static 'plugins/revolution/revolution/js/jquery.themepunch.revolution.min.js' %}"></script>
-
-    <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->    
-    <script  src="{% static 'plugins/revolution/revolution/js/extensions/revolution-plugin.js' %}"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-    <!-- REVOLUTION SLIDER SCRIPT FILES -->
-    {% comment %} <script  src="{% static 'js/rev-script-3.js' %}"></script>
-    <script src="{% static 'js/royal_preloader.min.js' %}"></script> {% endcomment %}
-	<script src="{% static 'js/bootstrap.min.js' %}"></script>
-	<script src="{% static 'js/slick.min.js' %}"></script>
-	<script src="{% static 'js/nouislider.min.js' %}"></script>
-	<script src="{% static 'js/jquery.zoom.min.js' %}"></script>
-	<script src="{% static 'js/main.js' %}"></script>
+        <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->    
+        <script  src="{% static 'plugins/revolution/revolution/js/extensions/revolution-plugin.js' %}"></script>
+        
+        <!-- REVOLUTION SLIDER SCRIPT FILES -->
+        <script  src="{% static 'js/rev-script-3.js' %}"></script>
+        <script src="{% static 'js/royal_preloader.min.js' %}"></script>
+        
+        {% comment %} <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"> </script> {% endcomment %}
+        {% comment %} <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css"> {% endcomment %}
+        {% comment %} <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> {% endcomment %}        
+        {% comment %} <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/slick.min.js' %}"></script>
+        <script src="{% static 'js/nouislider.min.js' %}"></script>
+        <script src="{% static 'js/jquery.zoom.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script> {% endcomment %}
 
         <script>
             window.jQuery = window.$ = jQuery;
