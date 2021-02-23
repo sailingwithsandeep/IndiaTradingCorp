@@ -28,7 +28,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'plugins/revolution/revolution/css/settings.css' %}">   
     <!-- REVOLUTION NAVIGATION STYLE -->
     <link rel="stylesheet" type="text/css" href="{% static 'plugins/revolution/revolution/css/navigation.css' %}">
-    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
@@ -38,6 +38,16 @@
 
 
 <body class="royal_preloader">
+        {% if messages %}
+        {% for message in messages %}
+       <div class="alert alert-danger alert-dismissible fade show " role="alert">
+           <strong> {{ message }} </strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+            {% endfor %}
+    {% endif %} 
     <div id="page" class="site">
         <header id="site-header" class="site-header sticky-header header-style-3 header-fullwidth">
             <!-- Main Header start -->
@@ -83,7 +93,7 @@
                                 <div class="octf-col menu-col">
                                     <nav id="site-navigation" class="main-navigation">
                                         <ul class="menu nav-style-2">
-                                            <li class="current-menu-item"><a href="#page">Home</a></li>
+                                            <li class="current-menu-item"><a href="/">Home</a></li>
                                             <li><a href="#services">Services</a></li>
                                             <li class="menu-item-has-children"><a href="#">Products</a>
                                                 <ul class="sub-menu">
@@ -987,7 +997,8 @@
                             <div class="widget-footer">
                                 <h5 class="text-white">Subscribe</h5>
                                 <p>Follow our newsletter to stay updated about agency.</p>
-                                <form action="" id="mc4wp-form-1" class="mc4wp-form" method="post">
+                                <form action="/products/saveemail" id="mc4wp-form-1" class="mc4wp-form" method="post">
+                                    {% csrf_token %}
                                     <div class="mc4wp-form-fields">
                                         <div class="subscribe-inner-form">
                                             <input type="email" name="email" placeholder="Your Email" required="">
@@ -995,6 +1006,7 @@
                                         </div>
                                     </div>
                                 </form>
+                       
                             </div>
                         </div>
                     </div>
@@ -1037,10 +1049,8 @@
         {% comment %} <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"> </script> {% endcomment %}
         {% comment %} <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css"> {% endcomment %}
         {% comment %} <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> {% endcomment %}        
-     
-        
-        <script src="{% static 'js/jquery.zoom.min.js' %}"></script>
-        {% comment %} <script src="{% static 'js/main.js' %}"></script {% endcomment %}
+        {% comment %} <script src="{% static 'js/jquery.zoom.min.js' %}"></script> {% endcomment %}
+        {% comment %} <script src="{% static 'js/main.js' %}"></script> {% endcomment %}
 
         <script>
             window.jQuery = window.$ = jQuery;
@@ -1052,7 +1062,7 @@
                     logo: 'images/logo.svg',
                     logo_size: [160, 75],
                     showProgress: true,
-                    showPercentage: true,
+                    showPercentage: true,                
                     text_colour: '#000000',
                     background: '#ffffff'
                 });
