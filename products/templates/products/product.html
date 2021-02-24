@@ -1,53 +1,60 @@
 {% extends 'base.html' %} {% block content %}
 
 <section class="portfolio-grid">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <div class="ot-heading">
-          <span> Our latest products</span>
-        </div>
-        <div class="space-5"></div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="project-filter-wrapper">
-          <ul class="project_filters">
-            <li><a href="#" data-filter="*" class="selected">All</a></li>
-            <li><a href="#" data-filter=".Agriculture">Agriculture</a></li>
-            <li><a href="#" data-filter=".Fabric">Fabric</a></li>
-            <li><a href="#" data-filter=".Hardware">Hardware</a></li>
-          </ul>
-          <div class="projects-grid projects-style-1 projects-col3">
-          {% for product in products %}
-          <div class="project-item {{ product.category }}">
-              <div class="projects-box">
-                <div class="projects-thumbnail">
-                  <a href="#">
-                    <img src="{{ product.productImage.url }}" alt="" />
-                  </a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="ot-heading">
+                    <span> Our latest products</span>
                 </div>
-                <div class="portfolio-info">
-                  <a class="overlay" href="#"></a>
-                  <div class="portfolio-info-inner">
-                    <h5>
-                      <a href="#">{{ product.productName }}</a>
-                    </h5>                    
-                  </div>
-                </div>
-              </div>
+                <div class="space-5"></div>
             </div>
-          {% endfor %}            
-          </div>
         </div>
-        <div class="space-60"></div>
-        {% comment %} <div class="ot-button text-center">
-          <a href="#" class="octf-btn octf-btn-primary">Load More</a>
-        </div> {% endcomment %}
-      </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="project-filter-wrapper">
+                    <ul class="project_filters">
+                        {% for category in categories %}
+                        <li><a href="#" data-filter=".{{ category.categoryName }}" class="{% if request.GET.type == category.categoryName %}selected{% endif %}">{{ category.categoryName }}</a></li>
+                        {% endfor %}  
+                    </ul>
+                    <div class="projects-grid projects-style-1 projects-col3">
+                        {% for product in products %}
+                        <div class="project-item {{ product.category }}">
+                            <div class="projects-box">
+                                <div class="projects-thumbnail">
+                                    <a href="#">
+                                        <img src="{{ product.productImage.url }}" alt="" />
+                                    </a>
+                                </div>
+                                <div class="portfolio-info">
+                                    <a class="overlay" href="#"></a>
+                                    <div class="portfolio-info-inner">
+                                        <h5>
+                                            <a href="#">{{ product.productName }}</a>
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="space-60"></div>
+                {% comment %}
+                <div class="ot-button text-center">
+                    <a href="#" class="octf-btn octf-btn-primary">Load More</a>
+                </div> {% endcomment %}
+            </div>
+        </div>
     </div>
-  </div>
 </section>
+{% comment %} <script>
+$(document).ready(function(){
+ var $optionSets = $('.project_filters'),
+  $optionLinks = $optionSets.find('a');
+  $optionLinks.trigger('click');
 
+});
+</script> {% endcomment %}
 {% endblock content %}

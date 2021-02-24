@@ -48,7 +48,7 @@
     </div>
     {% endfor %} {% endif %}
     <div id="page" class="site">
-        <header id="site-header" class="site-header sticky-header header-style-3 header-fullwidth">
+        <header id="site-header" class="site-header header-style-2 header-fullwidth sticky-header header-static">
             <!-- Main Header start -->
             <div class="header-topbar">
                 <div class="octf-area-wrap">
@@ -56,10 +56,11 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <ul class="topbar-info">
-                                    <li><i class="fas fa-envelope"></i><a href="mailto:mail@mail.net"> mail@mail.net</a></li>
-                                    <li><i class="fas fa-clock"></i> Mon - Sat: 10.00 am - 9.00 pm</li>
+                                    <li class="text-white"><i class="fas fa-phone text-warning"></i> +91 74054 55898</li>
+                                    <li class="text-white"><i class="fas fa-envelope text-warning"></i> <a href="mailto:mail@mail.net" class="text-white">mail@mail.net</a></li>
                                 </ul>
                             </div>
+                            {% comment %}
                             <div class="col-md-6 text-right">
                                 <div class="topbar-right">
                                     <ul class="extra-text">
@@ -72,7 +73,7 @@
                                         <li><a href="http://instagram" target="_self"><i class="fab fa-instagram"></i></a></li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> {% endcomment %}
                         </div>
                     </div>
                 </div>
@@ -83,16 +84,16 @@
                         <div class="octf-mainbar">
                             <div class="octf-mainbar-row octf-row">
                                 <div class="octf-col logo-col">
-                                    <div id="site-logo" class="site-logo">
+                                    <div id="site-logo" class="site-logo mt-auto mb-auto p-0">
                                         <a href="{% url 'products:home' %}">
-                                            <img src="images/itc logo-01.svg" width="200px" height="100px" alt="ITC" class="">
+                                            <img src="images/itc logo-01.png" alt="ITC" style="width: 100px;">
                                         </a>
                                     </div>
                                 </div>
                                 <div class="octf-col menu-col">
                                     <nav id="site-navigation" class="main-navigation">
-                                        <ul class="menu nav-style-2">
-                                            <li id="homeMenu" class="current-menu-item">
+                                        <ul class="menu">
+                                            <li id="homeMenu" class="">
                                                 {% if request.path == "/" %}
                                                 <a href="#page">Home</a> {% else %}
                                                 <a href="{% url 'products:home' %}">Home</a> {% endif %}
@@ -104,30 +105,9 @@
                                             </li>
                                             <li class="menu-item-has-children"><a href="#">Products</a>
                                                 <ul class="sub-menu">
-                                                    <li class="menu-item-has-children">
-                                                        <a href="#">Agriculture</a>
-                                                        <ul class="sub-menu">
-                                                            <li><a href="{% url 'products:productpage' %}">Item 1</a></li>
-                                                            <li><a href="{% url 'products:productpage' %}">Item 2</a></li>
-                                                            <li><a href="{% url 'products:productpage' %}">Item 3</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="menu-item-has-children">
-                                                        <a href="#">Fabrics</a>
-                                                        <ul class="sub-menu">
-                                                            <li><a href="{% url 'products:productpage' %}">Item 1</a></li>
-                                                            <li><a href="{% url 'products:productpage' %}">Item 2</a></li>
-                                                            <li><a href="{% url 'products:productpage' %}">Item 3</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="menu-item-has-children">
-                                                        <a href="#">Hardware</a>
-                                                        <ul class="sub-menu">
-                                                            <li><a href="{% url 'products:productpage' %}">Item 1</a></li>
-                                                            <li><a href="{% url 'products:productpage' %}">Item 2</a></li>
-                                                            <li><a href="{% url 'products:productpage' %}">Item 3</a></li>
-                                                        </ul>
-                                                    </li>
+                                                    {% for category in categories %}
+                                                    <li><a href="{% url 'products:productpage' %}?type={{ category.categoryName }}">{{ category.categoryName }}</a></li>
+                                                    {% endfor %}
                                                 </ul>
                                             </li>
                                             <li id="networkMenu">
@@ -140,7 +120,7 @@
                                 </div>
                                 <div class="octf-col cta-col text-right">
                                     <!-- Call To Action -->
-                                    <div class="octf-btn-cta hstyle-2">
+                                    <div class="octf-btn-cta">
                                         {% comment %}
                                         <div class="octf-header-module">
                                             <div class="toggle_search octf-cta-icons">
@@ -186,8 +166,8 @@
                 <div class="container">
                     <div class="mlogo_wrapper clearfix">
                         <div class="mobile_logo">
-                            <a href="index.html">
-                                <img src="images/logo.svg" alt="Engitech">
+                            <a href="/">
+                                <img src="images/itc logo-01.png" alt="ITC">
                             </a>
                         </div>
                         <div id="mmenu_toggle">
@@ -209,30 +189,9 @@
                                 </li>
                                 <li class="menu-item-has-children"><a href="#">Products</a>
                                     <ul class="sub-menu">
-                                        <li class="menu-item-has-children">
-                                            <a href="#">Agriculture</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="{% url 'products:productpage' %}">Item 1</a></li>
-                                                <li><a href="{% url 'products:productpage' %}">Item 2</a></li>
-                                                <li><a href="{% url 'products:productpage' %}">Item 3</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children">
-                                            <a href="#">Fabrics</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="{% url 'products:productpage' %}">Item 1</a></li>
-                                                <li><a href="{% url 'products:productpage' %}">Item 2</a></li>
-                                                <li><a href="{% url 'products:productpage' %}">Item 3</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children">
-                                            <a href="#">Hardware</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="{% url 'products:productpage' %}">Item 1</a></li>
-                                                <li><a href="{% url 'products:productpage' %}">Item 2</a></li>
-                                                <li><a href="{% url 'products:productpage' %}">Item 3</a></li>
-                                            </ul>
-                                        </li>
+                                        {% for category in categories %}
+                                        <li><a href="{% url 'products:productpage' %}?type={{ category.categoryName }}">{{ category.categoryName }}</a></li>
+                                        {% endfor %}
                                     </ul>
                                 </li>
                                 <li id="networkMenu">
@@ -932,44 +891,21 @@
 
             </div>
 
-            <footer id="site-footer" class="site-footer footer-v1">
+            <footer id="site-footer" class="site-footer footer-v1 pt-5 pb-2">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+                            <img src="images/itc logo-01.png" width="200px" height="100px" alt="" class="lazyloaded" data-ll-status="loaded">
+                        </div>
+                        <div class="offset-3 col-lg-3 col-md-3 col-sm-6 col-12">
                             <div class="widget-footer">
-                                <h5 class="text-white">Products</h5>
+                                <h5 class="text-white">Our Address</h5>
                                 <ul class="list-items">
-                                    {% for category in categories %}
-                                    <li class="list-item"><a href="{% url 'products:productpage' %}">{{ category.categoryName }}</a></li>
-                                    {% endfor %}
+                                    <li class="list-item">411 University St, Seattle, USA, 411 University St, Seattle, USA,</li>
                                 </ul>
                             </div>
                         </div>
-                        {% comment %}
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                            <div class="widget-footer">
-                                <h5 class="text-white">Learn</h5>
-                                <ul class="list-items">
-                                    <li class="list-item"><a href="it-services.html">Social Media Platform</a></li>
-                                    <li class="list-item"><a href="it-services.html">Business Management Tools</a></li>
-                                    <li class="list-item"><a href="it-services.html">Gambling & Betting Web Apps</a></li>
-                                    <li class="list-item"><a href="it-services.html">Sports and Fitness App</a></li>
-                                    <li class="list-item"><a href="it-services.html">Software as a Service (SaaS)</a></li>
-                                </ul>
-                            </div>
-                        </div> {% endcomment %}
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                            <div class="widget-footer">
-                                <h5 class="text-white">Company</h5>
-                                <ul class="list-items">
-                                    <li class="list-item"><a href="#">Services</a></li>
-                                    <li class="list-item"><a href="#">Categories</a></li>
-                                    <li class="list-item"><a href="#">Network</a></li>
-                                    <li class="list-item"><a href="#">Contact</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="offset-lg-3 col-lg-3 col-md-6 col-sm-6 col-12">
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-12">
                             <div class="widget-footer">
                                 <h5 class="text-white">Subscribe</h5>
                                 <p>Follow our newsletter to stay updated about agency.</p>
@@ -987,12 +923,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row mt-35">
-                        <div class="col-md-4 mb-4 mb-md-0">
-                            <img src="images/itc logo-01.svg" width="200px" height="100px" alt="" class="lazyloaded" data-ll-status="loaded">
-                        </div>
-                        <div class="col-md-8 text-left text-md-right align-self-center">
-                            <p class="copyright-text">Copyright © 2020 India Trading Corporation Powered by Coderedtechnology. All Rights Reserved.</p>
+                    <div class="row mt-1 justify-content-center">
+                        <div class="text-center align-items-center ">
+                            <p class="copyright-text">Copyright © 2020 India Trading Corporation. All Rights Reserved.</p>
+                            <p class="copyright-text">Powered By <a href="http://http://coderedtechnology.in/">CodeRed Technology</a></p>
                         </div>
                     </div>
                 </div>
@@ -1070,23 +1004,74 @@
                 });
             });
 
+            function homeON() {
+                $("#homeMenu").addClass("current-menu-item");
+                $("#serviceMenu").removeClass("current-menu-item");
+                $("#networkMenu").removeClass("current-menu-item");
+            }
+
+            function servicesON() {
+                $("#homeMenu").removeClass("current-menu-item");
+                $("#serviceMenu").addClass("current-menu-item");
+                $("#networkMenu").removeClass("current-menu-item");
+            }
+
+            function networkON() {
+                $("#homeMenu").removeClass("current-menu-item");
+                $("#serviceMenu").removeClass("current-menu-item");
+                $("#networkMenu").addClass("current-menu-item");
+            }
+
+            function findPosition(obj) {
+                var currenttop = 0;
+                if (obj.offsetParent) {
+                    do {
+                        currenttop += obj.offsetTop;
+                    } while ((obj = obj.offsetParent));
+                    return [currenttop];
+                }
+            }
             $(document).ready(function() {
+                if (window.location.hash === "#page" || window.location.pathname === "/") {
+                    homeON();
+                } else if (window.location.hash === "#services") {
+                    servicesON();
+
+                } else if (window.location.hash === "#network") {
+                    networkON();
+                } else {
+
+                }
+
                 $("#homeMenu").click(function(event) {
-                    $("#homeMenu").addClass("current-menu-item");
-                    $("#serviceMenu").removeClass("current-menu-item");
-                    $("#networkMenu").removeClass("current-menu-item");
+                    homeON();
                 });
                 $("#serviceMenu").click(function(event) {
-                    $("#homeMenu").removeClass("current-menu-item");
-                    $("#serviceMenu").addClass("current-menu-item");
-                    $("#networkMenu").removeClass("current-menu-item");
+                    servicesON();
+                    $('html, body').animate({
+                        scrollTop: $("#services").offset().top - 100
+                    }, 500);
                 });
                 $("#networkMenu").click(function(event) {
-                    $("#homeMenu").removeClass("current-menu-item");
-                    $("#serviceMenu").removeClass("current-menu-item");
-                    $("#networkMenu").addClass("current-menu-item");
+                    networkON();
+                    $('html, body').animate({
+                        scrollTop: $("#network").offset().top - 100
+                    }, 500);
                 });
 
+                /*  var currentDiv = "#page";
+                 $(document).scroll(function(event) {
+                     event.preventDefault();
+                     if (currentDiv === "#page") {
+                         window.scroll(0, findPosition(document.getElementById("services")) - 50);
+                         currentDiv = "#services";
+                     }
+                 }); */
+
+                var url = new URL(window.location.href);
+                $('.projects-grid').isotope({
+                    filter: '.' + url.searchParams.get('type')
+                });
             });
         </script>
 </body>

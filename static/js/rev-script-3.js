@@ -85,8 +85,10 @@
 
                 responsiveLevels: [1240, 1024, 778, 480],
                 visibilityLevels: [1240, 1024, 778, 480],
-                gridwidth: [1200, 1024, 778, 480],
-                gridheight: [800, 768, 600, 567],
+                // gridwidth: [1200, 1024, 778, 480],
+                // gridheight: [800, 768, 600, 567],
+                gridwidth: [1900],
+                gridheight: [600],
                 lazyType: "none",
                 parallax: {
                     type: "scroll",

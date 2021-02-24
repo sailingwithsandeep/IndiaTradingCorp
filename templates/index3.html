@@ -143,7 +143,7 @@
                 <div class="ot-heading">
                     <span class="text-primary-light">our products</span>
                     <h2 class="main-heading text-white">
-                        The Range of Products
+                        Introducing the Main <br />Categories of Products
                     </h2>
                 </div>
                 <div class="space-20"></div>
@@ -152,11 +152,11 @@
         <div class="row justify-content-center">
             {% for category in categories %}
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4 mb-lg-0">
-                <a class="text-white" href="{% url 'products:productpage' %}?type={{ category.categoryName }}">
+                <a class="text-white" href="{% url 'products:productpage' %}">
                     <img src="{{ category.categoryImage.url }}" style="height:300px;width:auto;" alt="" />
-                    <div class="serv-box s1 v4" style="background-color:white;">
+                    <div class="serv-box s1 v4">
                         <div class="content-box">
-                            <h5 style="color:#262051;">{{ category.categoryName }}</h5>
+                            <h5>{{ category.categoryName }}</h5>
                         </div>
                     </div>
                 </a>
@@ -184,7 +184,7 @@
             </div>
         </div>
         <div class="space-35"></div>
-        {% comment %} <div class="row">
+        <div class="row">
             <div class="col-md-12">
                 <div class="ot-testimonials">
                     <div class="owl-carousel owl-theme testimonial-inner ot-testimonials-slider">
@@ -251,7 +251,7 @@
                     </div>
                 </div>
             </div>
-        </div> {% endcomment %}
+        </div>
     </div>
 </section>
 {% endblock content %}
