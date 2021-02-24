@@ -34,27 +34,30 @@ class ProductPage(TemplateView):
         return context
 
 def insertEmail(request):
-
+    str_email = request.POST.get('email')
     try:
-        validate_email(request.POST.get('email'))
+        validate_email(str_email)
         if request.method == 'POST':
-            if request.POST.get('email'):
-                str_email = request.POST.get('email')
+            if str_email:
                 email  = Email_Newsletter.objects.get(emailAddress = str_email)
-                if not email:
-                    email=Email_Newsletter(emailAddress = request.POST.get('email'))
-                    print(request.POST.get('email'))
-                    email.save()              
-                print(type(request.path_info))
-                return HttpResponseRedirect(os.path.split(str(request.path_info))[0]) 
-    # if email already exists
+                if email:
+                    messages.error(request, "Email already exists!")  
+                # return to previous page
+                next = request.POST.get('next', '/')
+                return HttpResponseRedirect(next)    # if email already exists
     except Email_Newsletter.DoesNotExist:
-        messages.error(request, "Email already exists!")
-        return HttpResponseRedirect(os.path.split(str(request.path_info))[0]) 
+        email=Email_Newsletter(emailAddress = str_email)
+        # print(request.POST.get('email'))
+        email.save()       
+        # return to previous page
+        next = request.POST.get('next', '/')
+        return HttpResponseRedirect(next)
     # if invalid email
     except ValidationError as e:
         messages.error(request, "Invalid email address!")
-        return HttpResponseRedirect(os.path.split(str(request.path_info))[0])
+        # return to previous page
+        next = request.POST.get('next', '/')
+        return HttpResponseRedirect(next)
     
         
     

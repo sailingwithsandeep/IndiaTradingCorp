@@ -6,5 +6,5 @@ app_name = 'products'
 urlpatterns = [
     path('', views.HomePage.as_view(), name='home'),
     path('products', views.ProductPage.as_view(), name='productpage'),
-    path('products/saveemail', views.insertEmail, name='saveemail'),
+    path('saveemail', views.insertEmail, name='saveemail'),
 ]

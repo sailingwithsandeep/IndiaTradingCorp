@@ -997,11 +997,12 @@
                             <div class="widget-footer">
                                 <h5 class="text-white">Subscribe</h5>
                                 <p>Follow our newsletter to stay updated about agency.</p>
-                                <form action="/products/saveemail" id="mc4wp-form-1" class="mc4wp-form" method="post">
+                                <form action="/saveemail" id="mc4wp-form-1" class="mc4wp-form" method="post">
                                     {% csrf_token %}
                                     <div class="mc4wp-form-fields">
                                         <div class="subscribe-inner-form">
                                             <input type="email" name="email" placeholder="Your Email" required="">
+                                            <input type="hidden" name="next" value="{{ request.path }}">
                                             <button type="submit" class="subscribe-btn-icon"><i class="flaticon-telegram"></i></button>
                                         </div>
                                     </div>
