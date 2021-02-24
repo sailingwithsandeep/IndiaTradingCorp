@@ -15,22 +15,26 @@ import os
 class HomePage(TemplateView):
 
     template_name = "index.html"
-    context_object_name = 'slider'
+    context_object_name = 'slider','categories','products'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['slider'] = Slider.objects.all().order_by('id')
+        context['categories'] = Category.objects.all().order_by('id')
+        context['products'] = Products.objects.all().order_by('id')
+
         return context
 
 
 class ProductPage(ListView):
     model = Products
     template_name = "products/product.html"
-    context_object_name = 'products'
+    context_object_name = 'products','categories'
 
     def get_context_data(self, *args, **kwargs):
         context = super(ProductPage, self).get_context_data(**kwargs)
         context['products'] = Products.objects.all().order_by('id')
+        context['categories'] = Category.objects.all().order_by('id')
         return context
 
 

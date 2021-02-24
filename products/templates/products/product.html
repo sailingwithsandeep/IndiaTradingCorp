@@ -15,269 +15,36 @@
         <div class="project-filter-wrapper">
           <ul class="project_filters">
             <li><a href="#" data-filter="*" class="selected">All</a></li>
-            <li><a href="#" data-filter=".design">Agriculture</a></li>
-            <li><a href="#" data-filter=".development">Fabric</a></li>
-            <li><a href="#" data-filter=".ideas">Hardware</a></li>
+            <li><a href="#" data-filter=".Agriculture">Agriculture</a></li>
+            <li><a href="#" data-filter=".Fabric">Fabric</a></li>
+            <li><a href="#" data-filter=".Hardware">Hardware</a></li>
           </ul>
           <div class="projects-grid projects-style-1 projects-col3">
-            <div class="project-item design ideas">
+          {% for product in products %}
+          <div class="project-item {{ product.category }}">
               <div class="projects-box">
                 <div class="projects-thumbnail">
                   <a href="#">
-                    <img src="https://via.placeholder.com/720x720.png" alt="" />
+                    <img src="{{ product.productImage.url }}" alt="" />
                   </a>
                 </div>
                 <div class="portfolio-info">
                   <a class="overlay" href="#"></a>
                   <div class="portfolio-info-inner">
                     <h5>
-                      <a href="#">Product Name</a>
-                    </h5>
-                    <p class="portfolio-cates">
-                      <a href="#">Design</a><span>/</span>
-                      <a href="#">Ideas</a>
-                    </p>
+                      <a href="#">{{ product.productName }}</a>
+                    </h5>                    
                   </div>
                 </div>
               </div>
             </div>
-            <div class="project-item technology development">
-              <div class="projects-box">
-                <div class="projects-thumbnail">
-                  <a href="#">
-                    <img src="https://via.placeholder.com/720x720.png" alt="" />
-                  </a>
-                </div>
-                <div class="portfolio-info">
-                  <a class="overlay" href="#"></a>
-                  <div class="portfolio-info-inner">
-                    <h5>
-                      <a href="#">Product Name</a>
-                    </h5>
-                    <p class="portfolio-cates">
-                      <a href="#">Technology</a><span>/</span>
-                      <a href="#">Development</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="project-item ideas technology">
-              <div class="projects-box">
-                <div class="projects-thumbnail">
-                  <a href="#">
-                    <img src="https://via.placeholder.com/720x720.png" alt="" />
-                  </a>
-                </div>
-                <div class="portfolio-info">
-                  <a class="overlay" href="#"></a>
-                  <div class="portfolio-info-inner">
-                    <h5>
-                      <a href="#">Product Name</a>
-                    </h5>
-                    <p class="portfolio-cates">
-                      <a href="#">Ideas</a><span>/</span>
-                      <a href="#">Technology</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="project-item design development">
-              <div class="projects-box">
-                <div class="projects-thumbnail">
-                  <a href="#">
-                    <img src="https://via.placeholder.com/720x720.png" alt="" />
-                  </a>
-                </div>
-                <div class="portfolio-info">
-                  <a class="overlay" href="#"></a>
-                  <div class="portfolio-info-inner">
-                    <h5>
-                      <a href="#">Project Name</a>
-                    </h5>
-                    <p class="portfolio-cates">
-                      <a href="#">Design</a><span>/</span>
-                      <a href="#">Development</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="project-item design ideas">
-              <div class="projects-box">
-                <div class="projects-thumbnail">
-                  <a href="#">
-                    <img src="https://via.placeholder.com/720x720.png" alt="" />
-                  </a>
-                </div>
-                <div class="portfolio-info">
-                  <a class="overlay" href="#"></a>
-                  <div class="portfolio-info-inner">
-                    <h5>
-                      <a href="#">Project Name</a>
-                    </h5>
-                    <p class="portfolio-cates">
-                      <a href="#">Design</a><span>/</span>
-                      <a href="#">Ideas</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="project-item development ideas">
-              <div class="projects-box">
-                <div class="projects-thumbnail">
-                  <a href="#">
-                    <img src="https://via.placeholder.com/720x720.png" alt="" />
-                  </a>
-                </div>
-                <div class="portfolio-info">
-                  <a class="overlay" href="#"></a>
-                  <div class="portfolio-info-inner">
-                    <h5>
-                      <a href="#">Project Name</a>
-                    </h5>
-                    <p class="portfolio-cates">
-                      <a href="#">Development</a><span>/</span>
-                      <a href="#">Ideas</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="project-item design technology">
-              <div class="projects-box">
-                <div class="projects-thumbnail">
-                  <a href="#">
-                    <img src="https://via.placeholder.com/720x720.png" alt="" />
-                  </a>
-                </div>
-                <div class="portfolio-info">
-                  <a class="overlay" href="#"></a>
-                  <div class="portfolio-info-inner">
-                    <h5>
-                      <a href="#">Project Name</a>
-                    </h5>
-                    <p class="portfolio-cates">
-                      <a href="#">Design</a><span>/</span>
-                      <a href="#">Technology</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="project-item technology development">
-              <div class="projects-box">
-                <div class="projects-thumbnail">
-                  <a href="#">
-                    <img src="https://via.placeholder.com/720x720.png" alt="" />
-                  </a>
-                </div>
-                <div class="portfolio-info">
-                  <a class="overlay" href="#"></a>
-                  <div class="portfolio-info-inner">
-                    <h5>
-                      <a href="#">Project Name</a>
-                    </h5>
-                    <p class="portfolio-cates">
-                      <a href="#">Technology</a><span>/</span>
-                      <a href="#">Development</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="project-item design development">
-              <div class="projects-box">
-                <div class="projects-thumbnail">
-                  <a href="#">
-                    <img src="https://via.placeholder.com/720x720.png" alt="" />
-                  </a>
-                </div>
-                <div class="portfolio-info">
-                  <a class="overlay" href="#"></a>
-                  <div class="portfolio-info-inner">
-                    <h5>
-                      <a href="#">Project Name</a>
-                    </h5>
-                    <p class="portfolio-cates">
-                      <a href="#">Design</a><span>/</span>
-                      <a href="#">Development</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="project-item development ideas">
-              <div class="projects-box">
-                <div class="projects-thumbnail">
-                  <a href="#">
-                    <img src="https://via.placeholder.com/720x720.png" alt="" />
-                  </a>
-                </div>
-                <div class="portfolio-info">
-                  <a class="overlay" href="#"></a>
-                  <div class="portfolio-info-inner">
-                    <h5>
-                      <a href="#">Project Name</a>
-                    </h5>
-                    <p class="portfolio-cates">
-                      <a href="#">Design</a><span>/</span>
-                      <a href="#">Ideas</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="project-item design technology">
-              <div class="projects-box">
-                <div class="projects-thumbnail">
-                  <a href="#">
-                    <img src="https://via.placeholder.com/720x720.png" alt="" />
-                  </a>
-                </div>
-                <div class="portfolio-info">
-                  <a class="overlay" href="#"></a>
-                  <div class="portfolio-info-inner">
-                    <h5>
-                      <a href="#">Project Name</a>
-                    </h5>
-                    <p class="portfolio-cates">
-                      <a href="#">Design</a><span>/</span>
-                      <a href="#">Technology</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="project-item technology ideas">
-              <div class="projects-box">
-                <div class="projects-thumbnail">
-                  <a href="#">
-                    <img src="https://via.placeholder.com/720x720.png" alt="" />
-                  </a>
-                </div>
-                <div class="portfolio-info">
-                  <a class="overlay" href="#"></a>
-                  <div class="portfolio-info-inner">
-                    <h5>
-                      <a href="#">Project Name</a>
-                    </h5>
-                    <p class="portfolio-cates">
-                      <a href="#">Technology</a><span>/</span>
-                      <a href="#">Ideas</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          {% endfor %}            
           </div>
         </div>
         <div class="space-60"></div>
-        <div class="ot-button text-center">
+        {% comment %} <div class="ot-button text-center">
           <a href="#" class="octf-btn octf-btn-primary">Load More</a>
-        </div>
+        </div> {% endcomment %}
       </div>
     </div>
   </div>

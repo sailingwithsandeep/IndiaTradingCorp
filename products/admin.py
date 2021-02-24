@@ -26,4 +26,4 @@ class sliderImage_admin(admin.ModelAdmin):
 
 @admin.register(Email_Newsletter)
 class Email_Newsletter(admin.ModelAdmin):
-    list_display = ['emailAddress', 'date']
+    list_display = ['emailAddress',]
