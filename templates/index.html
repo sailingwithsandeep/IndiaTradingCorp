@@ -152,7 +152,7 @@
         <div class="row justify-content-center">
             {% for category in categories %}
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4 mb-lg-0">
-                <a class="text-white" href="/products">
+                <a class="text-white" href="{% url 'products:productpage' %}">
                     <img src="{{ category.categoryImage.url }}" style="height:300px;width:auto;" alt="" />
                     <div class="serv-box s1 v4">
                         <div class="content-box">

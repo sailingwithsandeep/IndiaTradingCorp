@@ -29,7 +29,7 @@ class HomePage(TemplateView):
 class ProductPage(ListView):
     model = Products
     template_name = "products/product.html"
-    context_object_name = 'products','categories'
+    context_object_name = 'products'
 
     def get_context_data(self, *args, **kwargs):
         context = super(ProductPage, self).get_context_data(**kwargs)
@@ -54,6 +54,7 @@ def insertEmail(request):
         email = Email_Newsletter(emailAddress=str_email)
         # print(request.POST.get('email'))
         email.save()
+        messages.error(request, "Email Address saved!")
         # return to previous page
         next = request.POST.get('next', '/')
         return HttpResponseRedirect(next)
