@@ -85,7 +85,7 @@
                             <div class="octf-mainbar-row octf-row">
                                 <div class="octf-col logo-col">
                                     <div id="site-logo" class="site-logo">
-                                        <a href="#">
+                                        <a href="{% url 'products:home' %}">
                                             <img src="images/logo-light.svg" alt="ITC" class="">
                                         </a>
                                     </div>
@@ -93,9 +93,9 @@
                                 <div class="octf-col menu-col">
                                     <nav id="site-navigation" class="main-navigation">
                                         <ul class="menu nav-style-2">
-                                            <li class="current-menu-item"><a href="/">Home</a></li>
+                                            <li class="current-menu-item"><a href="{% url 'products:home' %}">Home</a></li>
                                             <li><a href="#services">Services</a></li>
-                                            <li class="menu-item-has-children"><a href="#">Products</a>
+                                            <li class="menu-item-has-children"><a href="{% url 'products:productpage' %}">Products</a>
                                                 <ul class="sub-menu">
                                                     <li class="menu-item-has-children">
                                                         <a href="#">Agriculture</a>
@@ -131,18 +131,7 @@
                                     <!-- Call To Action -->
                                     <div class="octf-btn-cta hstyle-2">
 
-                                        <div class="octf-header-module cart-btn-hover">
-                                            <div class="h-cart-btn octf-cta-icons">
-                                                <a class="cart-icon" href="cart-page.html"><i class="flaticon-shopper"></i><span class="count">0</span></a>
-                                            </div>
-                                            <div class="site-header-cart">
-                                                <div class="widget woocommerce widget_shopping_cart">
-                                                    <div class="widget_shopping_cart_content">
-                                                        <p class="woocommerce-mini-cart__empty-message">No products in the cart.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
 
                                         <div class="octf-header-module">
                                             <div class="toggle_search octf-cta-icons">

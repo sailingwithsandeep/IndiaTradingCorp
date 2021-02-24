@@ -17,21 +17,22 @@ class HomePage(TemplateView):
     template_name = "index.html"
     context_object_name = 'slider'
 
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['slider'] = Slider.objects.all().order_by('id')
         return context
 
-class ProductPage(TemplateView):
 
-    template_name = "product.html"
+class ProductPage(ListView):
+    model = Products
+    template_name = "products/product.html"
     context_object_name = 'products'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+    def get_context_data(self, *args, **kwargs):
+        context = super(ProductPage, self).get_context_data(**kwargs)
         context['products'] = Products.objects.all().order_by('id')
         return context
+
 
 def insertEmail(request):
     str_email = request.POST.get('email')
@@ -39,16 +40,16 @@ def insertEmail(request):
         validate_email(str_email)
         if request.method == 'POST':
             if str_email:
-                email  = Email_Newsletter.objects.get(emailAddress = str_email)
+                email = Email_Newsletter.objects.get(emailAddress=str_email)
                 if email:
-                    messages.error(request, "Email already exists!")  
+                    messages.error(request, "Email already exists!")
                 # return to previous page
                 next = request.POST.get('next', '/')
                 return HttpResponseRedirect(next)    # if email already exists
     except Email_Newsletter.DoesNotExist:
-        email=Email_Newsletter(emailAddress = str_email)
+        email = Email_Newsletter(emailAddress=str_email)
         # print(request.POST.get('email'))
-        email.save()       
+        email.save()
         # return to previous page
         next = request.POST.get('next', '/')
         return HttpResponseRedirect(next)
@@ -58,6 +59,3 @@ def insertEmail(request):
         # return to previous page
         next = request.POST.get('next', '/')
         return HttpResponseRedirect(next)
-    
-        
-    
