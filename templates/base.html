@@ -1032,8 +1032,8 @@
                 }
             }
             window.setTimeout(function() {
-                $(".alert").fadeTo(5000, 0).slideUp(500, function(){
-                $(this).remove(); 
+                $(".alert").fadeTo(5000, 0).slideUp(500, function() {
+                    $(this).remove();
                 });
             }, 2000);
 
@@ -1077,6 +1077,45 @@
                 var url = new URL(window.location.href);
                 $('.projects-grid').isotope({
                     filter: '.' + url.searchParams.get('type')
+                });
+
+                $('#filterPrev').click(function(event) {
+                    var done1 = false;
+                    $('.filterGroup').each(function(index) {
+                        if (!done1) {
+                            if ($(this).hasClass("selected")) {
+                                if (index === 0) return;
+                                else {
+                                    let filter = $('.filterGroup')[index - 1].innerHTML;
+                                    $('.projects-grid').isotope({
+                                        filter: '.' + filter
+                                    });
+                                    $('.filterGroup').eq(index - 1).addClass("selected");
+                                    $(this).removeClass("selected");
+                                    done1 = true;
+                                }
+                            }
+                        }
+                    });
+                });
+                $('#filterNext').click(function(event) {
+                    var done = false;
+                    $('.filterGroup').each(function(index) {
+                        if (!done) {
+                            if ($(this).hasClass("selected")) {
+                                if (index === $('.filterGroup').length - 1) return;
+                                else {
+                                    let filter = $('.filterGroup')[index + 1].innerHTML;
+                                    $('.projects-grid').isotope({
+                                        filter: '.' + filter
+                                    });
+                                    $('.filterGroup').eq(index + 1).addClass("selected");
+                                    $(this).removeClass("selected");
+                                    done = true;
+                                }
+                            }
+                        }
+                    });
                 });
             });
         </script>

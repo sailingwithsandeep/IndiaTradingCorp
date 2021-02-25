@@ -12,13 +12,13 @@
         </div>
         <div class="row">
             <div class="col-1">
-                <a href="#" class="octf-btn octf-btn-primary"><i class="fa fa-arrow-left"></i></a>
+                <a id="filterPrev" href="#" class="btn" style="background-color: #7141b1;"><i class="text-white fa fa-arrow-left"></i></a>
             </div>
             <div class="col-lg-10 col-10">
                 <div class="project-filter-wrapper">
                     <ul class="project_filters">
                         {% for category in categories %}
-                        <li><a href="#" data-filter=".{{ category.categoryName }}" class="{% if request.GET.type == category.categoryName %}selected{% endif %}">{{ category.categoryName }}</a></li>
+                        <li><a href="#" data-filter=".{{ category.categoryName }}" class="filterGroup {% if request.GET.type == category.categoryName %}selected{% endif %}">{{ category.categoryName }}</a></li>
                         {% endfor %}
                     </ul>
 
@@ -52,7 +52,7 @@
                 </div> {% endcomment %}
             </div>
             <div class="col-1">
-                <a href="#" class="btn btn-primary"><i class="fa fa-arrow-right"></i></a>
+                <a id="filterNext" href="#" class="btn" style="background-color: #7141b1;"><i class="text-white fa fa-arrow-right"></i></a>
             </div>
         </div>
     </div>
@@ -60,9 +60,18 @@
 {% comment %}
 <script>
     $(document).ready(function() {
+
+
         var $optionSets = $('.project_filters'),
             $optionLinks = $optionSets.find('a');
         $optionLinks.trigger('click');
 
+
+        $('#filterPrev').click(function(event) {
+
+        });
+        $('#filterNext').click(function(event) {
+
+        });
     });
 </script> {% endcomment %} {% endblock content %}
