@@ -40,7 +40,7 @@
 
 <body class="royal_preloader">
     {% if messages %} {% for message in messages %}
-    <div class="alert alert-danger alert-dismissible fade show " role="alert">
+    <div class="alert alert-danger alert-dismissible fade show " id="aleart-danger" role="alert">
         <strong> {{ message }} </strong>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -992,9 +992,9 @@
 
             $(function() {
                 $('#WAButton').floatingWhatsApp({
-                    phone: '917405455898', //WhatsApp Business phone number
+                    phone: '916355115277', //WhatsApp Business phone number
                     headerTitle: 'Chat with us on WhatsApp!', //Popup Title
-                    popupMessage: 'Hello, how can we help you?', //Popup Message
+                    popupMessage: '', //Popup Message
                     showPopup: false, //Enables popup display
                     buttonImage: '<img src="static/images/whatsapp.svg" />', //Button Image
                     //headerColor: 'crimson', //Custom header color
@@ -1031,6 +1031,12 @@
                     return [currenttop];
                 }
             }
+            window.setTimeout(function() {
+                $(".alert").fadeTo(5000, 0).slideUp(500, function(){
+                $(this).remove(); 
+                });
+            }, 2000);
+
             $(document).ready(function() {
                 if (window.location.hash === "#page" || window.location.pathname === "/") {
                     homeON();
