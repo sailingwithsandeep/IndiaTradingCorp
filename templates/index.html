@@ -11,16 +11,31 @@
                 <img src="{{ slider.sliderImage.url }}" data-bgcolor='rgba(255,255,255,0.5)' alt="{{ slider.Name }}" data-bgposition="50% 50%" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
 
                 <!-- LAYER 4  Bold Title -->
-                <div class="tp-caption tp-resizeme text-dark tp-big-text" id="slide-7{{ forloop.counter0 }}-layer-6" data-x="['left','left','left','left']" data-y="['top','top','top','top']" data-hoffset="['15','15','15','15']" data-voffset="['195','105','127','133']"
+                {% comment %} <div class="tp-caption tp-resizeme text-light tp-big-text text-center ml-auto mr-auto" id="slide-7{{ forloop.counter0 }}-layer-6" data-x="['left','left','left','left']" data-y="['top','top','top','top']" data-hoffset="['15','15','15','15']" data-voffset="['195','105','127','133']"
                     data-fontsize="['72','60','48','30']" data-lineheight="['80','62','52','42']" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"delay":500,"split":"chars","splitdelay":0.1,"speed":500,"frame":"0","from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:50px;z:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","ease":"power3.inOut"}]'
-                    data-textAlign="['left','left','left','left']">
+                    data-textAlign="['center','center','center','center']">
+                    {{ slider.Name }}
+                </div> {% endcomment %}
+                <div class="tp-caption tp-resizeme text-light tp-big-text text-center ml-auto mr-auto" id="slide-7{{ forloop.counter0 }}-layer-6" data-x="['center','center','center','center']" data-y="['center','center','center','center']" 
+                    data-fontsize="['72','60','48','30']" 
+                    data-voffset="['-25','-25','-25','-25']"
+                    data-lineheight="['80','62','52','42']" data-type="text" 
+                    data-frames='[{"delay":500,"split":"chars","splitdelay":0.1,"speed":500,"frame":"0","from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:50px;z:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","ease":"power3.inOut"}]'
+                    data-textAlign="['center','center','center','center']">
                     {{ slider.Name }}
                 </div>
-
                 <!-- LAYER 5  Paragraph-->
-                <div class="tp-caption tp-resizeme text-dark" id="slide-7{{ forloop.counter0 }}-layer-7" data-x="['left','left','left','left']" data-hoffset="['15','15','15','15']" data-y="['top','top','top','top']" data-voffset="['340','140','155','145']" data-fontsize="['18','18','22','16']"
+                {% comment %} <div class="tp-caption tp-resizeme text-dark" id="slide-7{{ forloop.counter0 }}-layer-7" data-x="['left','left','left','left']" data-hoffset="['15','15','15','15']" data-y="['top','top','top','top']" data-voffset="['340','140','155','145']" data-fontsize="['18','18','22','16']"
                     data-lineheight="['30','34','32','28']" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"delay":1500,"speed":1000,"frame":"0","from":"x:150px;opacity:0;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:50px;opacity:0;","ease":"power3.inOut"}]'
                     data-textAlign="['left','left','left','left']" style="word-wrap: break-word;">{{ slider.Description }}
+                </div> {% endcomment %}
+                <div class="tp-caption tp-resizeme text-light text-center ml-auto mr-auto" id="slide-7{{ forloop.counter0 }}-layer-6" data-x="['center','center','center','center']" data-y="['center','center','center','center']" 
+                    data-fontsize="['22','22','22','22']" 
+                    data-voffset="['25','25','25','25']"
+                    data-lineheight="['80','62','52','42']" data-type="text" 
+                    data-frames='[{"delay":500,"speed":1000,"frame":"0","from":"x:150px;opacity:0;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:50px;opacity:0;","ease":"power3.inOut"}]'
+                    data-textAlign="['center','center','center','center']">
+                    {{ slider.Description }}
                 </div>
 
             </li>

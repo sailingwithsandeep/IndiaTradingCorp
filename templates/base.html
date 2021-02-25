@@ -35,7 +35,7 @@
 <body class="royal_preloader">
     {% if messages %} {% for message in messages %}
     <div class="alert alert-danger alert-dismissible fade show " id="aleart-danger" role="alert">
-        <strong > {{ message }} </strong>
+        <strong> {{ message }} </strong>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -50,14 +50,14 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <ul class="topbar-info">
-                                    <li class="text-white"><i class="fas fa-phone text-warning"></i> +91 6355115277</li>
                                     <li class="text-white"><i class="fas fa-envelope text-warning"></i> <a href="mailto:indiatradingcorporations@gmail.com" class="text-white">indiatradingcorporations@gmail.com</a></li>
+                                    <li class="text-white"><i class="fas fa-phone text-warning"></i> +91 6355115277</li>
                                 </ul>
                             </div>
-                            
+
                             <div class="col-md-6 text-right">
                                 <div class="topbar-right">
-                                    
+
                                     <ul class="social-list">
                                         <li><a href="http://twitter.com" target="_self"><i class="fab fa-twitter text-warning"></i></a></li>
                                         <li><a href="http://facebook.com" target="_self"><i class="fab fa-facebook-f text-warning"></i></a></li>
@@ -65,7 +65,7 @@
                                         <li><a href="http://instagram" target="_self"><i class="fab fa-instagram text-warning"></i></a></li>
                                     </ul>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -110,10 +110,11 @@
                                         </ul>
                                     </nav>
                                 </div>
-                                {% comment %} <div class="octf-col cta-col text-right">
+                                {% comment %}
+                                <div class="octf-col cta-col text-right">
                                     <!-- Call To Action -->
                                     <div class="octf-btn-cta">
-                                        
+
                                         <div class="octf-header-module">
                                             <div class="toggle_search octf-cta-icons">
                                                 <i class="flaticon-search"></i>
@@ -140,7 +141,7 @@
                                             </div>
                                         </div>
 
-                                        
+
                                         <div class="octf-header-module">
                                             <div class="btn-cta-group btn-cta-header">
                                                 <a class="octf-btn octf-btn-third" href="contact.html">Free Quote</a>
@@ -155,6 +156,20 @@
                 </div>
             </div>
             <div class="header_mobile">
+                <div class="header-topbar" style="display: block;">
+                    <div class="octf-area-wrap">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12">
+                                    <ul class="topbar-info small" style="display: inline-flex;">
+                                        <li class="text-white"><i class="fas fa-envelope text-warning"></i> <a href="mailto:indiatradingcorporations@gmail.com" class="text-white">indiatradingcorporations@gmail.com</a></li>
+                                        <li class="text-white"><i class="fas fa-phone text-warning"></i> +91 6355115277</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="container">
                     <div class="mlogo_wrapper clearfix">
                         <div class="mobile_logo">
@@ -886,23 +901,27 @@
             <footer id="site-footer" class="site-footer footer-v1 pt-5 pb-2">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-12 m-auto">
                             <img src="images/itc logo-01.png" width="200px" height="100px" alt="" class="lazyloaded" data-ll-status="loaded">
                         </div>
-                        <div class="offset-3 col-lg-3 col-md-3 col-sm-6 col-12">
+                        <div class="col-lg-2 col-md-2 col-sm-12 col-12 m-auto">
+                            <button class="btn text-white btn-info">Download Brochure</button>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-12">
                             <div class="widget-footer">
-                                <h5 class="text-white">Our Address</h5>
+                                <h5 class="text-white mb-2">Contact Us</h5>
                                 <ul class="list-items">
-                                    <li class="list-item">Rajkot - Gujarat - India 360001</li>
-                                     <li class="text-white"><i class="fas fa-phone text-primary"></i> +91 6355115277</li>
-                                  
+                                    <li class="list-item">Rajkot - 360001<br>Gujarat, India</li>
+                                    <li class="list-item"><i class="fas fa-phone" style="color: #ff7c00;"></i> <a href="tel:+916355115277">+91 63551 15277</a></li>
+                                    <li class="list-item"><i class="fas fa-envelope" style="color: #ff7c00;"></i> <a href="mailto:indiatradingcorporations@gmail.com">indiatradingcorporations@gmail.com</a></li>
+
                                 </ul>
-                                
+
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-12 col-12">
                             <div class="widget-footer">
-                                <h5 class="text-white">Subscribe</h5>
+                                <h5 class="text-white mb-2">Subscribe</h5>
                                 <p>Follow our newsletter to stay updated about agency.</p>
                                 <form action="/saveemail" id="mc4wp-form-1" class="mc4wp-form" method="post">
                                     {% csrf_token %}
@@ -914,14 +933,19 @@
                                         </div>
                                     </div>
                                 </form>
-
+                                <ul class="social-list  mt-3 ">
+                                    <li><a href="http://twitter.com" target="_self"><i class="fab fa-2x fa-twitter " style="font-size: 20px;color: #ff7c00;"></i></a></li>
+                                    <li><a href="http://facebook.com" target="_self"><i class="fab fa-facebook-f " style="font-size: 20px;color: #ff7c00;"></i></a></li>
+                                    <li><a href="http://linkedin.com" target="_self"><i class="fab fa-linkedin-in" style="font-size: 20px;color: #ff7c00;"></i></a></li>
+                                    <li><a href="http://instagram" target="_self"><i class="fab fa-instagram " style="font-size: 20px;color: #ff7c00;"></i></a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                     <div class="row mt-1 justify-content-center">
                         <div class="text-center align-items-center ">
-                            <p class="copyright-text">Copyright © 2021 India Trading Corporation. All Rights Reserved.</p>
-                            <p class="copyright-text">Powered By <a  class="text-danger" href="http://www.coderedtechnology.in/">CodeRed Technology</a></p>
+                            <p class="copyright-text" style="font-size: 12px;">Copyright © 2021 India Trading Corporation. All Rights Reserved.</p>
+                            <p class="copyright-text" style="font-size: 12px;">Powered By <a class="text-danger" href="http://www.coderedtechnology.in/">CodeRed Technology</a></p>
                         </div>
                     </div>
                 </div>
@@ -977,7 +1001,7 @@
                 Royal_Preloader.config({
                     mode: 'logo',
                     logo: 'images/itc2-02.png',
-                    logo_size: [60 ,200],
+                    logo_size: [60, 200],
                     showProgress: false,
                     showPercentage: false,
                     text_colour: '#000000',

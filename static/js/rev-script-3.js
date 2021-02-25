@@ -90,12 +90,12 @@
                 gridwidth: [1900],
                 gridheight: [600],
                 lazyType: "none",
-                parallax: {
-                    type: "scroll",
-                    origo: "slidercenter",
-                    speed: 2000,
-                    levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 46, 47, 48, 49, 50, 51, 55],
-                },
+                /*  parallax: {
+                     type: "scroll",
+                     origo: "slidercenter",
+                     speed: 2000,
+                     levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 46, 47, 48, 49, 50, 51, 55],
+                 }, */
                 shadow: 0,
                 spinner: "off",
                 stopLoop: "off",
