@@ -9,11 +9,7 @@
     <title>India Trading Corporation</title>
 
 
-    {% comment %}
-    <link type="text/css" rel="stylesheet" href="{% static 'css/slick.css' %}" /> {% endcomment %} {% comment %}
-    <link type="text/css" rel="stylesheet" href="{% static 'css/slick-theme.css' %}" /> {% endcomment %} {% comment %}
-    <link type="text/css" rel="stylesheet" href="{% static 'css/nouislider.min.css' %}" /> {% endcomment %} {% comment %}
-    <link rel="stylesheet" href="{% static 'css/style1.css' %}" /> {% endcomment %}
+
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
@@ -41,7 +37,7 @@
 <body class="royal_preloader">
     {% if messages %} {% for message in messages %}
     <div class="alert alert-danger alert-dismissible fade show " id="aleart-danger" role="alert">
-        <strong> {{ message }} </strong>
+        <strong > {{ message }} </strong>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -56,24 +52,22 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <ul class="topbar-info">
-                                    <li class="text-white"><i class="fas fa-phone text-warning"></i> +91 74054 55898</li>
-                                    <li class="text-white"><i class="fas fa-envelope text-warning"></i> <a href="mailto:mail@mail.net" class="text-white">mail@mail.net</a></li>
+                                    <li class="text-white"><i class="fas fa-phone text-warning"></i> +91 6355115277</li>
+                                    <li class="text-white"><i class="fas fa-envelope text-warning"></i> <a href="mailto:indiatradingcorporations@gmail.com" class="text-white">indiatradingcorporations@gmail.com</a></li>
                                 </ul>
                             </div>
-                            {% comment %}
+                            
                             <div class="col-md-6 text-right">
                                 <div class="topbar-right">
-                                    <ul class="extra-text">
-                                        <li>We are creative, ambitious and ready for challenges! <a href="http://coderedtechnology.in/" target="_blank">Hire Us</a></li>
-                                    </ul>
+                                    
                                     <ul class="social-list">
-                                        <li><a href="http://twitter.com" target="_self"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="http://facebook.com" target="_self"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="http://linkedin.com" target="_self"><i class="fab fa-linkedin-in"></i></a></li>
-                                        <li><a href="http://instagram" target="_self"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="http://twitter.com" target="_self"><i class="fab fa-twitter text-warning"></i></a></li>
+                                        <li><a href="http://facebook.com" target="_self"><i class="fab fa-facebook-f text-warning"></i></a></li>
+                                        <li><a href="http://linkedin.com" target="_self"><i class="fab fa-linkedin-in text-warning"></i></a></li>
+                                        <li><a href="http://instagram" target="_self"><i class="fab fa-instagram text-warning"></i></a></li>
                                     </ul>
                                 </div>
-                            </div> {% endcomment %}
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -103,7 +97,7 @@
                                                 <a href="#services">Services</a> {% else %}
                                                 <a href="{% url 'products:home' %}#services">Services</a> {% endif %}
                                             </li>
-                                            <li class="menu-item-has-children"><a href="#">Products</a>
+                                            <li class="menu-item-has-children"><a href="products?type=Agriculture">Products</a>
                                                 <ul class="sub-menu">
                                                     {% for category in categories %}
                                                     <li><a href="{% url 'products:productpage' %}?type={{ category.categoryName }}">{{ category.categoryName }}</a></li>
@@ -138,7 +132,7 @@
                                             </div>
                                         </div> {% endcomment %}
 
-                                        <div class="octf-header-module">
+                                        {% comment %} <div class="octf-header-module">
                                             <div class="btn-cta-group contact-header">
                                                 <i class="fas fa-phone"></i>
                                                 <div class="cinfo-header">
@@ -146,7 +140,7 @@
                                                     <span class="main-text"><a href="tel:+1-800-456-478-23">+91 74054 55898</a></span>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> {% endcomment %}
 
                                         {% comment %}
                                         <div class="octf-header-module">
@@ -901,8 +895,11 @@
                             <div class="widget-footer">
                                 <h5 class="text-white">Our Address</h5>
                                 <ul class="list-items">
-                                    <li class="list-item">411 University St, Seattle, USA, 411 University St, Seattle, USA,</li>
+                                    <li class="list-item">Rajkot - Gujarat - India 360001</li>
+                                     <li class="text-white"><i class="fas fa-phone text-primary"></i> +91 6355115277</li>
+                                  
                                 </ul>
+                                
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-12 col-12">
@@ -925,8 +922,8 @@
                     </div>
                     <div class="row mt-1 justify-content-center">
                         <div class="text-center align-items-center ">
-                            <p class="copyright-text">Copyright © 2020 India Trading Corporation. All Rights Reserved.</p>
-                            <p class="copyright-text">Powered By <a href="http://http://coderedtechnology.in/">CodeRed Technology</a></p>
+                            <p class="copyright-text">Copyright © 2021 India Trading Corporation. All Rights Reserved.</p>
+                            <p class="copyright-text">Powered By <a  class="text-danger" href="http://www.coderedtechnology.in/">CodeRed Technology</a></p>
                         </div>
                     </div>
                 </div>
@@ -982,9 +979,9 @@
                 Royal_Preloader.config({
                     mode: 'logo',
                     logo: 'images/itc2-02.png',
-                    logo_size: [50, 120],
-                    showProgress: true,
-                    showPercentage: true,
+                    logo_size: [60 ,200],
+                    showProgress: false,
+                    showPercentage: false,
                     text_colour: '#000000',
                     background: '#ffffff'
                 });
@@ -994,7 +991,7 @@
                 $('#WAButton').floatingWhatsApp({
                     phone: '916355115277', //WhatsApp Business phone number
                     headerTitle: 'Chat with us on WhatsApp!', //Popup Title
-                    popupMessage: '', //Popup Message
+                    popupMessage: 'Hello i need query on regarding products,', //Popup Message
                     showPopup: false, //Enables popup display
                     buttonImage: '<img src="static/images/whatsapp.svg" />', //Button Image
                     //headerColor: 'crimson', //Custom header color
