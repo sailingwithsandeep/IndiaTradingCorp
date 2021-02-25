@@ -40,7 +40,7 @@
 
 <body class="royal_preloader">
     {% if messages %} {% for message in messages %}
-    <div class="alert alert-danger alert-dismissible fade show " role="alert">
+    <div class="alert alert-danger alert-dismissible fade show " id="aleart-danger" role="alert">
         <strong> {{ message }} </strong>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -1031,6 +1031,12 @@
                     return [currenttop];
                 }
             }
+            window.setTimeout(function() {
+                $(".alert").fadeTo(5000, 0).slideUp(500, function(){
+                $(this).remove(); 
+                });
+            }, 2000);
+
             $(document).ready(function() {
                 if (window.location.hash === "#page" || window.location.pathname === "/") {
                     homeON();
