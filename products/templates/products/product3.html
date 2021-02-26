@@ -1,12 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-{% comment %} <style>
-.filterGroup{
-display:none;
-}
-.selected{
-display:block;
-}
-</style> {% endcomment %}
+
 <section class="portfolio-grid">
   <div class="container">
     <div class="row">
@@ -17,28 +10,21 @@ display:block;
         <div class="space-5"></div>
       </div>
     </div>
-    {% comment %} <div class="owl-carousel owl-theme">
-    {% for category in categories %}
-            <div class="item text-center">
-              <h3 class="filterTitle">{{ category.categoryName }}</h3>
-            </div>
-            {% endfor %}    
-    </div> {% endcomment %}
     <div class="row">
-      <div class="col-lg-1 col-2">
-        <a id="filterPrev" href="#" class="btn text-white" style="background-color: #7141b1"><i class="text-white fa fa-arrow-left d-inline pr-1"></i><span id="prevText"></span></a>
-        {% comment %} <i class="fa fa-arrow-left" style="color: #7141b1"></i>
+      <div class="col-1">
         <a
           id="filterPrev"
-          href="#"          
-          style="color: #7141b1"
-          ></a> {% endcomment %}
+          href="#"
+          class="btn"
+          style="background-color: #7141b1"
+          ><i class="text-white fa fa-arrow-left"></i
+        ></a>
       </div>
-      <div class="col-lg-10 col-8">
+      <div class="col-lg-10 col-10">
         <div class="project-filter-wrapper">
-          <ul class="project_filters text-center ">
+          <ul class="project_filters">
             {% for category in categories %}
-            <li class="mr-auto ml-auto">
+            <li>
               <a
                 href="#"
                 data-filter=".{{ category.categoryName }}"
@@ -84,27 +70,27 @@ display:block;
         </div>
         {% endcomment %}
       </div>
-      <div class="col-lg-1 col-2">
+      <div class="col-1">
         <a
           id="filterNext"
           href="#"
-          class="btn  text-white"
+          class="btn"
           style="background-color: #7141b1"
-          ><span id="nextText"></span><i class="pl-1 text-white fa fa-arrow-right d-inline"></i></a>
-        {% comment %} <a
-          id="filterNext"
-          href="#"
-          class=""
-          style="color: #7141b1"
           ><i class="text-white fa fa-arrow-right"></i
         ></a>
-        <i class="fa fa-arrow-right" style="color: #7141b1"></i> {% endcomment %}
       </div>
     </div>
   </div>
 </section>
-
+{% comment %}
 <script>
+  $(document).ready(function () {
+    var $optionSets = $(".project_filters"),
+      $optionLinks = $optionSets.find("a");
+    $optionLinks.trigger("click");
 
+    $("#filterPrev").click(function (event) {});
+    $("#filterNext").click(function (event) {});
+  });
 </script>
- {% endblock content %}
+{% endcomment %} {% endblock content %}

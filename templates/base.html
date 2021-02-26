@@ -1061,12 +1061,9 @@
                     homeON();
                 } else if (window.location.hash === "#services") {
                     servicesON();
-
                 } else if (window.location.hash === "#network") {
                     networkON();
-                } else {
-
-                }
+                } else {}
 
                 $("#homeMenu").click(function(event) {
                     homeON();
@@ -1103,39 +1100,126 @@
                     $('.filterGroup').each(function(index) {
                         if (!done1) {
                             if ($(this).hasClass("selected")) {
-                                if (index === 0) return;
-                                else {
+                                if (index === 0) {
+                                    let filter = $('.filterGroup')[$('.filterGroup').length - 1].innerHTML;
+                                    $('.projects-grid').isotope({
+                                        filter: '.' + filter
+                                    });
+                                    $('.filterGroup').eq($('.filterGroup').length - 1).addClass("selected");
+
+                                    $('#filterPrev').children('#prevText').text($('.filterGroup')[$('.filterGroup').length - 2].innerHTML);
+                                    $('#filterNext').children('#nextText').text($('.filterGroup')[index].innerHTML);
+
+                                    $(this).removeClass("selected");
+                                    done1 = true;
+                                } else {
                                     let filter = $('.filterGroup')[index - 1].innerHTML;
                                     $('.projects-grid').isotope({
                                         filter: '.' + filter
                                     });
                                     $('.filterGroup').eq(index - 1).addClass("selected");
+                                    if (index - 1 === 0) {
+                                        $('#filterPrev').children('#prevText').text($('.filterGroup')[$('.filterGroup').length - 1].innerHTML);
+                                        $('#filterNext').children('#nextText').text($('.filterGroup')[index].innerHTML);
+                                    } else {
+                                        $('#filterPrev').children('#prevText').text($('.filterGroup')[index - 2].innerHTML);
+                                        $('#filterNext').children('#nextText').text($('.filterGroup')[index].innerHTML);
+                                    }
                                     $(this).removeClass("selected");
                                     done1 = true;
                                 }
                             }
                         }
                     });
+                    changeSelected();
                 });
                 $('#filterNext').click(function(event) {
                     var done = false;
                     $('.filterGroup').each(function(index) {
                         if (!done) {
                             if ($(this).hasClass("selected")) {
-                                if (index === $('.filterGroup').length - 1) return;
-                                else {
+                                if (index === $('.filterGroup').length - 1) {
+                                    let filter = $('.filterGroup')[0].innerHTML;
+                                    $('.projects-grid').isotope({
+                                        filter: '.' + filter
+                                    });
+                                    $('.filterGroup').eq(0).addClass("selected");
+                                    if (0 + 1 === $('.filterGroup').length - 1) {
+                                        $('#filterNext').children('#nextText').text($('.filterGroup')[0].innerHTML);
+                                        $('#filterPrev').children('#prevText').text($('.filterGroup')[index].innerHTML);
+                                    } else {
+                                        $('#filterNext').children('#nextText').text($('.filterGroup')[0 + 1].innerHTML);
+                                        $('#filterPrev').children('#prevText').text($('.filterGroup')[index].innerHTML);
+                                    }
+                                    $(this).removeClass("selected");
+                                    done = true;
+                                } else {
                                     let filter = $('.filterGroup')[index + 1].innerHTML;
                                     $('.projects-grid').isotope({
                                         filter: '.' + filter
                                     });
                                     $('.filterGroup').eq(index + 1).addClass("selected");
+                                    if (index + 1 === $('.filterGroup').length - 1) {
+                                        $('#filterNext').children('#nextText').text($('.filterGroup')[0].innerHTML);
+                                        $('#filterPrev').children('#prevText').text($('.filterGroup')[index].innerHTML);
+                                    } else {
+                                        $('#filterNext').children('#nextText').text($('.filterGroup')[index + 1 + 1].innerHTML);
+                                        $('#filterPrev').children('#prevText').text($('.filterGroup')[index].innerHTML);
+                                    }
                                     $(this).removeClass("selected");
                                     done = true;
                                 }
                             }
                         }
                     });
+                    changeSelected();
                 });
+
+                $('#filterPrev').trigger('click');
+                $('#filterNext').trigger('click');
+
+                function changeSelected() {
+                    $('.filterGroup').each(function(index) {
+                        if (!$(this).hasClass('selected')) {
+                            $(this).parent('li').attr({
+                                "style": "display:none;"
+                            });
+                        } else {
+                            $(this).parent('li').attr({
+                                "style": "display:inline-block;"
+                            });
+                            $(this).attr({
+                                "style": "font-size:30px;text-decoration:none;"
+                            });
+                        }
+                    });
+                }
+            });
+
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                navText: ['Next', 'Prev'],
+                dots: false,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: true,
+                        navText: ['Next', 'Prev'],
+                    },
+                    600: {
+                        items: 1,
+                        nav: true,
+                        navText: ['Next', 'Prev'],
+                    },
+                    1000: {
+                        items: 1,
+                        nav: true,
+                        navText: ['Next', 'Prev'],
+                    }
+                }
             });
         </script>
 </body>
