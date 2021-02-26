@@ -1,77 +1,96 @@
 {% extends 'base.html' %} {% block content %}
 
 <section class="portfolio-grid">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <div class="ot-heading">
-                    <span> Our latest products</span>
-                </div>
-                <div class="space-5"></div>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="ot-heading">
+          <span> Our latest products</span>
         </div>
-        <div class="row">
-            <div class="col-1">
-                <a id="filterPrev" href="#" class="btn" style="background-color: #7141b1;"><i class="text-white fa fa-arrow-left"></i></a>
-            </div>
-            <div class="col-lg-10 col-10">
-                <div class="project-filter-wrapper">
-                    <ul class="project_filters">
-                        {% for category in categories %}
-                        <li><a href="#" data-filter=".{{ category.categoryName }}" class="filterGroup {% if request.GET.type == category.categoryName %}selected{% endif %}">{{ category.categoryName }}</a></li>
-                        {% endfor %}
-                    </ul>
-
-                    <div class="projects-grid projects-style-1 projects-col3">
-                        {% for product in products %}
-                        <div class="project-item {{ product.category }}">
-                            <div class="projects-box">
-                                <div class="projects-thumbnail">
-                                    <a href="#">
-                                        <img src="{{ product.productImage.url }}" alt="" />
-                                    </a>
-                                </div>
-                                <div class="portfolio-info">
-                                    <a class="overlay" href="#"></a>
-                                    <div class="portfolio-info-inner">
-                                        <h5>
-                                            <a href="#">{{ product.productName }}</a>
-                                        </h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-
-                </div>
-                <div class="space-60"></div>
-                {% comment %}
-                <div class="ot-button text-center">
-                    <a href="#" class="octf-btn octf-btn-primary">Load More</a>
-                </div> {% endcomment %}
-            </div>
-            <div class="col-1">
-                <a id="filterNext" href="#" class="btn" style="background-color: #7141b1;"><i class="text-white fa fa-arrow-right"></i></a>
-            </div>
-        </div>
+        <div class="space-5"></div>
+      </div>
     </div>
+    <div class="row">
+      <div class="col-1">
+        <a
+          id="filterPrev"
+          href="#"
+          class="btn"
+          style="background-color: #7141b1"
+          ><i class="text-white fa fa-arrow-left"></i
+        ></a>
+      </div>
+      <div class="col-lg-10 col-10">
+        <div class="project-filter-wrapper">
+          <ul class="project_filters">
+            {% for category in categories %}
+            <li>
+              <a
+                href="#"
+                data-filter=".{{ category.categoryName }}"
+                class="filterGroup {% if request.GET.type == category.categoryName %}selected{% endif %}"
+                >{{ category.categoryName }}</a
+              >
+            </li>
+            {% endfor %}
+          </ul>
+
+          <div class="projects-grid projects-style-1 projects-col3">
+            {% for product in products %}
+            <div class="project-item {{ product.category }}">
+              <div class="projects-box">
+                <div class="projects-thumbnail">
+                  <a href="#">
+                    <img src="{{ product.productImage.url }}" alt="" />
+                  </a>
+                </div>
+                <div class="portfolio-info">
+                  <a class="overlay" href="#"></a>
+                  <div class="portfolio-info-inner">
+                    <h5>
+                      <a href="#">{{ product.productName }}</a>
+                    </h5>
+                    {% if product.productDescription != null %}
+                    <a class="overlay" href="#"></a>
+                    <h5 style="font-size: 15px">
+                      <a href="#">{{product.productDescription}}</a>
+                    </h5>
+                    {%endif%}
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="space-60"></div>
+        {% comment %}
+        <div class="ot-button text-center">
+          <a href="#" class="octf-btn octf-btn-primary">Load More</a>
+        </div>
+        {% endcomment %}
+      </div>
+      <div class="col-1">
+        <a
+          id="filterNext"
+          href="#"
+          class="btn"
+          style="background-color: #7141b1"
+          ><i class="text-white fa fa-arrow-right"></i
+        ></a>
+      </div>
+    </div>
+  </div>
 </section>
 {% comment %}
 <script>
-    $(document).ready(function() {
+  $(document).ready(function () {
+    var $optionSets = $(".project_filters"),
+      $optionLinks = $optionSets.find("a");
+    $optionLinks.trigger("click");
 
-
-        var $optionSets = $('.project_filters'),
-            $optionLinks = $optionSets.find('a');
-        $optionLinks.trigger('click');
-
-
-        $('#filterPrev').click(function(event) {
-
-        });
-        $('#filterNext').click(function(event) {
-
-        });
-    });
-</script> {% endcomment %} {% endblock content %}
+    $("#filterPrev").click(function (event) {});
+    $("#filterNext").click(function (event) {});
+  });
+</script>
+{% endcomment %} {% endblock content %}
