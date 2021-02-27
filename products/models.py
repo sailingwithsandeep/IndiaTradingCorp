@@ -7,6 +7,8 @@ from django.utils.html import format_html
 
 class Category(models.Model):
     categoryName = models.CharField(max_length=256, unique=True)
+    categoryDescription = models.TextField(
+        max_length=256, blank=True, null=True)
     categoryImage = models.ImageField(upload_to='category/')
 
     def __str__(self):
@@ -47,7 +49,7 @@ class Products(models.Model):
     subcategory = models.ForeignKey(
         Subcategory, on_delete=models.CASCADE, to_field='subCategoryName', null=True, blank=True)
     productName = models.CharField(max_length=256, unique=True)
-    productDescription = models.CharField(max_length=256,null=True )
+    productDescription = models.CharField(max_length=256, null=True)
     productImage = models.ImageField(upload_to='products/')
 
     def productImg(self):
@@ -65,8 +67,8 @@ class Products(models.Model):
 
 
 class Slider(models.Model):
-    Name = models.CharField(max_length=255,blank=True)
-    Description = models.CharField(max_length=255,blank=True)
+    Name = models.CharField(max_length=255, blank=True)
+    Description = models.CharField(max_length=255, blank=True)
     sliderImage = models.ImageField(upload_to='slider/', unique=True)
 
     def sliderImg(self):

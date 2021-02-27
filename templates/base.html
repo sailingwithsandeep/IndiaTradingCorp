@@ -95,7 +95,7 @@
                                                 <a href="#services">Services</a> {% else %}
                                                 <a href="{% url 'products:home' %}#services">Services</a> {% endif %}
                                             </li>
-                                            <li class="menu-item-has-children"><a href="products?type=Agriculture">Products</a>
+                                            <li class="menu-item-has-children"><a href="#">Products</a>
                                                 <ul class="sub-menu">
                                                     {% for category in categories %}
                                                     <li><a href="{% url 'products:productpage' %}?type={{ category.categoryName }}">{{ category.categoryName }}</a></li>
