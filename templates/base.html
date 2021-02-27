@@ -24,6 +24,7 @@
     <!-- REVOLUTION NAVIGATION STYLE -->
     <link rel="stylesheet" type="text/css" href="{% static 'plugins/revolution/revolution/css/navigation.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
@@ -95,7 +96,7 @@
                                                 <a href="#services">Services</a> {% else %}
                                                 <a href="{% url 'products:home' %}#services">Services</a> {% endif %}
                                             </li>
-                                            <li class="menu-item-has-children"><a href="#">Products</a>
+                                            <li class="menu-item-has-children"><a href="products?type=Agriculture">Products</a>
                                                 <ul class="sub-menu">
                                                     {% for category in categories %}
                                                     <li><a href="{% url 'products:productpage' %}?type={{ category.categoryName }}">{{ category.categoryName }}</a></li>
@@ -1066,15 +1067,18 @@
                 } else {}
 
                 $("#homeMenu").click(function(event) {
+                    // event.preventDefault();
                     homeON();
                 });
                 $("#serviceMenu").click(function(event) {
+                    // event.preventDefault();
                     servicesON();
                     $('html, body').animate({
                         scrollTop: $("#services").offset().top - 100
                     }, 500);
                 });
                 $("#networkMenu").click(function(event) {
+                    // event.preventDefault();
                     networkON();
                     $('html, body').animate({
                         scrollTop: $("#network").offset().top - 100
@@ -1096,6 +1100,8 @@
                 });
 
                 $('#filterPrev').click(function(event) {
+                    event.preventDefault();
+                    // $(this).addClass('animate__animated animate__slideInLeft');
                     var done1 = false;
                     $('.filterGroup').each(function(index) {
                         if (!done1) {
@@ -1132,8 +1138,14 @@
                         }
                     });
                     changeSelected();
+
+                    $('#filterGroupTitle').addClass('animate__animated animate__zoomIn animate__faster');
+                    $('#filterPrev').addClass('animate__animated animate__zoomIn animate__faster');
+                    $('#filterNext').addClass('animate__animated animate__zoomIn animate__faster');
+                    // $('#filterGroupTitle').toggleClass('animate__animated animate__slideInLeft');;
                 });
                 $('#filterNext').click(function(event) {
+                    event.preventDefault();
                     var done = false;
                     $('.filterGroup').each(function(index) {
                         if (!done) {
@@ -1173,10 +1185,20 @@
                         }
                     });
                     changeSelected();
+
+                    $('#filterGroupTitle').addClass('animate__animated animate__zoomIn animate__faster');
+                    $('#filterPrev').addClass('animate__animated animate__zoomIn animate__faster');
+                    $('#filterNext').addClass('animate__animated animate__zoomIn animate__faster');
+                    // $('#filterGroupTitle').toggleClass('animate__animated animate__slideInLeft');
                 });
 
                 $('#filterPrev').trigger('click');
                 $('#filterNext').trigger('click');
+                $('#filterGroupTitle').on('animationend', function() {
+                    $('#filterGroupTitle').removeClass('animate__animated animate__zoomIn animate__faster')
+                    $('#filterPrev').removeClass('animate__animated animate__zoomIn animate__faster')
+                    $('#filterNext').removeClass('animate__animated animate__zoomIn animate__faster')
+                });
 
                 function changeSelected() {
                     $('.filterGroup').each(function(index) {

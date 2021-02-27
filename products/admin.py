@@ -6,7 +6,7 @@ from .models import *
 
 @admin.register(Category)
 class Category_admin(admin.ModelAdmin):
-    list_display = ['categoryName', 'categoryImg']
+    list_display = ['categoryName', 'categoryDescription', 'categoryImg']
 
 
 @admin.register(Subcategory)

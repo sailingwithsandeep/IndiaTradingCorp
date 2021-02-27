@@ -1,120 +1,95 @@
 {% extends 'base.html' %} {% block content %} {% comment %}
 <style>
-  .filterGroup {
-    display: none;
-  }
-  .selected {
-    display: block;
-  }
+    .filterGroup {
+        display: none;
+    }
+    
+    .selected {
+        display: block;
+    }
 </style>
 {% endcomment %}
 <section class="portfolio-grid">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <div class="ot-heading">
-          <span> Our latest products</span>
-        </div>
-        <div class="space-5"></div>
-      </div>
-    </div>
-    {% comment %}
-    <div class="owl-carousel owl-theme">
-      {% for category in categories %}
-      <div class="item text-center">
-        <h3 class="filterTitle">{{ category.categoryName }}</h3>
-      </div>
-      {% endfor %}
-    </div>
-    {% endcomment %}
-    <div class="row">
-      <div class="col-lg-1 col-2">
-        <a
-          id="filterPrev"
-          href="#"
-          class="btn text-white"
-          style="background-color: #7141b1"
-          ><i class="text-white fa fa-arrow-left d-inline pr-1"></i
-          ><span id="prevText"></span
-        ></a>
-        {% comment %} <i class="fa fa-arrow-left" style="color: #7141b1"></i>
-        <a id="filterPrev" href="#" style="color: #7141b1"></a> {% endcomment %}
-      </div>
-      <div class="col-lg-10 col-8">
-        <div class="project-filter-wrapper">
-          {% for category in categories %}
-          <ul class="project_filters text-center">
-            <li class="mr-auto ml-auto">
-              <a
-                href="#"
-                data-filter=".{{ category.categoryName }}"
-                class="filterGroup {% if request.GET.type == category.categoryName %}selected{% endif %}"
-                >{{ category.categoryName }}</a
-              >
-              <div class="space-10"></div>
-              <div class="p-1 text-white bold d-flex align-items-center" align="center" style="background-color: #7141b1;">
-
-              {%if category.categoryDescription != null%}
-              <p>{{ category.categoryDescription }}</p>
-              {%endif%}
-              <div>
-            </li>
-          </ul>
-          {% endfor %}
-
-          <div class="projects-grid projects-style-1 projects-col3">
-            {% for product in products %}
-            <div class="project-item {{ product.category }}">
-              <div class="projects-box">
-                <div class="projects-thumbnail">
-                  <a href="#">
-                    <img src="{{ product.productImage.url }}" alt="" />
-                  </a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="ot-heading">
+                    <span> Our latest products</span>
                 </div>
-                <div class="portfolio-info">
-                  <a class="overlay" href="#"></a>
-                  <div class="portfolio-info-inner">
-                    <h5>
-                      <a href="#">{{ product.productName }}</a>
-                    </h5>
-                    {% if product.productDescription != null %}
-                    <a class="overlay" href="#"></a>
-                    <h5 style="font-size: 15px">
-                      <a href="#">{{product.productDescription}}</a>
-                    </h5>
-                    {%endif%}
-                  </div>
-                </div>
-              </div>
+                <div class="space-5"></div>
             </div>
-            {% endfor %}
-          </div>
         </div>
-        <div class="space-60"></div>
-        {% comment %}
-        <div class="ot-button text-center">
-          <a href="#" class="octf-btn octf-btn-primary">Load More</a>
+        <div class="row">
+            <div class="col-lg-1 col-2 d-flex align-self-baseline justify-content-center" style="top: 50px;">
+                <a id="filterPrev" href="#" class="btn text-white " style="transform:rotate(340deg);background-color: #7141b1"><i class="text-white fa fa-arrow-left d-inline pr-1"></i><span id="prevText"></span></a> </div>
+            <div id="filterGroupTitle" class="col-lg-10 col-8">
+                <div class="project-filter-wrapper">
+                    <ul class="project_filters text-center ">
+                        {% for category in categories %}
+                        <li class="mr-auto ml-auto">
+                            <a href="#" data-filter=".{{ category.categoryName }}" class="filterGroup {% if request.GET.type == category.categoryName %}selected{% endif %}">{{ category.categoryName }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="projects-grid projects-style-1 projects-col3" style="top: 50px;">
+                        {% for category in categories %}
+                        <h6 class=" project-item ml-auto mr-auto w-100 text-center {{ category.categoryName }}">{{ category.categoryDescription }}</h6>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="space-60"></div>
+
+            </div>
+            <div class="col-lg-1 col-2 d-flex align-self-baseline justify-content-center" style="top: 50px;">
+                <a id="filterNext" href="#" class="btn  text-white" style="top:50px;transform:rotate(20deg);background-color: #7141b1"><span id="nextText"></span><i class="pl-1 text-white fa fa-arrow-right d-inline"></i></a>
+            </div>
         </div>
-        {% endcomment %}
-      </div>
-      <div class="col-lg-1 col-2">
-        <a
-          id="filterNext"
-          href="#"
-          class="btn text-white"
-          style="background-color: #7141b1"
-          ><span id="nextText"></span
-          ><i class="pl-1 text-white fa fa-arrow-right d-inline"></i
-        ></a>
-        {% comment %}
-        <a id="filterNext" href="#" class="" style="color: #7141b1"
-          ><i class="text-white fa fa-arrow-right"></i
-        ></a>
-        <i class="fa fa-arrow-right" style="color: #7141b1"></i>
-        {% endcomment%}
-      </div>
+        <div class="row">
+            <div class="offset-1 col-10">
+                <div class="projects-grid projects-style-1 projects-col3" style="top: 50px;">
+                    {% for product in products %}
+                    <div class="project-item {{ product.category }}">
+                        <div class="projects-box">
+                            <div class="projects-thumbnail">
+                                <a href="#">
+                                    <img src="{{ product.productImage.url }}" alt="" />
+                                </a>
+                            </div>
+                            <div class="portfolio-info" style="opacity: 1;background-color: transparent;">
+                                <a class="overlay" href="#"></a>
+                                <div class="portfolio-info-inner">
+                                    <h5>
+                                        {{ product.productName }}
+                                    </h5>
+                                    {% if product.productDescription != null %}
+                                    <a class="overlay" href="#"></a>
+                                    <h5 style="font-size: 15px">
+                                        <a href="#">{{product.productDescription}}</a>
+                                    </h5>
+                                    {%endif%}
+                                </div>
+                            </div>
+                            <div class="portfolio-info">
+                                <a class="overlay" href="#"></a>
+                                <div class="portfolio-info-inner">
+                                    <h5>
+                                        {{ product.productName }}
+                                    </h5>
+                                    {% if product.productDescription != null %}
+                                    <a class="overlay" href="#"></a>
+                                    <h5 style="font-size: 15px">
+                                        <a href="#">{{product.productDescription}}</a>
+                                    </h5>
+                                    {%endif%}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
 <script></script>
