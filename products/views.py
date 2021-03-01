@@ -15,7 +15,7 @@ import os
 class HomePage(TemplateView):
 
     template_name = "index.html"
-    context_object_name = 'slider','categories','products'
+    context_object_name = 'slider', 'categories', 'products'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -64,3 +64,7 @@ def insertEmail(request):
         # return to previous page
         next = request.POST.get('next', '/')
         return HttpResponseRedirect(next)
+
+
+def errorPage(request, *args, **kwargs):
+    return render(request, '404.html', status=404)
