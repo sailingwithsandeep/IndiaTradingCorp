@@ -49,7 +49,8 @@ class Products(models.Model):
     subcategory = models.ForeignKey(
         Subcategory, on_delete=models.CASCADE, to_field='subCategoryName', null=True, blank=True)
     productName = models.CharField(max_length=256, unique=True)
-    productDescription = models.CharField(max_length=256, null=True)
+    productDescription = models.CharField(
+        max_length=256, null=True, blank=True)
     productImage = models.ImageField(upload_to='products/')
 
     def productImg(self):
@@ -76,8 +77,10 @@ class Slider(models.Model):
 
     sliderImg.allow_tags = True
     sliderImg.short_description = 'Image'
+
     def __str__(self):
         return self.Name
+
     class Meta:
         verbose_name = "Slider"
         verbose_name_plural = "Slider"
@@ -86,8 +89,10 @@ class Slider(models.Model):
 class Email_Newsletter(models.Model):
     emailAddress = models.EmailField(max_length=256, unique=True)
     date = models.DateTimeField(default=now, editable=False)
+
     def __str__(self):
         return self.emailAddress
+
     class Meta:
         verbose_name = "Email_Newsletter"
         verbose_name_plural = "Email_Newsletter"
