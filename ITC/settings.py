@@ -24,7 +24,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = 'qgi5+^kp=6_wxgbo_d#^dw^bn)9m(^po--4ug&owa@li@due88'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -137,7 +137,7 @@ USE_TZ = True
 
 # STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 MEDIA_URL = '/images/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/images')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
@@ -149,4 +149,4 @@ if DEBUG:
         os.path.join(BASE_DIR, 'static'),
     ]
 else:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
