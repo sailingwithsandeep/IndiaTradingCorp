@@ -91,11 +91,11 @@
                                                 <a href="#page">Home</a> {% else %}
                                                 <a href="{% url 'products:home' %}">Home</a> {% endif %}
                                             </li>
-                                            <li id="serviceMenu">
+                                            <!-- <li id="serviceMenu">
                                                 {% if request.path == "/" %}
                                                 <a href="#services">Services</a> {% else %}
                                                 <a href="{% url 'products:home' %}#services">Services</a> {% endif %}
-                                            </li>
+                                            </li> -->
                                             <li class="menu-item-has-children"><a href="products?type=Agriculture">Products</a>
                                                 <ul class="sub-menu">
                                                     {% for category in categories %}
@@ -103,10 +103,14 @@
                                                     {% endfor %}
                                                 </ul>
                                             </li>
-                                            <li id="networkMenu">
+                                            <!-- <li id="networkMenu">
                                                 {% if request.path == "/" %}
                                                 <a href="#network">Network</a> {% else %}
                                                 <a href="{% url 'products:home' %}#network">Network</a> {% endif %}
+                                            </li> -->
+                                             <li id="homeMenu" class="">                                
+                                                <a href="#">Brochure</a> 
+                                                
                                             </li>
                                         </ul>
                                     </nav>

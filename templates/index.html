@@ -1,66 +1,161 @@
 {% extends 'base.html' %} {% block content %}
 
-<div id="rev_slider_one_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="mask-showcase" data-source="gallery">
-    <!-- START REVOLUTION SLIDER 5.4.1 fullscreen mode -->
-    <div id="rev_slider_three" class="rev_slider fullscreenbanner" data-version="5.4.1">
-        <ul>
-            {% for slider in slider %}
-            <li data-index="rs-7{{ forloop.counter0 }}" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-thumb="{{ slider.sliderImage.url }}"
-                data-rotate="0" data-saveperformance="off" data-title="" data-param1="1" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
-                <img src="{{ slider.sliderImage.url }}" data-bgcolor="rgba(255,255,255,0.5)" alt="{{ slider.Name }}" data-bgposition="50% 50%" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina />
+<div
+  id="rev_slider_one_wrapper"
+  class="rev_slider_wrapper fullscreen-container"
+  data-alias="mask-showcase"
+  data-source="gallery"
+>
+  <!-- START REVOLUTION SLIDER 5.4.1 fullscreen mode -->
+  <div
+    id="rev_slider_three"
+    class="rev_slider fullscreenbanner"
+    data-version="5.4.1"
+  >
+    <ul>
+      {% for slider in slider %}
+      <li
+        data-index="rs-7{{ forloop.counter0 }}"
+        data-transition="fade"
+        data-slotamount="default"
+        data-hideafterloop="0"
+        data-hideslideonmobile="off"
+        data-easein="default"
+        data-easeout="default"
+        data-masterspeed="300"
+        data-thumb="{{ slider.sliderImage.url }}"
+        data-rotate="0"
+        data-saveperformance="off"
+        data-title=""
+        data-param1="1"
+        data-param2=""
+        data-param3=""
+        data-param4=""
+        data-param5=""
+        data-param6=""
+        data-param7=""
+        data-param8=""
+        data-param9=""
+        data-param10=""
+        data-description=""
+      >
+        <img
+          src="{{ slider.sliderImage.url }}"
+          data-bgcolor="rgba(255,255,255,0.5)"
+          alt="{{ slider.Name }}"
+          data-bgposition="50% 50%"
+          data-bgfit="cover"
+          data-bgrepeat="no-repeat"
+          data-bgparallax="off"
+          class="rev-slidebg"
+          data-no-retina
+        />
 
-                <!-- LAYER 4  Bold Title -->
-                {% comment %}
-                <div class="tp-caption tp-resizeme text-light tp-big-text text-center ml-auto mr-auto" id="slide-7{{ forloop.counter0 }}-layer-6" data-x="['left','left','left','left']" data-y="['top','top','top','top']" data-hoffset="['15','15','15','15']" data-voffset="['195','105','127','133']"
-                    data-fontsize="['72','60','48','30']" data-lineheight="['80','62','52','42']" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"delay":500,"split":"chars","splitdelay":0.1,"speed":500,"frame":"0","from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:50px;z:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","ease":"power3.inOut"}]'
-                    data-textAlign="['center','center','center','center']">
-                    {{ slider.Name }}
-                </div>
-                {% endcomment %}
-                <div class="tp-caption tp-resizeme text-light tp-big-text text-center ml-auto mr-auto" id="slide-7{{ forloop.counter0 }}-layer-6" data-x="['center','center','center','center']" data-y="['center','center','center','center']" data-fontsize="['72','60','48','30']"
-                    data-voffset="['-25','-25','-25','-25']" data-lineheight="['80','62','52','42']" data-type="text" data-frames='[{"delay":500,"split":"chars","splitdelay":0.1,"speed":500,"frame":"0","from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:50px;z:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","ease":"power3.inOut"}]'
-                    data-textAlign="['center','center','center','center']">
-                    {{ slider.Name }}
-                </div>
-                <!-- LAYER 5  Paragraph-->
-                {% comment %}
-                <div class="tp-caption tp-resizeme text-dark" id="slide-7{{ forloop.counter0 }}-layer-7" data-x="['left','left','left','left']" data-hoffset="['15','15','15','15']" data-y="['top','top','top','top']" data-voffset="['340','140','155','145']" data-fontsize="['18','18','22','16']"
-                    data-lineheight="['30','34','32','28']" data-whitespace="nowrap" data-type="text" data-responsive_offset="on" data-frames='[{"delay":1500,"speed":1000,"frame":"0","from":"x:150px;opacity:0;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:50px;opacity:0;","ease":"power3.inOut"}]'
-                    data-textAlign="['left','left','left','left']" style="word-wrap: break-word">
-                    {{ slider.Description }}
-                </div>
-                {% endcomment %}
-                <div class="tp-caption tp-resizeme text-light text-center ml-auto mr-auto" id="slide-7{{ forloop.counter0 }}-layer-6" data-x="['center','center','center','center']" data-y="['center','center','center','center']" data-fontsize="['22','22','22','22']" data-voffset="['25','25','25','25']"
-                    data-lineheight="['80','62','52','42']" data-type="text" data-frames='[{"delay":500,"speed":1000,"frame":"0","from":"x:150px;opacity:0;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:50px;opacity:0;","ease":"power3.inOut"}]'
-                    data-textAlign="['center','center','center','center']">
-                    {{ slider.Description }}
-                </div>
-            </li>
-            {% endfor %}
-        </ul>
-        <div class="tp-bannertimer" style="height: 10px; background: rgba(0, 0, 0, 0)"></div>
-    </div>
+        <!-- LAYER 4  Bold Title -->
+        {% comment %}
+        <div
+          class="tp-caption tp-resizeme text-light tp-big-text text-center ml-auto mr-auto"
+          id="slide-7{{ forloop.counter0 }}-layer-6"
+          data-x="['left','left','left','left']"
+          data-y="['top','top','top','top']"
+          data-hoffset="['15','15','15','15']"
+          data-voffset="['195','105','127','133']"
+          data-fontsize="['72','60','48','30']"
+          data-lineheight="['80','62','52','42']"
+          data-whitespace="nowrap"
+          data-type="text"
+          data-responsive_offset="on"
+          data-frames='[{"delay":500,"split":"chars","splitdelay":0.1,"speed":500,"frame":"0","from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:50px;z:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","ease":"power3.inOut"}]'
+          data-textAlign="['center','center','center','center']"
+        >
+          {{ slider.Name }}
+        </div>
+        {% endcomment %}
+        <div
+          class="tp-caption tp-resizeme text-light tp-big-text text-center ml-auto mr-auto"
+          id="slide-7{{ forloop.counter0 }}-layer-6"
+          data-x="['center','center','center','center']"
+          data-y="['center','center','center','center']"
+          data-fontsize="['72','60','48','30']"
+          data-voffset="['-25','-25','-25','-25']"
+          data-lineheight="['80','62','52','42']"
+          data-type="text"
+          data-frames='[{"delay":500,"split":"chars","splitdelay":0.1,"speed":500,"frame":"0","from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"power4.inOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:50px;z:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","ease":"power3.inOut"}]'
+          data-textAlign="['center','center','center','center']"
+        >
+          {{ slider.Name }}
+        </div>
+        <!-- LAYER 5  Paragraph-->
+        {% comment %}
+        <div
+          class="tp-caption tp-resizeme text-dark"
+          id="slide-7{{ forloop.counter0 }}-layer-7"
+          data-x="['left','left','left','left']"
+          data-hoffset="['15','15','15','15']"
+          data-y="['top','top','top','top']"
+          data-voffset="['340','140','155','145']"
+          data-fontsize="['18','18','22','16']"
+          data-lineheight="['30','34','32','28']"
+          data-whitespace="nowrap"
+          data-type="text"
+          data-responsive_offset="on"
+          data-frames='[{"delay":1500,"speed":1000,"frame":"0","from":"x:150px;opacity:0;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:50px;opacity:0;","ease":"power3.inOut"}]'
+          data-textAlign="['left','left','left','left']"
+          style="word-wrap: break-word"
+        >
+          {{ slider.Description }}
+        </div>
+        {% endcomment %}
+        <div
+          class="tp-caption tp-resizeme text-light text-center ml-auto mr-auto"
+          id="slide-7{{ forloop.counter0 }}-layer-6"
+          data-x="['center','center','center','center']"
+          data-y="['center','center','center','center']"
+          data-fontsize="['22','22','22','22']"
+          data-voffset="['25','25','25','25']"
+          data-lineheight="['80','62','52','42']"
+          data-type="text"
+          data-frames='[{"delay":500,"speed":1000,"frame":"0","from":"x:150px;opacity:0;","to":"o:1;","ease":"power3.inOut"},{"delay":"wait","speed":1000,"frame":"999","to":"x:50px;opacity:0;","ease":"power3.inOut"}]'
+          data-textAlign="['center','center','center','center']"
+        >
+          {{ slider.Description }}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+    <div
+      class="tp-bannertimer"
+      style="height: 10px; background: rgba(0, 0, 0, 0)"
+    ></div>
+  </div>
 </div>
 <div class="row">
-    <div class="col-sm-2 text-white bold pl-5 d-flex align-items-center " style="background-color: #ff7c00;">
-        <p class="mt-auto mb-auto">UPDATES
-            <p>
-    </div>
-    <div class="col-sm-10 text-white bold d-flex align-items-center" style="background-color: #141d38;">
-        <marquee behavior="scroll">
-            <p class="mt-2 mb-2">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam pariatur aliquid consectetur. Rem in temporibus delectus! Alias esse fuga, magnam nihil at, voluptate iure optio, eligendi totam aperiam incidunt deleniti.
-            </p>
-        </marquee>
-    </div>
+  <div
+    class="col-sm-2 text-center text-white bold pl-5 d-flex align-items-center"
+    style="background-color: #ff7c00"
+  >
+    <p class="mt-auto mb-auto">UPDATES</p>
+  </div>
+
+  <div
+    class="col-sm-10 text-white bold d-flex align-items-center"
+    style="background-color: #141d38"
+  >
+    <marquee behavior="scroll">
+      <i class="fa fa-bullhorn m-2"></i>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam pariatur
+      aliquid consectetur. Rem in temporibus delectus! Alias esse fuga, magnam
+      nihil at, voluptate iure optio, eligendi totam aperiam incidunt deleniti.
+    </marquee>
+  </div>
 </div>
 <!-- <div class="row">
     <div class="ot-heading main-heading col-lg-12">
     </div>
 </div> -->
 <section id="services" class="service-v5">
-    <div class="container">
-        <!-- <div class="row mt--70 justify-content-center">
+  <div class="container">
+    <!-- <div class="row mt--70 justify-content-center">
             <div class="col-lg-4 col-md-6">
                 <div class="serv-box s1 v5 bg-s1 md-mb-30">
                     <a href="it-services.html" class="overlay"></a>
@@ -89,22 +184,26 @@
         </div>
     </div>
 </div> -->
-        <div class="space-80"></div>
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <div class="ot-heading">
-                    <span>our services</span>
-                    <h2 class="main-heading">We Offer a Wide <br />Range of Products</h2>
-                    <div class="space-30"></div>
-                    <p>
-                        India Trading Corporation promises quality exports and an enriching experience of trading on international platforms by providing a wide range of products like different blends of spices including grains. Also have varieties of fabric and for manufacturing
-                        industries we offer automotive products like Hydraulic fittings, Water fittings and CNC and VMC Machining services.
-                    </p>
-                </div>
-            </div>
+    <div class="space-80"></div>
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <div class="ot-heading">
+          <span>our services</span>
+          <h2 class="main-heading">We Offer a Wide <br />Range of Products</h2>
+          <div class="space-30"></div>
+          <p>
+            India Trading Corporation promises quality exports and an enriching
+            experience of trading on international platforms by providing a wide
+            range of products like different blends of spices including grains.
+            Also have varieties of fabric and for manufacturing industries we
+            offer automotive products like Hydraulic fittings, Water fittings
+            and CNC and VMC Machining services.
+          </p>
         </div>
-        <div class="space-30"></div>
-        <!-- <div class="row">
+      </div>
+    </div>
+    <div class="space-30"></div>
+    <!-- <div class="row">
             <div class="col-lg-4 col-md-6 mb-30">
                 <div class="icon-box-s2 s2 border-s1 bg bg1 text-center">
                     <div class="icon-main"><span class="flaticon-code"></span></div>
@@ -160,126 +259,172 @@
                 </div>
             </div>
         </div> -->
-    </div>
+  </div>
 </section>
 
 <section id="products" class="service-v4">
-    <div class="overlay overlay-bg"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <div class="ot-heading">
-                    <span class="text-primary-light">our products</span>
-                    <h2 class="main-heading text-white">The Range of Products</h2>
-                </div>
-                <div class="space-20"></div>
-            </div>
+  <div class="overlay overlay-bg"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <div class="ot-heading">
+          <span class="text-primary-light">our products</span>
+          <h2 class="main-heading text-white">The Range of Products</h2>
         </div>
-        <div class="row justify-content-center">
-            {% for category in categories %}
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 mb-lg-0">
-                <a class="text-white" href="{% url 'products:productpage' %}?type={{ category.categoryName }}">
-                    <img src="{{ category.categoryImage.url }}" style="height: 300px; width: auto" alt="" />
-                    <div class="serv-box s1 v4" style="background-color: white">
-                        <div class="content-box">
-                            <h5 style="color: #262051">{{ category.categoryName }}</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            {% endfor %}
-        </div>
+        <div class="space-20"></div>
+      </div>
     </div>
+    <div class="row justify-content-center">
+      {% for category in categories %}
+      <div class="col-lg-4 col-md-6 col-sm-12 mb-4 mb-lg-0">
+        <a
+          class="text-white"
+          href="{% url 'products:productpage' %}?type={{ category.categoryName }}"
+        >
+          <img
+            src="{{ category.categoryImage.url }}"
+            style="height: 300px; width: auto"
+            alt=""
+          />
+          <div class="serv-box s1 v4" style="background-color: white">
+            <div class="content-box">
+              <h5 style="color: #262051">{{ category.categoryName }}</h5>
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
 </section>
 
 <section id="network">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="ot-heading text-center">
-                    <span>our network</span>
-                    <h2 class="main-heading">
-                        We are Trusted <br />Worldwide Connections
-                    </h2>
-                    <div class="space-30"></div>
-                    <p>
-                        We encourage global trading of quality goods by exporting Indian culture of purity. In the international market, India Trading Corporation has an evolving identity and has a wide as well as experienced exporting network which includes Countries of Africa,Dubai,Australia
-                        and Bangladesh also.
-                    </p>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="ot-heading text-center">
+          <span>our network</span>
+          <h2 class="main-heading">
+            We are Trusted <br />Worldwide Connections
+          </h2>
+          <div class="space-30"></div>
+          <p>
+            We encourage global trading of quality goods by exporting Indian
+            culture of purity. In the international market, India Trading
+            Corporation has an evolving identity and has a wide as well as
+            experienced exporting network which includes Countries of
+            Africa,Dubai,Australia and Bangladesh also.
+          </p>
         </div>
-        <div class="space-35"></div>
-        {% comment %}
-        <div class="row">
-            <div class="col-md-12">
-                <div class="ot-testimonials">
-                    <div class="owl-carousel owl-theme testimonial-inner ot-testimonials-slider">
-                        <div class="testi-item">
-                            <div class="layer1"></div>
-                            <div class="layer2">
-                                <div class="t-head flex-middle">
-                                    <img src="https://via.placeholder.com/90x90.png" alt="Emilia Clarke" class="lazyloaded" data-ll-status="loaded" />
-                                    <div class="tinfo">
-                                        <h6>SoftTech,</h6>
-                                        <span>Manager of Company</span>
-                                    </div>
-                                </div>
-                                <div class="ttext">
-                                    "Patience. Infinite patience. No shortcuts. Very well thought out and articulate communication. Clear milestones, deadlines and fast work. Even if the client is being careless. The best part...always solving problems with great original ideas!."
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testi-item">
-                            <div class="layer1"></div>
-                            <div class="layer2">
-                                <div class="t-head flex-middle">
-                                    <img src="https://via.placeholder.com/90x90.png" alt="Emilia Clarke" class="lazyloaded" data-ll-status="loaded" />
-                                    <div class="tinfo">
-                                        <h6>Moonkle LTD,</h6>
-                                        <span>Client of Company</span>
-                                    </div>
-                                </div>
-                                <div class="ttext">
-                                    "Very well thought out and articulate communication. Clear milestones, deadlines and fast work. Patience. Infinite patience. No shortcuts. Even if the client is being careless. The best part...always solving problems with great original ideas!."
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testi-item">
-                            <div class="layer1"></div>
-                            <div class="layer2">
-                                <div class="t-head flex-middle">
-                                    <img src="https://via.placeholder.com/90x90.png" alt="Emilia Clarke" class="lazyloaded" data-ll-status="loaded" />
-                                    <div class="tinfo">
-                                        <h6>SoftTech,</h6>
-                                        <span>Manager of Company</span>
-                                    </div>
-                                </div>
-                                <div class="ttext">
-                                    "Patience. Infinite patience. No shortcuts. Very well thought out and articulate communication. Clear milestones, deadlines and fast work. Even if the client is being careless. The best part...always solving problems with great original ideas!."
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testi-item">
-                            <div class="layer1"></div>
-                            <div class="layer2">
-                                <div class="t-head flex-middle">
-                                    <img src="https://via.placeholder.com/90x90.png" alt="Emilia Clarke" class="lazyloaded" data-ll-status="loaded" />
-                                    <div class="tinfo">
-                                        <h6>Moonkle LTD,</h6>
-                                        <span>Client of Company</span>
-                                    </div>
-                                </div>
-                                <div class="ttext">
-                                    "Very well thought out and articulate communication. Clear milestones, deadlines and fast work. Patience. Infinite patience. No shortcuts. Even if the client is being careless. The best part...always solving problems with great original ideas!."
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endcomment %}
+      </div>
     </div>
+    <div class="space-35"></div>
+    {% comment %}
+    <div class="row">
+      <div class="col-md-12">
+        <div class="ot-testimonials">
+          <div
+            class="owl-carousel owl-theme testimonial-inner ot-testimonials-slider"
+          >
+            <div class="testi-item">
+              <div class="layer1"></div>
+              <div class="layer2">
+                <div class="t-head flex-middle">
+                  <img
+                    src="https://via.placeholder.com/90x90.png"
+                    alt="Emilia Clarke"
+                    class="lazyloaded"
+                    data-ll-status="loaded"
+                  />
+                  <div class="tinfo">
+                    <h6>SoftTech,</h6>
+                    <span>Manager of Company</span>
+                  </div>
+                </div>
+                <div class="ttext">
+                  "Patience. Infinite patience. No shortcuts. Very well thought
+                  out and articulate communication. Clear milestones, deadlines
+                  and fast work. Even if the client is being careless. The best
+                  part...always solving problems with great original ideas!."
+                </div>
+              </div>
+            </div>
+            <div class="testi-item">
+              <div class="layer1"></div>
+              <div class="layer2">
+                <div class="t-head flex-middle">
+                  <img
+                    src="https://via.placeholder.com/90x90.png"
+                    alt="Emilia Clarke"
+                    class="lazyloaded"
+                    data-ll-status="loaded"
+                  />
+                  <div class="tinfo">
+                    <h6>Moonkle LTD,</h6>
+                    <span>Client of Company</span>
+                  </div>
+                </div>
+                <div class="ttext">
+                  "Very well thought out and articulate communication. Clear
+                  milestones, deadlines and fast work. Patience. Infinite
+                  patience. No shortcuts. Even if the client is being careless.
+                  The best part...always solving problems with great original
+                  ideas!."
+                </div>
+              </div>
+            </div>
+            <div class="testi-item">
+              <div class="layer1"></div>
+              <div class="layer2">
+                <div class="t-head flex-middle">
+                  <img
+                    src="https://via.placeholder.com/90x90.png"
+                    alt="Emilia Clarke"
+                    class="lazyloaded"
+                    data-ll-status="loaded"
+                  />
+                  <div class="tinfo">
+                    <h6>SoftTech,</h6>
+                    <span>Manager of Company</span>
+                  </div>
+                </div>
+                <div class="ttext">
+                  "Patience. Infinite patience. No shortcuts. Very well thought
+                  out and articulate communication. Clear milestones, deadlines
+                  and fast work. Even if the client is being careless. The best
+                  part...always solving problems with great original ideas!."
+                </div>
+              </div>
+            </div>
+            <div class="testi-item">
+              <div class="layer1"></div>
+              <div class="layer2">
+                <div class="t-head flex-middle">
+                  <img
+                    src="https://via.placeholder.com/90x90.png"
+                    alt="Emilia Clarke"
+                    class="lazyloaded"
+                    data-ll-status="loaded"
+                  />
+                  <div class="tinfo">
+                    <h6>Moonkle LTD,</h6>
+                    <span>Client of Company</span>
+                  </div>
+                </div>
+                <div class="ttext">
+                  "Very well thought out and articulate communication. Clear
+                  milestones, deadlines and fast work. Patience. Infinite
+                  patience. No shortcuts. Even if the client is being careless.
+                  The best part...always solving problems with great original
+                  ideas!."
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endcomment %}
+  </div>
 </section>
 {% endblock content %}
