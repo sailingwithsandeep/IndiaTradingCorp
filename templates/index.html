@@ -274,7 +274,7 @@
         <div class="space-20"></div>
       </div>
     </div>
-    <div class="row justify-content-center">
+    <!-- <div class="row justify-content-center">
       {% for category in categories %}
       <div class="col-lg-4 col-md-6 col-sm-12 mb-4 mb-lg-0">
         <a
@@ -294,7 +294,95 @@
         </a>
       </div>
       {% endfor %}
+    </div> -->
+    <!-- product display starts -->
+    <div class="row justify-content-center">
+      {% for category in categories %} {% if forloop.counter|divisibleby:2%}
+
+      <div class="card wrapper mt-5 mx-5">
+        <a
+          class=""
+          style="text-decoration: none"
+          href="{% url 'products:productpage' %}?type={{ category.categoryName }}"
+        >
+          <div class="card-horizontal" style="display: flex; flex: 1 1 auto">
+            <div class="img-square-wrapper">
+              <img
+                class=""
+                src="{{ category.categoryImage.url }}"
+                style="height: 300px; width: 600px"
+                alt="Card image cap"
+              />
+            </div>
+            <div class="card-body s1 v4 content-box center">
+              <strong class="text-left">
+                <p class="card-text" style="color: #262051; font-size: x-large">
+                  {{category.categoryName}}
+                </p>
+
+                <p class="card-text" style="color: #262051">
+                  {{category.categoryDescription}}
+                </p>
+              </strong>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      {% else %}
+
+      <div class="card wrapper mt-5 mx-5">
+        <a
+          class=""
+          style="text-decoration: none"
+          href="{% url 'products:productpage' %}?type={{ category.categoryName }}"
+        >
+          <div class="card-horizontal" style="display: flex; flex: 1 1 auto">
+            <div
+              class="card-body s1 v4 content-box text-right"
+              style="direction: rtl"
+            >
+              <strong class="text-right">
+                <p class="card-text" style="color: #262051; font-size: x-large">
+                  {{category.categoryName}}
+                </p>
+
+                <p class="card-text" style="color: #262051">
+                  {{category.categoryDescription}}
+                </p>
+              </strong>
+            </div>
+            <div class="img-square-wrapper">
+              <img
+                class=""
+                src="{{ category.categoryImage.url }}"
+                style="height: 300px; width: 600px"
+                alt="Card image cap"
+              />
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- <div class="col-lg-4 col-md-6 col-sm-12 mb-4 mb-lg-0">
+        <a
+          class="text-white"
+          href="{% url 'products:productpage' %}?type={{ category.categoryName }}"
+        >
+          <img
+            src="{{ category.categoryImage.url }}"
+            style="height: 300px; width: auto"
+            alt=""
+          />
+          <div class="serv-box s1 v4" style="background-color: white">
+            <div class="content-box">
+              <h5 style="color: #262051">{{ category.categoryName }}</h5>
+            </div>
+          </div>
+        </a>
+      </div> -->
+      {% endif %} {% endfor %}
     </div>
+    <!-- product displat ends -->
   </div>
 </section>
 
