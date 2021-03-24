@@ -50,7 +50,7 @@ class AwardList(ListView):
         return context
 
 
-class ContactUs(CreateView):
+class ContactUsView(CreateView):
     model = ContactUs
     template_name = "products/contact.html"
     form_class = ContactForm
@@ -60,6 +60,37 @@ class ContactUs(CreateView):
         messages.success(
             self.request, ("Thanks for contacting with us!"))
 
+def saveFeedback(request):
+    str_name = request.POST.get('name')
+    str_email = request.POST.get('email')
+    str_message = request.POST.get('message')
+    try:
+        validate_email(str_email)
+
+        if request.method == 'POST':
+            print("post")
+            if str_email and str_name and str_message:
+                print('all feild')
+                feedback = ContactUs(name=str_name,contactEmail=str_email,message=str_message)
+                feedback.save()
+                messages.error(request, "Thanks for contacting with us!")
+
+                # return to previous page
+                next = request.POST.get('next', '/')
+                return HttpResponseRedirect(next)   
+            else:
+                print("missing")   
+                messages.error(request, "Please enter all feilds!")
+
+                 # return to previous page
+                next = request.POST.get('next', '/')
+                return HttpResponseRedirect(next)
+    # if invalid email
+    except ValidationError as e:
+        messages.error(request, "Invalid email address!")
+        # return to previous page
+        next = request.POST.get('next', '/')
+        return HttpResponseRedirect(next)
 
 def insertEmail(request):
     str_email = request.POST.get('email')
@@ -88,6 +119,6 @@ def insertEmail(request):
         next = request.POST.get('next', '/')
         return HttpResponseRedirect(next)
 
-
+    
 def errorPage(request, *args, **kwargs):
     return render(request, '404.html', status=404)
