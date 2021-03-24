@@ -21,9 +21,19 @@ class Product_admin(admin.ModelAdmin):
 
 @admin.register(Slider)
 class sliderImage_admin(admin.ModelAdmin):
-    list_display = ['Name', 'Description', 'sliderImage', 'sliderImg']
+    list_display = ['Heading', 'Description', 'sliderImage', 'sliderImg']
 
 
 @admin.register(Email_Newsletter)
 class Email_Newsletter(admin.ModelAdmin):
-    list_display = ['emailAddress',]
+    list_display = ['emailAddress', ]
+
+
+@admin.register(Awards)
+class Award_admin(admin.ModelAdmin):
+    list_display = ['awardCategory', 'awardImg']
+
+
+@admin.register(ContactUs)
+class Contact_admin(admin.ModelAdmin):
+    list_display = ['name', 'contactEmail']

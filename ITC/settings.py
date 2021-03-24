@@ -84,7 +84,7 @@ ADMIN_REORDER = (
     {'app': 'auth', 'models': ('auth.User',)},
 
     {'app': 'products', 'models': ('products.Category', 'products.Subcategory',
-                                   'products.Products', 'products.Email_Newsletter', 'products.Slider', )},
+                                   'products.Products', 'products.Email_Newsletter', 'products.Slider', 'products.Awards', 'products.ContactUs')},
 
 
 )

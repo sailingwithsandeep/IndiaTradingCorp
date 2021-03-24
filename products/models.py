@@ -10,6 +10,7 @@ class Category(models.Model):
     categoryDescription = models.TextField(
         max_length=256, blank=True, null=True)
     categoryImage = models.ImageField(upload_to='category/')
+    productImg = models.ImageField(upload_to='product/', blank=True,)
 
     def __str__(self):
         return self.categoryName
@@ -68,7 +69,7 @@ class Products(models.Model):
 
 
 class Slider(models.Model):
-    Name = models.CharField(max_length=255, blank=True)
+    Heading = models.CharField(max_length=255, blank=True)
     Description = models.CharField(max_length=255, blank=True)
     sliderImage = models.ImageField(upload_to='slider/', unique=True)
 
@@ -79,7 +80,7 @@ class Slider(models.Model):
     sliderImg.short_description = 'Image'
 
     def __str__(self):
-        return self.Name
+        return self.Heading
 
     class Meta:
         verbose_name = "Slider"
@@ -96,3 +97,32 @@ class Email_Newsletter(models.Model):
     class Meta:
         verbose_name = "Email_Newsletter"
         verbose_name_plural = "Email_Newsletter"
+
+
+class Awards(models.Model):
+    awardCategory = models.ForeignKey(
+        Category, on_delete=models.CASCADE, to_field='categoryName')
+    awardImage = models.ImageField(upload_to='awards/')
+
+    def awardImg(self):
+        return format_html('<img href="{0}" src="{0}" width="150" height="150" />'.format(self.awardImage.url))
+
+    awardImg.allow_tags = True
+    awardImg.short_description = 'Image'
+
+    class Meta:
+        verbose_name = "Award"
+        verbose_name_plural = "Awards"
+
+
+class ContactUs(models.Model):
+    name = models.CharField(max_length=255)
+    contactEmail = models.EmailField(max_length=255)
+    message = models.TextField(max_length=500)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Contact Us"
+        verbose_name_plural = "Contact Us"

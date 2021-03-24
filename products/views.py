@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import EmailForm
+from .forms import EmailForm, ContactForm
 from .models import *
 from django.views.generic import TemplateView, ListView, CreateView
 from django.urls import reverse
@@ -8,6 +8,7 @@ from django.core.exceptions import ValidationError
 from django.core.validators import validate_email
 from django.contrib import messages
 from django import forms
+from django.contrib import messages
 import os
 # Create your views here.
 
@@ -36,6 +37,28 @@ class ProductPage(ListView):
         context['products'] = Products.objects.all().order_by('id')
         context['categories'] = Category.objects.all().order_by('id')
         return context
+
+
+class AwardList(ListView):
+    model = Awards
+    template_name = "products/about.html"
+    context_object_name = 'award'
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(AwardList, self).get_context_data(**kwargs)
+        context['award'] = Awards.objects.all().order_by('id')
+        return context
+
+
+class ContactUs(CreateView):
+    model = ContactUs
+    template_name = "products/contact.html"
+    form_class = ContactForm
+    success_url = "/contact"
+
+    def get_success_url(self, *args):
+        messages.success(
+            self.request, ("Thanks for contacting with us!"))
 
 
 def insertEmail(request):

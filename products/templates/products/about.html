@@ -1,0 +1,318 @@
+{% extends 'base.html' %} {% block content %}
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+	rel="stylesheet"
+	id="bootstrap-css"
+/>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<style>
+	header {
+		background: url(static/images/header-bg.jpg) no-repeat bottom center;
+		background-size: cover;
+		color: #cfcfcf;
+		position: relative;
+		height: 100%;
+	}
+	header p {
+		color: rgba(255, 255, 255, 0.5);
+		font-size: 18px;
+		font-weight: 300;
+		margin-bottom: 60px;
+		padding: 0 4px;
+	}
+	.intro-text {
+		position: relative;
+		padding-top: 250px;
+		padding-right: 0;
+		padding-left: 0;
+		padding-bottom: 200px;
+	}
+	.intro-text H1 {
+		font-size: 60px;
+		color: #eeeeee;
+		font-weight: 600;
+	}
+	.color {
+		color: #007bff;
+		font-weight: 700;
+	}
+	.btn-default {
+		color: #007bff;
+
+		font-family: "Open Sans", sans-serif;
+		background-color: transparent;
+		border: 1px solid;
+		border-radius: 4px;
+		margin: 0 8px;
+		font-size: 18px;
+		transition: all 0.5s;
+	}
+	.btn-default:hover,
+	.btn-default:focus,
+	.btn-default.focus,
+	.btn-default:active,
+	.btn-default.active {
+		background-color: #007bff;
+		border: 1px solid;
+		color: #eeeeee;
+	}
+	/* About Section */
+	#about-section {
+		padding: 100px 0;
+		background-color: #f6f6f6;
+	}
+	#about-section h4 {
+		border-bottom: 1px solid #007bff;
+		padding-bottom: 20px;
+		display: inline-block;
+	}
+	#about-section p {
+		margin-top: 20px;
+		margin-bottom: 30px;
+	}
+	.section-title {
+		padding-bottom: 50px;
+	}
+	#about-section hr {
+		border-bottom: 1px solid #007bff;
+	}
+	#about-section i.far {
+		font-size: 36px;
+		margin-right: 20px;
+		color: #007bff;
+		padding-bottom: 10px;
+		display: block;
+	}
+	#about-section i.fas {
+		font-size: 36px;
+		margin-right: 20px;
+		color: #007bff;
+		padding-bottom: 10px;
+		display: block;
+	}
+	#works-section {
+		padding: 100px 0;
+		background-color: #f6f6f6;
+	}
+	#works-section hr {
+		border-bottom: 1px solid #007bff;
+	}
+	#works-section {
+		padding: 100px 0;
+		background-color: #f6f6f6;
+	}
+
+	.gallery-title {
+		font-size: 36px;
+		color: #42b32f;
+		text-align: center;
+		font-weight: 500;
+		margin-bottom: 70px;
+	}
+	.gallery-title:after {
+		content: "";
+		position: absolute;
+		width: 7.5%;
+		left: 46.5%;
+		height: 45px;
+		border-bottom: 1px solid #5e5e5e;
+	}
+	.filter-button {
+		font-size: 18px;
+		border: 1px solid #007bff;
+		border-radius: 5px;
+		text-align: center;
+		color: #000000;
+		margin-bottom: 30px;
+	}
+	.filter-button:hover {
+		font-size: 18px;
+		border: 1px solid #007bff;
+		border-radius: 5px;
+		text-align: center;
+		color: #ffffff;
+		background-color: #007bff;
+	}
+	.btn-default:active .filter-button:active {
+		background-color: #007bff;
+		color: white;
+	}
+
+	.port-image {
+		width: 100%;
+	}
+
+	.gallery_product {
+		margin-bottom: 30px;
+	}
+</style>
+<header class="text-center" name="home">
+	<div class="intro-text">
+		<h1>We are <span class="color">Corporation</span></h1>
+		<p>An award winning multipurpose company</p>
+	</div>
+</header>
+<div id="about-section">
+	<div class="container">
+		<div class="section-title">
+			<h2>About Us</h2>
+			<hr />
+		</div>
+		<div class="space"></div>
+		<div class="row">
+			<div class="col-md-4">
+				<i class="far fa-building"></i>
+				<h4>Who We Are</h4>
+
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed
+					dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum
+					dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh
+					ante facilisis bibendum.
+				</p>
+			</div>
+			<div class="col-md-4">
+				<i class="fas fa-cogs"></i>
+				<h4>What We Do</h4>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed
+					dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum
+					dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh
+					ante facilisis bibendum.
+				</p>
+			</div>
+			<div class="col-md-4">
+				<i class="fas fa-globe"></i>
+				<h4>Why Choose Us</h4>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed
+					dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum
+					dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh
+					ante facilisis bibendum.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Services Section -->
+
+<div id="works-section">
+	<div class="container">
+		<!-- Container -->
+		<div class="section-title">
+			<h2>Our Awards</h2>
+			<hr />
+			<div class="clearfix"></div>
+		</div>
+
+		<div class="row">
+			<div align="center">
+				<button class="btn btn-default filter-button" data-filter="all">
+					All
+				</button>
+				<button class="btn btn-default filter-button" data-filter="hdpe">
+					Agriculture
+				</button>
+				<button class="btn btn-default filter-button" data-filter="sprinkle">
+					Fabric
+				</button>
+				<button class="btn btn-default filter-button" data-filter="spray">
+					Industries
+				</button>
+			</div>
+			<br />
+
+			<div
+				class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe"
+			>
+				<img
+					src="static/images/portfolio/01.jpg"
+					class="img-responsive"
+					alt="Project Title"
+				/>
+			</div>
+
+			<div
+				class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle"
+			>
+				<img
+					src="static/images/portfolio/02.jpg"
+					class="img-responsive"
+					alt="Project Title"
+				/>
+			</div>
+
+			<div
+				class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe"
+			>
+				<img
+					src="static/images/portfolio/03.jpg"
+					class="img-responsive"
+					alt="Project Title"
+				/>
+			</div>
+
+			<div
+				class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation"
+			>
+				<img
+					src="static/images/portfolio/04.jpg"
+					class="img-responsive"
+					alt="Project Title"
+				/>
+			</div>
+
+			<div
+				class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray"
+			>
+				<img
+					src="static/images/portfolio/01.jpg"
+					class="img-responsive"
+					alt="Project Title"
+				/>
+			</div>
+
+			<div
+				class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation"
+			>
+				<img
+					src="static/images/portfolio/01.jpg"
+					class="img-responsive"
+					alt="Project Title"
+				/>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-migrate-3.3.2.min.js"></script>
+
+<script>
+	$(document).ready(function () {
+		$(".filter-button").click(function () {
+			var value = $(this).attr("data-filter");
+
+			if (value == "all") {
+				//$('.filter').removeClass('hidden');
+				$(".filter").show("1000");
+			} else {
+				//            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
+				//            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
+				$(".filter")
+					.not("." + value)
+					.hide("3000");
+				$(".filter")
+					.filter("." + value)
+					.show("3000");
+			}
+		});
+
+		if ($(".filter-button").removeClass("active")) {
+			$(this).removeClass("active");
+		}
+		$(this).addClass("active");
+	});
+</script>
+
+{% endblock content %}
