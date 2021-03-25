@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-
+{% load static %}
   
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
     <style>
@@ -159,42 +159,42 @@
     <link
       rel="stylesheet"
       id="wp-block-library-css"
-      href="./contact us_files/style.min.css"
+      href="{% static 'css/contact us_files/style.min.css' %}"
       type="text/css"
       media="all"
     />
     <link
       rel="stylesheet"
       id="wc-block-vendors-style-css"
-      href="./contact us_files/vendors-style.css"
+      href="{% static 'css/contact us_files/vendors-style.css' %}"
       type="text/css"
       media="all"
     />
     <link
       rel="stylesheet"
       id="wc-block-style-css"
-      href="./contact us_files/style.css"
+      href="{% static 'css/contact us_files/style.css' %}"
       type="text/css"
       media="all"
     />
     <link
       rel="stylesheet"
       id="woocommerce-layout-css"
-      href="./contact us_files/woocommerce-layout.css"
+      href="{% static 'css/contact us_files/woocommerce-layout.css' %}"
       type="text/css"
       media="all"
     />
-    <link
+    {% comment %} <link
       rel="stylesheet"
       id="woocommerce-smallscreen-css"
-      href="./contact us_files/woocommerce-smallscreen.css"
+      href="{% static 'css/contact us_files/woocommerce-smallscreen.css' % }"
       type="text/css"
       media="only screen and (max-width: 768px)"
-    />
+    /> {% endcomment %}
     <link
       rel="stylesheet"
       id="woocommerce-general-css"
-      href="./contact us_files/woocommerce.css"
+      href="{%static 'css/contact us_files/woocommerce.css'%}"
       type="text/css"
       media="all"
     />
@@ -206,41 +206,41 @@
     <link
       rel="stylesheet"
       id="divi-fonts-css"
-      href="./contact us_files/css(1)"
+      href="{% static 'css/contact us_files/css(1)'%}"
       type="text/css"
       media="all"
     />
     <link
       rel="stylesheet"
       id="divi-style-css"
-      href="./contact us_files/style(1).css"
+      href="{% static 'css/contact us_files/style(1).css ' %}"
       type="text/css"
       media="all"
     />
     <link
       rel="stylesheet"
       id="et-builder-googlefonts-cached-css"
-      href="./contact us_files/css(2)"
+      href="{% static 'css/contact us_files/css(2) '%}"
       type="text/css"
       media="all"
     />
     <link
       rel="stylesheet"
       id="dashicons-css"
-      href="./contact us_files/dashicons.min.css"
+      href="{% static 'css/contact us_files/dashicons.min.css'%}"
       type="text/css"
       media="all"
     />
-    <script
+    {% comment %} <script
       type="text/javascript"
-      src="./contact us_files/jquery.min.js.download"
+      src="{% static 'css/contact us_files/jquery.min.js.download ' %}"
       id="jquery-core-js"
     ></script>
     <script
       type="text/javascript"
-      src="./contact us_files/jquery-migrate.min.js.download"
+      src="{% static 'css/contact us_files/jquery-migrate.min.js.download' %}"
       id="jquery-migrate-js"
-    ></script>
+    ></script> {% endcomment %}
     
     <noscript
       ><style>
@@ -253,7 +253,7 @@
     <link
       rel="stylesheet"
       id="et-core-unified-214191-cached-inline-styles"
-      href="./contact us_files/et-core-unified-214191-16155840169603.min.css"
+      href="{% static 'css/contact us_files/et-core-unified-214191-16155840169603.min.css'%}"
       onerror="et_core_page_resource_fallback(this, true)"
       onload="et_core_page_resource_fallback(this)"
     />
@@ -280,27 +280,23 @@
         height: 100%;
       }
     </style>
-    <script
+    {% comment %} <script
       type="text/javascript"
       charset="UTF-8"
-      src="./contact us_files/common.js.download"
+      src="{% static 'css/contact us_files/common.js.download'%}"
     ></script>
     <script
       type="text/javascript"
       charset="UTF-8"
-      src="./contact us_files/util.js.download"
+      src="{% static 'css/contact us_files/util.js.download'%}"
     ></script>
+    
     <script
       type="text/javascript"
       charset="UTF-8"
-      src="./contact us_files/map.js.download"
-    ></script>
-    <script
-      type="text/javascript"
-      charset="UTF-8"
-      src="./contact us_files/marker.js.download"
-    ></script>
-    <script
+      src="{% static './contact us_files/marker.js.download'%}"
+    ></script> {% endcomment %}
+    {% comment %} <script
       type="text/javascript"
       charset="UTF-8"
       src="./contact us_files/onion.js.download"
@@ -309,32 +305,25 @@
       type="text/javascript"
       charset="UTF-8"
       src="./contact us_files/controls.js.download"
-    ></script>
+    ></script> {% endcomment %}
   </head>
   <body
-    class="page-template-default page page-id-214191 theme-Divi woocommerce-js et_pb_button_helper_class et_fullwidth_nav et_fixed_nav et_show_nav et_primary_nav_dropdown_animation_fade et_secondary_nav_dropdown_animation_fade et_header_style_left et_pb_footer_columns4 et_cover_background et_pb_gutter windows et_pb_gutters3 et_pb_pagebuilder_layout et_no_sidebar et_divi_theme et-db et_minified_js et_minified_css chrome"
-    style="overflow-x: hidden"
+    class="page-template-default page page-id-214191 theme-Divi woocommerce-js et_pb_button_helper_class et_header_style_left et_pb_footer_columns4 et_cover_background et_pb_gutter windows et_pb_gutters3 et_pb_pagebuilder_layout et_no_sidebar et_divi_theme et-db et_minified_js et_minified_css chrome"
+    style="overflow-x: hidden; margin: 0%; padding: 0%;"
   >
     <div
       id="page-container"
-      style="padding-top: 80px; overflow-y: hidden; margin-top: -1px"
+      style="overflow-y: hidden;"
       class="et-animated-content"
-    >
-      <header
-        id="main-header"
-        data-height-onload="80"
-        data-height-loaded="true"
-        data-fixed-height-onload="80"
-        style="top: 0px"
-        class=""
-      ></header>
+    >      
       <div id="et-main-area">
         <div id="main-content">
           <article
             id="post-214191"
             class="post-214191 page type-page status-publish hentry"
           >
-            <div class="entry-content">
+            <div class="entry-content" style="overflow-x: hidden; margin: 0%; padding: 0%;"
+>
               <div id="et-boc" class="et-boc">
                 <div class="et-l et-l--post">
                   <div class="et_builder_inner_content et_pb_gutters3">
@@ -350,7 +339,7 @@
                           <div
                             class="et_pb_with_border et_pb_module et_pb_text et_pb_text_0 et_pb_text_align_left et_pb_bg_layout_dark"
                           >
-                            <div class="et_pb_text_inner">
+                            <div class="et_pb_text_inner" style="padding-top: 0%; margin-top: 0%;">
                               <h1>Contact Us</h1>
                             </div>
                           </div>
@@ -369,7 +358,7 @@
                             <botton
                               class="et_pb_button et_pb_custom_button_icon et_pb_button_0 et_pb_bg_layout_dark"
                               href=""
-                              data-icon=""
+                              data-icon=""                              
                               >Send A Message</button
                             >
                           </div>
@@ -380,8 +369,8 @@
                           <div
                             class="et_pb_module et_pb_text et_pb_text_2 et_pb_text_align_left et_pb_bg_layout_light"
                           >
-                            <div class="et_pb_text_inner">
-                              <h2>Contact Info</h2>
+                            <div class="et_pb_text_inner" >
+                              <h2 class="ot-heading">Contact Info</h2>
                             </div>
                           </div>
                           <div
@@ -393,7 +382,7 @@
                                 <span class="et_pb_image_wrap"
                                   ><span
                                     class="et-waypoint et_pb_animation_off et-pb-icon et-animated"
-                                    ><i class="fa fa-map-marker"></i> </span
+                                    ></span
                                 ></span>
                               </div>
                               <div class="et_pb_blurb_container">
@@ -415,7 +404,7 @@
                                 <span class="et_pb_image_wrap"
                                   ><span
                                     class="et-waypoint et_pb_animation_off et-pb-icon et-animated"
-                                    ><i class="bi bi-alarm"></i></span
+                                    ></span
                                 ></span>
                               </div>
                               <div class="et_pb_blurb_container">
@@ -438,7 +427,7 @@
                                 <span class="et_pb_image_wrap"
                                   ><span
                                     class="et-waypoint et_pb_animation_off et-pb-icon et-animated"
-                                    ><i class="bi bi-chat-text"></i></span
+                                    ></span
                                 ></span>
                               </div>
                               <div class="et_pb_blurb_container">	
@@ -451,9 +440,7 @@
                                 </div>
                               </div>
                             </div>
-                          </div>
-
-                         
+                          </div>                         
                         </div>
                       </div>
                     </div>
@@ -469,10 +456,10 @@
                             class="et_pb_module et_pb_text et_pb_text_3 et_pb_text_align_left et_pb_bg_layout_light"
                           >
                             <div class="et_pb_text_inner">
-                              <h2>
+                              <h2  style="color: #262051">
                                 Call:
                                 <span style="white-space: nowrap"
-                                  ><a href="tel:+916355115277"
+                                  ><a href="tel:+916355115277"  style="color: #262051"
                                     >+91 63551 15277</a
                                   ></span
                                 >
@@ -514,8 +501,9 @@
                               <form
                                 class="et_pb_contact_form clearfix"
                                 method="post"
-                                action="#"
+                                action="/saveFeedback"
                               >
+                              {% csrf_token %}
                                 <p
                                   class="et_pb_contact_field et_pb_contact_field_0 et_pb_contact_field_last"
                                   data-id="name"
@@ -531,7 +519,7 @@
                                     id="et_pb_contact_name_0"
                                     class="input"
                                     value=""
-                                    name="et_pb_contact_name_0"
+                                    name="name"
                                     data-required_mark="required"
                                     data-field_type="input"
                                     data-original_id="name"
@@ -553,7 +541,7 @@
                                     id="et_pb_contact_email_0"
                                     class="input"
                                     value=""
-                                    name="et_pb_contact_email_0"
+                                    name="email"
                                     data-required_mark="required"
                                     data-field_type="email"
                                     data-original_id="email"
@@ -571,7 +559,7 @@
                                     >Message</label
                                   >
                                   <textarea
-                                    name="et_pb_contact_message_0"
+                                    name="message"
                                     id="et_pb_contact_message_0"
                                     class="et_pb_contact_message input"
                                     data-required_mark="required"
@@ -579,12 +567,9 @@
                                     data-original_id="message"
                                     placeholder="Message"
                                   ></textarea>
-                                </p>
-                                <input
-                                  type="hidden"
-                                  value="et_contact_proccess"
-                                  name="et_pb_contactform_submit_0"
-                                />
+                                </p>  
+                            <input type="hidden" name="next" value="{{ request.path }}">
+                              
                                 <div class="et_contact_bottom_container">
                                   <button
                                     type="submit"
@@ -603,1445 +588,7 @@
                         
                       </div>
                     </div>
-                    <div
-                      class="et_pb_section et_pb_section_3 et_pb_fullwidth_section et_section_regular"
-                    >
-                      <div
-                        class="et_pb_module et_pb_fullwidth_map_0 et_pb_map_container"
-                      >
-                        <div
-                          class="et_pb_map"
-                          data-center-lat="22.2964"
-                          data-center-lng="70.7942"
-                          data-zoom="18"
-                          data-mouse-wheel="off"
-                          data-mobile-dragging="on"
-                          style="position: relative; overflow: hidden"
-                        >
-                          <div
-                            style="
-                              height: 100%;
-                              width: 100%;
-                              position: absolute;
-                              top: 0px;
-                              left: 0px;
-                              background-color: rgb(229, 227, 223);
-                            "
-                          >
-                            <div
-                              class="gm-style"
-                              style="
-                                position: absolute;
-                                z-index: 0;
-                                left: 0px;
-                                top: 0px;
-                                height: 100%;
-                                width: 100%;
-                                padding: 0px;
-                                border-width: 0px;
-                                margin: 0px;
-                              "
-                            >
-                              <div
-                                tabindex="0"
-                                aria-label="Map"
-                                aria-roledescription="map"
-                                role="group"
-                                style="
-                                  position: absolute;
-                                  z-index: 0;
-                                  left: 0px;
-                                  top: 0px;
-                                  height: 100%;
-                                  width: 100%;
-                                  padding: 0px;
-                                  border-width: 0px;
-                                  margin: 0px;
-                                  cursor: url('https://maps.gstatic.com/mapfiles/openhand_8_8.cur'),
-                                    default;
-                                  touch-action: pan-x pan-y;
-                                "
-                              >
-                                <div
-                                  style="
-                                    z-index: 1;
-                                    position: absolute;
-                                    left: 50%;
-                                    top: 50%;
-                                    width: 100%;
-                                    transform: translate(0px, 0px);
-                                  "
-                                >
-                                  <div
-                                    style="
-                                      position: absolute;
-                                      left: 0px;
-                                      top: 0px;
-                                      z-index: 100;
-                                      width: 100%;
-                                    "
-                                  >
-                                    <div
-                                      style="
-                                        position: absolute;
-                                        left: 0px;
-                                        top: 0px;
-                                        z-index: 0;
-                                      "
-                                    >
-                                      <div
-                                        style="
-                                          position: absolute;
-                                          z-index: 982;
-                                          transform: matrix(
-                                            1,
-                                            0,
-                                            0,
-                                            1,
-                                            -231,
-                                            -30
-                                          );
-                                        "
-                                      >
-                                        <div
-                                          style="
-                                            position: absolute;
-                                            left: 256px;
-                                            top: 0px;
-                                            width: 256px;
-                                            height: 256px;
-                                          "
-                                        >
-                                          <div
-                                            style="width: 256px; height: 256px"
-                                          ></div>
-                                        </div>
-                                        <div
-                                          style="
-                                            position: absolute;
-                                            left: 0px;
-                                            top: 0px;
-                                            width: 256px;
-                                            height: 256px;
-                                          "
-                                        >
-                                          <div
-                                            style="width: 256px; height: 256px"
-                                          ></div>
-                                        </div>
-                                        <div
-                                          style="
-                                            position: absolute;
-                                            left: 0px;
-                                            top: -256px;
-                                            width: 256px;
-                                            height: 256px;
-                                          "
-                                        >
-                                          <div
-                                            style="width: 256px; height: 256px"
-                                          ></div>
-                                        </div>
-                                        <div
-                                          style="
-                                            position: absolute;
-                                            left: 256px;
-                                            top: -256px;
-                                            width: 256px;
-                                            height: 256px;
-                                          "
-                                        >
-                                          <div
-                                            style="width: 256px; height: 256px"
-                                          ></div>
-                                        </div>
-                                        <div
-                                          style="
-                                            position: absolute;
-                                            left: 512px;
-                                            top: -256px;
-                                            width: 256px;
-                                            height: 256px;
-                                          "
-                                        >
-                                          <div
-                                            style="width: 256px; height: 256px"
-                                          ></div>
-                                        </div>
-                                        <div
-                                          style="
-                                            position: absolute;
-                                            left: 512px;
-                                            top: 0px;
-                                            width: 256px;
-                                            height: 256px;
-                                          "
-                                        >
-                                          <div
-                                            style="width: 256px; height: 256px"
-                                          ></div>
-                                        </div>
-                                        <div
-                                          style="
-                                            position: absolute;
-                                            left: -256px;
-                                            top: 0px;
-                                            width: 256px;
-                                            height: 256px;
-                                          "
-                                        >
-                                          <div
-                                            style="width: 256px; height: 256px"
-                                          ></div>
-                                        </div>
-                                        <div
-                                          style="
-                                            position: absolute;
-                                            left: -256px;
-                                            top: -256px;
-                                            width: 256px;
-                                            height: 256px;
-                                          "
-                                        >
-                                          <div
-                                            style="width: 256px; height: 256px"
-                                          ></div>
-                                        </div>
-                                        <div
-                                          style="
-                                            position: absolute;
-                                            left: 768px;
-                                            top: -256px;
-                                            width: 256px;
-                                            height: 256px;
-                                          "
-                                        >
-                                          <div
-                                            style="width: 256px; height: 256px"
-                                          ></div>
-                                        </div>
-                                        <div
-                                          style="
-                                            position: absolute;
-                                            left: 768px;
-                                            top: 0px;
-                                            width: 256px;
-                                            height: 256px;
-                                          "
-                                        >
-                                          <div
-                                            style="width: 256px; height: 256px"
-                                          ></div>
-                                        </div>
-                                        <div
-                                          style="
-                                            position: absolute;
-                                            left: -512px;
-                                            top: 0px;
-                                            width: 256px;
-                                            height: 256px;
-                                          "
-                                        >
-                                          <div
-                                            style="width: 256px; height: 256px"
-                                          ></div>
-                                        </div>
-                                        <div
-                                          style="
-                                            position: absolute;
-                                            left: -512px;
-                                            top: -256px;
-                                            width: 256px;
-                                            height: 256px;
-                                          "
-                                        >
-                                          <div
-                                            style="width: 256px; height: 256px"
-                                          ></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div
-                                    style="
-                                      position: absolute;
-                                      left: 0px;
-                                      top: 0px;
-                                      z-index: 101;
-                                      width: 100%;
-                                    "
-                                  ></div>
-                                  <div
-                                    style="
-                                      position: absolute;
-                                      left: 0px;
-                                      top: 0px;
-                                      z-index: 102;
-                                      width: 100%;
-                                    "
-                                  ></div>
-                                  <div
-                                    style="
-                                      position: absolute;
-                                      left: 0px;
-                                      top: 0px;
-                                      z-index: 103;
-                                      width: 100%;
-                                    "
-                                  >
-                                    <div
-                                      style="
-                                        width: 46px;
-                                        height: 43px;
-                                        overflow: hidden;
-                                        position: absolute;
-                                        left: -16px;
-                                        top: -43px;
-                                        z-index: 0;
-                                      "
-                                    >
-                                      <img
-                                        alt=""
-                                        src="./contact us_files/marker.png"
-                                        draggable="false"
-                                        style="
-                                          position: absolute;
-                                          left: 0px;
-                                          top: 0px;
-                                          user-select: none;
-                                          border: 0px;
-                                          padding: 0px;
-                                          margin: 0px;
-                                          max-width: none;
-                                          width: 46px;
-                                          height: 43px;
-                                        "
-                                      />
-                                    </div>
-                                    <div
-                                      style="
-                                        position: absolute;
-                                        left: 0px;
-                                        top: 0px;
-                                        z-index: -1;
-                                      "
-                                    >
-                                      <div
-                                        style="
-                                          position: absolute;
-                                          z-index: 982;
-                                          transform: matrix(
-                                            1,
-                                            0,
-                                            0,
-                                            1,
-                                            -231,
-                                            -30
-                                          );
-                                        "
-                                      >
-                                        <div
-                                          style="
-                                            width: 256px;
-                                            height: 256px;
-                                            overflow: hidden;
-                                            position: absolute;
-                                            left: 256px;
-                                            top: 0px;
-                                          "
-                                        ></div>
-                                        <div
-                                          style="
-                                            width: 256px;
-                                            height: 256px;
-                                            overflow: hidden;
-                                            position: absolute;
-                                            left: 0px;
-                                            top: 0px;
-                                          "
-                                        ></div>
-                                        <div
-                                          style="
-                                            width: 256px;
-                                            height: 256px;
-                                            overflow: hidden;
-                                            position: absolute;
-                                            left: 0px;
-                                            top: -256px;
-                                          "
-                                        ></div>
-                                        <div
-                                          style="
-                                            width: 256px;
-                                            height: 256px;
-                                            overflow: hidden;
-                                            position: absolute;
-                                            left: 256px;
-                                            top: -256px;
-                                          "
-                                        ></div>
-                                        <div
-                                          style="
-                                            width: 256px;
-                                            height: 256px;
-                                            overflow: hidden;
-                                            position: absolute;
-                                            left: 512px;
-                                            top: -256px;
-                                          "
-                                        ></div>
-                                        <div
-                                          style="
-                                            width: 256px;
-                                            height: 256px;
-                                            overflow: hidden;
-                                            position: absolute;
-                                            left: 512px;
-                                            top: 0px;
-                                          "
-                                        ></div>
-                                        <div
-                                          style="
-                                            width: 256px;
-                                            height: 256px;
-                                            overflow: hidden;
-                                            position: absolute;
-                                            left: -256px;
-                                            top: 0px;
-                                          "
-                                        ></div>
-                                        <div
-                                          style="
-                                            width: 256px;
-                                            height: 256px;
-                                            overflow: hidden;
-                                            position: absolute;
-                                            left: -256px;
-                                            top: -256px;
-                                          "
-                                        ></div>
-                                        <div
-                                          style="
-                                            width: 256px;
-                                            height: 256px;
-                                            overflow: hidden;
-                                            position: absolute;
-                                            left: 768px;
-                                            top: -256px;
-                                          "
-                                        ></div>
-                                        <div
-                                          style="
-                                            width: 256px;
-                                            height: 256px;
-                                            overflow: hidden;
-                                            position: absolute;
-                                            left: 768px;
-                                            top: 0px;
-                                          "
-                                        ></div>
-                                        <div
-                                          style="
-                                            width: 256px;
-                                            height: 256px;
-                                            overflow: hidden;
-                                            position: absolute;
-                                            left: -512px;
-                                            top: 0px;
-                                          "
-                                        ></div>
-                                        <div
-                                          style="
-                                            width: 256px;
-                                            height: 256px;
-                                            overflow: hidden;
-                                            position: absolute;
-                                            left: -512px;
-                                            top: -256px;
-                                          "
-                                        ></div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div
-                                    style="
-                                      position: absolute;
-                                      left: 0px;
-                                      top: 0px;
-                                      z-index: 0;
-                                    "
-                                  >
-                                    <div
-                                      style="
-                                        position: absolute;
-                                        z-index: 982;
-                                        transform: matrix(
-                                          1,
-                                          0,
-                                          0,
-                                          1,
-                                          -231,
-                                          -30
-                                        );
-                                      "
-                                    >
-                                      <div
-                                        style="
-                                          position: absolute;
-                                          left: 256px;
-                                          top: 0px;
-                                          width: 256px;
-                                          height: 256px;
-                                          transition: opacity 200ms linear 0s;
-                                        "
-                                      >
-                                        <img
-                                          draggable="false"
-                                          alt=""
-                                          role="presentation"
-                                          src="./contact us_files/vt"
-                                          style="
-                                            width: 256px;
-                                            height: 256px;
-                                            user-select: none;
-                                            border: 0px;
-                                            padding: 0px;
-                                            margin: 0px;
-                                            max-width: none;
-                                          "
-                                        />
-                                      </div>
-                                      <div
-                                        style="
-                                          position: absolute;
-                                          left: 0px;
-                                          top: 0px;
-                                          width: 256px;
-                                          height: 256px;
-                                          transition: opacity 200ms linear 0s;
-                                        "
-                                      >
-                                        <img
-                                          draggable="false"
-                                          alt=""
-                                          role="presentation"
-                                          src="./contact us_files/vt(1)"
-                                          style="
-                                            width: 256px;
-                                            height: 256px;
-                                            user-select: none;
-                                            border: 0px;
-                                            padding: 0px;
-                                            margin: 0px;
-                                            max-width: none;
-                                          "
-                                        />
-                                      </div>
-                                      <div
-                                        style="
-                                          position: absolute;
-                                          left: 0px;
-                                          top: -256px;
-                                          width: 256px;
-                                          height: 256px;
-                                          transition: opacity 200ms linear 0s;
-                                        "
-                                      >
-                                        <img
-                                          draggable="false"
-                                          alt=""
-                                          role="presentation"
-                                          src="./contact us_files/vt(2)"
-                                          style="
-                                            width: 256px;
-                                            height: 256px;
-                                            user-select: none;
-                                            border: 0px;
-                                            padding: 0px;
-                                            margin: 0px;
-                                            max-width: none;
-                                          "
-                                        />
-                                      </div>
-                                      <div
-                                        style="
-                                          position: absolute;
-                                          left: 256px;
-                                          top: -256px;
-                                          width: 256px;
-                                          height: 256px;
-                                          transition: opacity 200ms linear 0s;
-                                        "
-                                      >
-                                        <img
-                                          draggable="false"
-                                          alt=""
-                                          role="presentation"
-                                          src="./contact us_files/vt(3)"
-                                          style="
-                                            width: 256px;
-                                            height: 256px;
-                                            user-select: none;
-                                            border: 0px;
-                                            padding: 0px;
-                                            margin: 0px;
-                                            max-width: none;
-                                          "
-                                        />
-                                      </div>
-                                      <div
-                                        style="
-                                          position: absolute;
-                                          left: 512px;
-                                          top: -256px;
-                                          width: 256px;
-                                          height: 256px;
-                                          transition: opacity 200ms linear 0s;
-                                        "
-                                      >
-                                        <img
-                                          draggable="false"
-                                          alt=""
-                                          role="presentation"
-                                          src="./contact us_files/vt(4)"
-                                          style="
-                                            width: 256px;
-                                            height: 256px;
-                                            user-select: none;
-                                            border: 0px;
-                                            padding: 0px;
-                                            margin: 0px;
-                                            max-width: none;
-                                          "
-                                        />
-                                      </div>
-                                      <div
-                                        style="
-                                          position: absolute;
-                                          left: 512px;
-                                          top: 0px;
-                                          width: 256px;
-                                          height: 256px;
-                                          transition: opacity 200ms linear 0s;
-                                        "
-                                      >
-                                        <img
-                                          draggable="false"
-                                          alt=""
-                                          role="presentation"
-                                          src="./contact us_files/vt(5)"
-                                          style="
-                                            width: 256px;
-                                            height: 256px;
-                                            user-select: none;
-                                            border: 0px;
-                                            padding: 0px;
-                                            margin: 0px;
-                                            max-width: none;
-                                          "
-                                        />
-                                      </div>
-                                      <div
-                                        style="
-                                          position: absolute;
-                                          left: -256px;
-                                          top: 0px;
-                                          width: 256px;
-                                          height: 256px;
-                                          transition: opacity 200ms linear 0s;
-                                        "
-                                      >
-                                        <img
-                                          draggable="false"
-                                          alt=""
-                                          role="presentation"
-                                          src="./contact us_files/vt(6)"
-                                          style="
-                                            width: 256px;
-                                            height: 256px;
-                                            user-select: none;
-                                            border: 0px;
-                                            padding: 0px;
-                                            margin: 0px;
-                                            max-width: none;
-                                          "
-                                        />
-                                      </div>
-                                      <div
-                                        style="
-                                          position: absolute;
-                                          left: -256px;
-                                          top: -256px;
-                                          width: 256px;
-                                          height: 256px;
-                                          transition: opacity 200ms linear 0s;
-                                        "
-                                      >
-                                        <img
-                                          draggable="false"
-                                          alt=""
-                                          role="presentation"
-                                          src="./contact us_files/vt(7)"
-                                          style="
-                                            width: 256px;
-                                            height: 256px;
-                                            user-select: none;
-                                            border: 0px;
-                                            padding: 0px;
-                                            margin: 0px;
-                                            max-width: none;
-                                          "
-                                        />
-                                      </div>
-                                      <div
-                                        style="
-                                          position: absolute;
-                                          left: 768px;
-                                          top: -256px;
-                                          width: 256px;
-                                          height: 256px;
-                                          transition: opacity 200ms linear 0s;
-                                        "
-                                      >
-                                        <img
-                                          draggable="false"
-                                          alt=""
-                                          role="presentation"
-                                          src="./contact us_files/vt(8)"
-                                          style="
-                                            width: 256px;
-                                            height: 256px;
-                                            user-select: none;
-                                            border: 0px;
-                                            padding: 0px;
-                                            margin: 0px;
-                                            max-width: none;
-                                          "
-                                        />
-                                      </div>
-                                      <div
-                                        style="
-                                          position: absolute;
-                                          left: 768px;
-                                          top: 0px;
-                                          width: 256px;
-                                          height: 256px;
-                                          transition: opacity 200ms linear 0s;
-                                        "
-                                      >
-                                        <img
-                                          draggable="false"
-                                          alt=""
-                                          role="presentation"
-                                          src="./contact us_files/vt(9)"
-                                          style="
-                                            width: 256px;
-                                            height: 256px;
-                                            user-select: none;
-                                            border: 0px;
-                                            padding: 0px;
-                                            margin: 0px;
-                                            max-width: none;
-                                          "
-                                        />
-                                      </div>
-                                      <div
-                                        style="
-                                          position: absolute;
-                                          left: -512px;
-                                          top: 0px;
-                                          width: 256px;
-                                          height: 256px;
-                                          transition: opacity 200ms linear 0s;
-                                        "
-                                      >
-                                        <img
-                                          draggable="false"
-                                          alt=""
-                                          role="presentation"
-                                          src="./contact us_files/vt(10)"
-                                          style="
-                                            width: 256px;
-                                            height: 256px;
-                                            user-select: none;
-                                            border: 0px;
-                                            padding: 0px;
-                                            margin: 0px;
-                                            max-width: none;
-                                          "
-                                        />
-                                      </div>
-                                      <div
-                                        style="
-                                          position: absolute;
-                                          left: -512px;
-                                          top: -256px;
-                                          width: 256px;
-                                          height: 256px;
-                                          transition: opacity 200ms linear 0s;
-                                        "
-                                      >
-                                        <img
-                                          draggable="false"
-                                          alt=""
-                                          role="presentation"
-                                          src="./contact us_files/vt(11)"
-                                          style="
-                                            width: 256px;
-                                            height: 256px;
-                                            user-select: none;
-                                            border: 0px;
-                                            padding: 0px;
-                                            margin: 0px;
-                                            max-width: none;
-                                          "
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="gm-style-pbc"
-                                  style="
-                                    z-index: 2;
-                                    position: absolute;
-                                    height: 100%;
-                                    width: 100%;
-                                    padding: 0px;
-                                    border-width: 0px;
-                                    margin: 0px;
-                                    left: 0px;
-                                    top: 0px;
-                                    opacity: 0;
-                                  "
-                                >
-                                  <p class="gm-style-pbt"></p>
-                                </div>
-                                <div
-                                  style="
-                                    z-index: 3;
-                                    position: absolute;
-                                    height: 100%;
-                                    width: 100%;
-                                    padding: 0px;
-                                    border-width: 0px;
-                                    margin: 0px;
-                                    left: 0px;
-                                    top: 0px;
-                                    touch-action: pan-x pan-y;
-                                  "
-                                >
-                                  <div
-                                    style="
-                                      z-index: 4;
-                                      position: absolute;
-                                      left: 50%;
-                                      top: 50%;
-                                      width: 100%;
-                                      transform: translate(0px, 0px);
-                                    "
-                                  >
-                                    <div
-                                      style="
-                                        position: absolute;
-                                        left: 0px;
-                                        top: 0px;
-                                        z-index: 104;
-                                        width: 100%;
-                                      "
-                                    ></div>
-                                    <div
-                                      style="
-                                        position: absolute;
-                                        left: 0px;
-                                        top: 0px;
-                                        z-index: 105;
-                                        width: 100%;
-                                      "
-                                    ></div>
-                                    <div
-                                      style="
-                                        position: absolute;
-                                        left: 0px;
-                                        top: 0px;
-                                        z-index: 106;
-                                        width: 100%;
-                                      "
-                                    >
-                                      <div
-                                        style="
-                                          width: 46px;
-                                          height: 43px;
-                                          overflow: hidden;
-                                          position: absolute;
-                                          left: -16px;
-                                          top: -43px;
-                                          z-index: 0;
-                                        "
-                                      >
-                                        <img
-                                          alt=""
-                                          src="./contact us_files/transparent.png"
-                                          draggable="false"
-                                          usemap="#gmimap0"
-                                          style="
-                                            width: 46px;
-                                            height: 43px;
-                                            user-select: none;
-                                            border: 0px;
-                                            padding: 0px;
-                                            margin: 0px;
-                                            max-width: none;
-                                          "
-                                        /><map name="gmimap0" id="gmimap0"
-                                          ><area
-                                            log="miw"
-                                            coords="1,1,46,43"
-                                            shape="rect"
-                                            tabindex="-1"
-                                            title=""
-                                            style="
-                                              cursor: pointer;
-                                              touch-action: none;
-                                            "
-                                        /></map>
-                                      </div>
-                                    </div>
-                                    <div
-                                      style="
-                                        position: absolute;
-                                        left: 0px;
-                                        top: 0px;
-                                        z-index: 107;
-                                        width: 100%;
-                                      "
-                                    ></div>
-                                  </div>
-                                </div>
-                              </div>
-                              <iframe
-                                aria-hidden="true"
-                                frameborder="0"
-                                tabindex="-1"
-                                style="
-                                  z-index: -1;
-                                  position: absolute;
-                                  width: 100%;
-                                  height: 100%;
-                                  top: 0px;
-                                  left: 0px;
-                                  border: none;
-                                "
-                                __idm_frm__="252"
-                                src="./contact us_files/saved_resource.html"
-                              ></iframe>
-                              <div
-                                style="
-                                  pointer-events: none;
-                                  width: 100%;
-                                  height: 100%;
-                                  box-sizing: border-box;
-                                  position: absolute;
-                                  z-index: 1000002;
-                                  opacity: 0;
-                                  border: 2px solid rgb(26, 115, 232);
-                                "
-                              ></div>
-                              <div></div>
-                              <div></div>
-                              <div></div>
-                              <div>
-                                <div
-                                  class="gmnoprint gm-bundled-control"
-                                  draggable="false"
-                                  controlwidth="40"
-                                  controlheight="81"
-                                  style="
-                                    margin: 10px;
-                                    user-select: none;
-                                    position: absolute;
-                                    top: 0px;
-                                    left: 0px;
-                                  "
-                                >
-                                  <div
-                                    class="gmnoprint"
-                                    controlwidth="40"
-                                    controlheight="81"
-                                    style="
-                                      position: absolute;
-                                      left: 0px;
-                                      top: 0px;
-                                    "
-                                  >
-                                   
-                              <div></div>
-                              <div></div>
-                              <div></div>
-                              <div></div>
-                              <div>
-                                <div
-                                  class="gmnoprint gm-bundled-control gm-bundled-control-on-bottom"
-                                  draggable="false"
-                                  controlwidth="0"
-                                  controlheight="0"
-                                  style="
-                                    margin: 10px;
-                                    user-select: none;
-                                    position: absolute;
-                                    bottom: 14px;
-                                    right: 0px;
-                                    display: none;
-                                  "
-                                >
-                                  <div
-                                    class="gmnoprint"
-                                    controlwidth="40"
-                                    controlheight="40"
-                                    style="display: none; position: absolute"
-                                  >
-                                    <div style="width: 40px; height: 40px">
-                                      <button
-                                        draggable="false"
-                                        title="Rotate map 90 degrees"
-                                        aria-label="Rotate map 90 degrees"
-                                        type="button"
-                                        class="gm-control-active"
-                                        style="
-                                          background: none rgb(255, 255, 255);
-                                          display: none;
-                                          border: 0px;
-                                          margin: 0px 0px 32px;
-                                          padding: 0px;
-                                          text-transform: none;
-                                          appearance: none;
-                                          position: relative;
-                                          cursor: pointer;
-                                          user-select: none;
-                                          width: 40px;
-                                          height: 40px;
-                                          top: 0px;
-                                          left: 0px;
-                                          overflow: hidden;
-                                          box-shadow: rgba(0, 0, 0, 0.3) 0px 1px
-                                            4px -1px;
-                                          border-radius: 2px;
-                                        "
-                                      >
-                                        <img
-                                          src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2222%22%20viewBox%3D%220%200%2024%2022%22%3E%0A%20%20%3Cpath%20fill%3D%22%23666%22%20fill-rule%3D%22evenodd%22%20d%3D%22M20%2010c0-5.52-4.48-10-10-10s-10%204.48-10%2010v5h5v-5c0-2.76%202.24-5%205-5s5%202.24%205%205v5h-4l6.5%207%206.5-7h-4v-5z%22%20clip-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A"
-                                          style="height: 18px; width: 18px"
-                                        /><img
-                                          src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2222%22%20viewBox%3D%220%200%2024%2022%22%3E%0A%20%20%3Cpath%20fill%3D%22%23333%22%20fill-rule%3D%22evenodd%22%20d%3D%22M20%2010c0-5.52-4.48-10-10-10s-10%204.48-10%2010v5h5v-5c0-2.76%202.24-5%205-5s5%202.24%205%205v5h-4l6.5%207%206.5-7h-4v-5z%22%20clip-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A"
-                                          style="height: 18px; width: 18px"
-                                        /><img
-                                          src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2222%22%20viewBox%3D%220%200%2024%2022%22%3E%0A%20%20%3Cpath%20fill%3D%22%23111%22%20fill-rule%3D%22evenodd%22%20d%3D%22M20%2010c0-5.52-4.48-10-10-10s-10%204.48-10%2010v5h5v-5c0-2.76%202.24-5%205-5s5%202.24%205%205v5h-4l6.5%207%206.5-7h-4v-5z%22%20clip-rule%3D%22evenodd%22%2F%3E%0A%3C%2Fsvg%3E%0A"
-                                          style="height: 18px; width: 18px"
-                                        /></button
-                                      ><button
-                                        draggable="false"
-                                        title="Tilt map"
-                                        aria-label="Tilt map"
-                                        type="button"
-                                        class="gm-tilt gm-control-active"
-                                        style="
-                                          background: none rgb(255, 255, 255);
-                                          display: block;
-                                          border: 0px;
-                                          margin: 0px;
-                                          padding: 0px;
-                                          text-transform: none;
-                                          appearance: none;
-                                          position: relative;
-                                          cursor: pointer;
-                                          user-select: none;
-                                          width: 40px;
-                                          height: 40px;
-                                          top: 0px;
-                                          left: 0px;
-                                          overflow: hidden;
-                                          box-shadow: rgba(0, 0, 0, 0.3) 0px 1px
-                                            4px -1px;
-                                          border-radius: 2px;
-                                        "
-                                      >
-                                        <img
-                                          src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2218px%22%20height%3D%2216px%22%20viewBox%3D%220%200%2018%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23666%22%20d%3D%22M0%2C16h8V9H0V16z%20M10%2C16h8V9h-8V16z%20M0%2C7h8V0H0V7z%20M10%2C0v7h8V0H10z%22%2F%3E%0A%3C%2Fsvg%3E%0A"
-                                          style="width: 18px"
-                                        /><img
-                                          src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2218px%22%20height%3D%2216px%22%20viewBox%3D%220%200%2018%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23333%22%20d%3D%22M0%2C16h8V9H0V16z%20M10%2C16h8V9h-8V16z%20M0%2C7h8V0H0V7z%20M10%2C0v7h8V0H10z%22%2F%3E%0A%3C%2Fsvg%3E%0A"
-                                          style="width: 18px"
-                                        /><img
-                                          src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2218px%22%20height%3D%2216px%22%20viewBox%3D%220%200%2018%2016%22%3E%0A%20%20%3Cpath%20fill%3D%22%23111%22%20d%3D%22M0%2C16h8V9H0V16z%20M10%2C16h8V9h-8V16z%20M0%2C7h8V0H0V7z%20M10%2C0v7h8V0H10z%22%2F%3E%0A%3C%2Fsvg%3E%0A"
-                                          style="width: 18px"
-                                        />
-                                      </button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div>
-                                <div
-                                  style="
-                                    margin-left: 5px;
-                                    margin-right: 5px;
-                                    z-index: 1000000;
-                                    position: absolute;
-                                    left: 0px;
-                                    bottom: 0px;
-                                  "
-                                >
-                                  <a
-                                    target="_blank"
-                                    rel="noopener"
-                                    href="https://maps.google.com/maps?ll=22.2964,70.7942&amp;z=18&amp;t=m&amp;hl=en-GB&amp;gl=US&amp;mapclient=apiv3"
-                                    title="Open this area in Google Maps (opens a new window)"
-                                    style="
-                                      position: static;
-                                      overflow: visible;
-                                      float: none;
-                                      display: inline;
-                                    "
-                                    ><div
-                                      style="
-                                        width: 66px;
-                                        height: 26px;
-                                        cursor: pointer;
-                                      "
-                                    >
-                                      <img
-                                        alt=""
-                                        src="./contact us_files/google_white5.png"
-                                        draggable="false"
-                                        style="
-                                          position: absolute;
-                                          left: 0px;
-                                          top: 0px;
-                                          width: 66px;
-                                          height: 26px;
-                                          user-select: none;
-                                          border: 0px;
-                                          padding: 0px;
-                                          margin: 0px;
-                                        "
-                                      /></div
-                                  ></a>
-                                </div>
-                              </div>
-                              <div></div>
-                              <div>
-                                <div
-                                  class="gmnoprint"
-                                  style="
-                                    z-index: 1000001;
-                                    position: absolute;
-                                    right: 166px;
-                                    bottom: 0px;
-                                    width: 121px;
-                                  "
-                                >
-                                  <div
-                                    draggable="false"
-                                    class="gm-style-cc"
-                                    style="
-                                      user-select: none;
-                                      height: 14px;
-                                      line-height: 14px;
-                                    "
-                                  >
-                                    <div
-                                      style="
-                                        opacity: 0.7;
-                                        width: 100%;
-                                        height: 100%;
-                                        position: absolute;
-                                      "
-                                    >
-                                      <div style="width: 1px"></div>
-                                      <div
-                                        style="
-                                          background-color: rgb(245, 245, 245);
-                                          width: auto;
-                                          height: 100%;
-                                          margin-left: 1px;
-                                        "
-                                      ></div>
-                                    </div>
-                                    <div
-                                      style="
-                                        position: relative;
-                                        padding-right: 6px;
-                                        padding-left: 6px;
-                                        box-sizing: border-box;
-                                        font-family: Roboto, Arial, sans-serif;
-                                        font-size: 10px;
-                                        color: rgb(0, 0, 0);
-                                        white-space: nowrap;
-                                        direction: ltr;
-                                        text-align: right;
-                                        vertical-align: middle;
-                                        display: inline-block;
-                                      "
-                                    >
-                                      <a
-                                        style="
-                                          text-decoration: none;
-                                          cursor: pointer;
-                                          display: none;
-                                        "
-                                        >Map Data</a
-                                      ><span>Map data ©2021 Google</span>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="gmnoprint gm-style-cc"
-                                  draggable="false"
-                                  style="
-                                    z-index: 1000001;
-                                    user-select: none;
-                                    height: 14px;
-                                    line-height: 14px;
-                                    position: absolute;
-                                    right: 95px;
-                                    bottom: 0px;
-                                  "
-                                >
-                                  <div
-                                    style="
-                                      opacity: 0.7;
-                                      width: 100%;
-                                      height: 100%;
-                                      position: absolute;
-                                    "
-                                  >
-                                    <div style="width: 1px"></div>
-                                    <div
-                                      style="
-                                        background-color: rgb(245, 245, 245);
-                                        width: auto;
-                                        height: 100%;
-                                        margin-left: 1px;
-                                      "
-                                    ></div>
-                                  </div>
-                                  <div
-                                    style="
-                                      position: relative;
-                                      padding-right: 6px;
-                                      padding-left: 6px;
-                                      box-sizing: border-box;
-                                      font-family: Roboto, Arial, sans-serif;
-                                      font-size: 10px;
-                                      color: rgb(0, 0, 0);
-                                      white-space: nowrap;
-                                      direction: ltr;
-                                      text-align: right;
-                                      vertical-align: middle;
-                                      display: inline-block;
-                                    "
-                                  >
-                                    <a
-                                      href="https://www.google.com/intl/en-GB_US/help/terms_maps.html"
-                                      target="_blank"
-                                      rel="noopener"
-                                      style="
-                                        text-decoration: none;
-                                        cursor: pointer;
-                                        color: rgb(0, 0, 0);
-                                      "
-                                      >Terms of Use</a
-                                    >
-                                  </div>
-                                </div>
-                                <div
-                                  draggable="false"
-                                  class="gm-style-cc"
-                                  style="
-                                    user-select: none;
-                                    height: 14px;
-                                    line-height: 14px;
-                                    position: absolute;
-                                    right: 0px;
-                                    bottom: 0px;
-                                  "
-                                >
-                                  <div
-                                    style="
-                                      opacity: 0.7;
-                                      width: 100%;
-                                      height: 100%;
-                                      position: absolute;
-                                    "
-                                  >
-                                    <div style="width: 1px"></div>
-                                    <div
-                                      style="
-                                        background-color: rgb(245, 245, 245);
-                                        width: auto;
-                                        height: 100%;
-                                        margin-left: 1px;
-                                      "
-                                    ></div>
-                                  </div>
-                                  <div
-                                    style="
-                                      position: relative;
-                                      padding-right: 6px;
-                                      padding-left: 6px;
-                                      box-sizing: border-box;
-                                      font-family: Roboto, Arial, sans-serif;
-                                      font-size: 10px;
-                                      color: rgb(0, 0, 0);
-                                      white-space: nowrap;
-                                      direction: ltr;
-                                      text-align: right;
-                                      vertical-align: middle;
-                                      display: inline-block;
-                                    "
-                                  >
-                                    <a
-                                      target="_blank"
-                                      rel="noopener"
-                                      title="Report errors in the road map or imagery to Google"
-                                      dir="ltr"
-                                      href="https://www.google.com/maps/@37.7749295,-122.4194155,18z/data=!10m1!1e1!12b1?source=apiv3&amp;rapsrc=apiv3"
-                                      style="
-                                        font-family: Roboto, Arial, sans-serif;
-                                        font-size: 10px;
-                                        color: rgb(0, 0, 0);
-                                        text-decoration: none;
-                                        position: relative;
-                                      "
-                                      >Report a map error</a
-                                    >
-                                  </div>
-                                </div>
-                                <div
-                                  class="gmnoscreen"
-                                  style="
-                                    position: absolute;
-                                    right: 0px;
-                                    bottom: 0px;
-                                  "
-                                >
-                                  <div
-                                    style="
-                                      font-family: Roboto, Arial, sans-serif;
-                                      font-size: 11px;
-                                      color: rgb(0, 0, 0);
-                                      direction: ltr;
-                                      text-align: right;
-                                      background-color: rgb(245, 245, 245);
-                                    "
-                                  >
-                                    Map data ©2021 Google
-                                  </div>
-                                </div>
-                              </div>
-                              <div
-                                style="
-                                  background-color: white;
-                                  padding: 15px 21px;
-                                  border: 1px solid rgb(171, 171, 171);
-                                  font-family: Roboto, Arial, sans-serif;
-                                  color: rgb(34, 34, 34);
-                                  box-sizing: border-box;
-                                  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px;
-                                  z-index: 10000002;
-                                  display: none;
-                                  width: 300px;
-                                  height: 180px;
-                                  position: absolute;
-                                  left: 525px;
-                                  top: 130px;
-                                "
-                              >
-                                <div
-                                  style="
-                                    padding: 0px 0px 10px;
-                                    font-size: 16px;
-                                    box-sizing: border-box;
-                                  "
-                                >
-                                  Map Data
-                                </div>
-                             
-                                <button
-                                  draggable="false"
-                                  title="Close"
-                                  aria-label="Close"
-                                  type="button"
-                                  class="gm-ui-hover-effect"
-                                  style="
-                                    background: none;
-                                    display: block;
-                                    border: 0px;
-                                    margin: 0px;
-                                    padding: 0px;
-                                    text-transform: none;
-                                    appearance: none;
-                                    position: absolute;
-                                    cursor: pointer;
-                                    user-select: none;
-                                    top: 0px;
-                                    right: 0px;
-                                    width: 37px;
-                                    height: 37px;
-                                  "
-                                >
-                                  <img
-                                    src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224px%22%20height%3D%2224px%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M19%206.41L17.59%205%2012%2010.59%206.41%205%205%206.41%2010.59%2012%205%2017.59%206.41%2019%2012%2013.41%2017.59%2019%2019%2017.59%2013.41%2012z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%2F%3E%0A%3C%2Fsvg%3E%0A"
-                                    style="
-                                      pointer-events: none;
-                                      display: block;
-                                      width: 13px;
-                                      height: 13px;
-                                      margin: 12px;
-                                    "
-                                  />
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                          <div
-                            style="
-                              background-color: white;
-                              font-weight: 500;
-                              font-family: Roboto, sans-serif;
-                              padding: 15px 25px;
-                              box-sizing: border-box;
-                              top: 5px;
-                              border: 1px solid rgba(0, 0, 0, 0.12);
-                              border-radius: 5px;
-                              left: 50%;
-                              max-width: 375px;
-                              position: absolute;
-                              transform: translateX(-50%);
-                              width: calc(100% - 10px);
-                              z-index: 1;
-                            "
-                          >
-                           
-                            <div style="line-height: 20px; margin: 15px 0px">
-                              <span
-                                style="
-                                  color: rgba(0, 0, 0, 0.87);
-                                  font-size: 14px;
-                                "
-                                >This page can't load Google Maps
-                                correctly.</span
-                              >
-                            </div>
-                           
-                        </div>
-                        <div
-                          class="et_pb_map_pin"
-                          data-lat="37.7749295"
-                          data-lng="-122.4194155"
-                          data-title=""
-                        ></div>
-                      </div>
+                                    
                     </div>
                   </div>
                 </div>

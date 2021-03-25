@@ -87,7 +87,7 @@ def saveFeedback(request):
                 return HttpResponseRedirect(next)
     # if invalid email
     except ValidationError as e:
-        messages.error(request, "Invalid email address!")
+        messages.error(request, "Please enter valid email address!")
         # return to previous page
         next = request.POST.get('next', '/')
         return HttpResponseRedirect(next)
