@@ -184,13 +184,13 @@
       type="text/css"
       media="all"
     />
-    {% comment %} <link
+    <link
       rel="stylesheet"
       id="woocommerce-smallscreen-css"
       href="{% static 'css/contact us_files/woocommerce-smallscreen.css' % }"
       type="text/css"
       media="only screen and (max-width: 768px)"
-    /> {% endcomment %}
+    />
     <link
       rel="stylesheet"
       id="woocommerce-general-css"
@@ -585,13 +585,81 @@
                           </div>
                         </div>
                         
-                        <div
+                        {% comment %} <div
                           class=" mt-5 et_pb_column et_pb_column_1_2 et_pb_column_5 et_pb_css_mix_blend_mode_passthrough et-last-child"
                         >
                           <div
                             class="et_pb_module et_pb_accordion et_pb_accordion_0"
-                          >
-                            <div
+                          > {% endcomment %}
+                          <div class="box" style=" width: 320px;
+    margin: 100px auto;
+    background: #fff;
+    border-radius: 7px;
+    float: right;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);">
+  <p class="heading" style=" background: #201d3c;
+    border-radius: 7px 7px 0px 0px;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    ">FAQs</p>
+  <div class="faqs" style="    padding: 20px 20px 20px;
+">
+    <details style=" background: #f6f6f6;
+    padding: 10px 20px;
+    border-radius: 7px;
+    margin-top: 20px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 3px;">
+      <summary style="    outline: none;
+">What is Lorem ipsum?</summary>
+      <p class="text" style="margin-top: 2px;">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+    </details>
+    <details style=" padding: 10px 20px;
+    border-radius: 7px;
+    margin-top: 20px;
+    font-size: 14px;
+     background: #f6f6f6;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 3px;">
+      <summary>What is Lorem ipsum?</summary>
+      <p class="text" style="margin-top: 2px;">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+    </details>
+    <details style="  background: #f6f6f6;padding: 10px 20px;
+    border-radius: 7px;
+    margin-top: 20px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 3px;">
+      <summary>What is Lorem ipsum?</summary>
+      <p class="text"style="margin-top: 2px;">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+    </details>
+    <details style="  background: #f6f6f6;padding: 10px 20px;
+    border-radius: 7px;
+    margin-top: 20px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 3px;">
+      <summary>What is Lorem ipsum?</summary>
+      <p class="text"style="margin-top: 2px;">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+    </details>
+  </div>
+</div>
+
+                            {% comment %} <div
                               class="et_pb_toggle et_pb_module et_pb_accordion_item et_pb_accordion_item_0 et_pb_toggle_open"
                             >
                               <h5 class="et_pb_toggle_title">
@@ -613,7 +681,7 @@
                                 Vivamus suscipit tortor eget felis porttitor
                                 volutpat?
                               </h5>
-                              {% comment %} <div class="et_pb_toggle_content clearfix">
+                               <div class="et_pb_toggle_content clearfix">
                                 Nulla quis lorem ut libero malesuada feugiat.
                                 Vestibulum ac diam sit amet quam vehicula
                                 elementum sed sit amet dui. Quisque velit nisi,
@@ -621,7 +689,7 @@
                                 porttitor lectus nibh. Mauris blandit aliquet
                                 elit, eget tincidunt nibh pulvinar a. Nulla
                                 porttitor accumsan tincidunt.
-                              </div> {% endcomment %}
+                              </div>
                             </div>
                             <div
                               class="et_pb_toggle et_pb_module et_pb_accordion_item et_pb_accordion_item_2 et_pb_toggle_close"
@@ -629,7 +697,7 @@
                               <h5 class="et_pb_toggle_title">
                                 Curabitur non nulla sit amet nisl tempus?
                               </h5>
-                              {% comment %} <div class="et_pb_toggle_content clearfix">
+                              <div class="et_pb_toggle_content clearfix">
                                 Nulla quis lorem ut libero malesuada feugiat.
                                 Vestibulum ac diam sit amet quam vehicula
                                 elementum sed sit amet dui. Quisque velit nisi,
@@ -637,7 +705,7 @@
                                 porttitor lectus nibh. Mauris blandit aliquet
                                 elit, eget tincidunt nibh pulvinar a. Nulla
                                 porttitor accumsan tincidunt.
-                              </div> {% endcomment %}
+                              </div> 
                             </div>
                             <div
                               class="et_pb_toggle et_pb_module et_pb_accordion_item et_pb_accordion_item_3 et_pb_toggle_close"
@@ -645,7 +713,7 @@
                               <h5 class="et_pb_toggle_title">
                                 Pellentesque in ipsum id orci porta dapibus?
                               </h5>
-                              {% comment %} <div class="et_pb_toggle_content clearfix">
+                               <div class="et_pb_toggle_content clearfix">
                                 Nulla quis lorem ut libero malesuada feugiat.
                                 Vestibulum ac diam sit amet quam vehicula
                                 elementum sed sit amet dui. Quisque velit nisi,
@@ -653,7 +721,7 @@
                                 porttitor lectus nibh. Mauris blandit aliquet
                                 elit, eget tincidunt nibh pulvinar a. Nulla
                                 porttitor accumsan tincidunt.
-                              </div> {% endcomment %}
+                              </div> 
                             </div>
                             <div
                               class="et_pb_toggle et_pb_module et_pb_accordion_item et_pb_accordion_item_4 et_pb_toggle_close"
@@ -661,7 +729,7 @@
                               <h5 class="et_pb_toggle_title">
                                 Curabitur non nulla sit amet nisl?
                               </h5>
-                              {% comment %} <div class="et_pb_toggle_content clearfix">
+                               <div class="et_pb_toggle_content clearfix">
                                 Nulla quis lorem ut libero malesuada feugiat.
                                 Vestibulum ac diam sit amet quam vehicula
                                 elementum sed sit amet dui. Quisque velit nisi,
@@ -669,10 +737,10 @@
                                 porttitor lectus nibh. Mauris blandit aliquet
                                 elit, eget tincidunt nibh pulvinar a. Nulla
                                 porttitor accumsan tincidunt.
-                              </div> {% endcomment %}
-                            </div>
-                          </div>
-                        </div>
+                              </div>                             </div>{% endcomment %}
+
+                          {% comment %} </div>
+                        </div> {% endcomment %}
 
                       </div>
                     </div>
@@ -733,3 +801,51 @@
       ];
     </script>
    
+<style>
+  @import url("https://fonts.googleapis.com/css?family=Rubik&display=swap");
+
+  body {
+    background: #f6f6f6;
+  }
+
+  .box {
+    width: 320px;
+    margin: 100px auto;
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .box .heading {
+    background: #7800cf;
+    border-radius: 7px 7px 0px 0px;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    font-family: "Rubik";
+  }
+
+  .faqs {
+    padding: 0px 20px 20px;
+  }
+
+  ::-webkit-details-marker {
+    float: right;
+    margin-top: 3px;
+  }
+
+  details {
+    background: #f6f6f6;
+    padding: 10px 20px;
+    border-radius: 7px;
+    margin-top: 20px;
+    font-family: "Rubik";
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+
+  details summary {
+    outline: none;
+  }
+</style>
