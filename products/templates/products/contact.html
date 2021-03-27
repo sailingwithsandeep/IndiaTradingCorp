@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 {% load static %}
   
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+   
     <style>
       .dismissButton {
         background-color: #fff;
@@ -184,10 +184,12 @@
       type="text/css"
       media="all"
     />
+    
     <link
       rel="stylesheet"
       id="woocommerce-smallscreen-css"
-      href="{% static 'css/contact us_files/woocommerce-smallscreen.css' % }"
+      href='{% static 'css/contact us_files/woocommerce-smallscreen.css' % }'
+      {% comment %} href="{% static 'css/contact us_files/woocommerce-smallscreen.css' %}" {% endcomment %}
       type="text/css"
       media="only screen and (max-width: 768px)"
     />
@@ -501,7 +503,7 @@
                               <form
                                 class="et_pb_contact_form clearfix"
                                 method="post"
-                                action="/saveFeed  back"
+                                action="/saveFeedback"
                               >
                               {% csrf_token %}
                                 <p

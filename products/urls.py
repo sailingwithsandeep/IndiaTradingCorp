@@ -11,6 +11,6 @@ urlpatterns = [
     path('about', views.AwardList.as_view(), name='about'),
     path('contact', views.ContactUsView.as_view(), name='contact'),
     path('saveemail', views.insertEmail, name='saveemail'),
-    path('saveFeedback', views.saveFeedback, name='saveemail'),
+    path('saveFeedback', views.saveFeedback, name='savefeedback'),
 
 ]
