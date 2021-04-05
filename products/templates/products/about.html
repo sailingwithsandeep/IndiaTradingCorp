@@ -208,6 +208,13 @@
 
 		<div class="row">
 			<div align="center">
+				{% for award in award %}
+				<a
+					href="#"
+					data-filter=".{{ award.awardCategory }}"
+					class="filter-button btn-click btn btn-default"
+					>{{ award.awardCategory }}</a
+				>{% endfor %}{% comment %}
 				<button class="btn btn-default filter-button" data-filter="all">
 					All
 				</button>
@@ -220,68 +227,21 @@
 				<button class="btn btn-default filter-button" data-filter="spray">
 					Industries
 				</button>
+				{% endcomment %}
 			</div>
 			<br />
-
+			{% for award in award %}
 			<div
 				class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe"
 			>
 				<img
-					src="static/images/portfolio/01.jpg"
+					src="{{ award.awardImage.url }}"
+					style="width: 300px; height: 300px"
 					class="img-responsive"
 					alt="Project Title"
 				/>
 			</div>
-
-			<div
-				class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle"
-			>
-				<img
-					src="static/images/portfolio/02.jpg"
-					class="img-responsive"
-					alt="Project Title"
-				/>
-			</div>
-
-			<div
-				class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe"
-			>
-				<img
-					src="static/images/portfolio/03.jpg"
-					class="img-responsive"
-					alt="Project Title"
-				/>
-			</div>
-
-			<div
-				class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation"
-			>
-				<img
-					src="static/images/portfolio/04.jpg"
-					class="img-responsive"
-					alt="Project Title"
-				/>
-			</div>
-
-			<div
-				class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray"
-			>
-				<img
-					src="static/images/portfolio/01.jpg"
-					class="img-responsive"
-					alt="Project Title"
-				/>
-			</div>
-
-			<div
-				class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter irrigation"
-			>
-				<img
-					src="static/images/portfolio/01.jpg"
-					class="img-responsive"
-					alt="Project Title"
-				/>
-			</div>
+			{% endfor %}
 		</div>
 	</div>
 </div>
