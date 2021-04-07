@@ -113,10 +113,10 @@
                                                 <a href="{% url 'products:home' %}#network">Network</a> {% endif %}
                                             </li> -->
                                              <li id="homeMenu" class="">
-                                                <a href="{% url 'products:about' %}">About Us</a> 
+                                                <a href="{% url 'products:about' %}?type=Agriculture">About Us</a> 
                                             </li>
                                              <li id="homeMenu" class="">
-                                                <a href="{% url 'products:contact' %}">Contact Us</a> 
+                                                <a href="{% url 'products:savefeedback' %}">Contact Us</a> 
                                             </li>
                                              <li id="homeMenu" class="">                                
                                                 <a href="#">Brochure</a> 
@@ -216,7 +216,7 @@
                                     </ul>
                                 </li>
                                 <li id="networkMenu">
-                                    <a href="{% url 'products:contact' %}">Contact Us</a> 
+                                    <a href="{% url 'products:savefeedback' %}">Contact Us</a> 
                                 </li>
                                 <li id="homeMenu">
                                   <a href="#">Brochure</a> 

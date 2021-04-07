@@ -1,960 +1,274 @@
-{% extends 'base.html' %} {% block content %}
-{% load static %}
-  
-   
-    <style>
-      .dismissButton {
-        background-color: #fff;
-        border: 1px solid #dadce0;
-        color: #1a73e8;
-        border-radius: 4px;
-        font-family: Roboto, sans-serif;
-        font-size: 14px;
-        height: 36px;
-        cursor: pointer;
-        padding: 0 24px;
-      }
-      .dismissButton:hover {
-        background-color: rgba(66, 133, 244, 0.04);
-        border: 1px solid #d2e3fc;
-      }
-      .dismissButton:focus {
-        background-color: rgba(66, 133, 244, 0.12);
-        border: 1px solid #d2e3fc;
-        outline: 0;
-      }
-      .dismissButton:hover:focus {
-        background-color: rgba(66, 133, 244, 0.16);
-        border: 1px solid #d2e2fd;
-      }
-      .dismissButton:active {
-        background-color: rgba(66, 133, 244, 0.16);
-        border: 1px solid #d2e2fd;
-        box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
-          0 1px 3px 1px rgba(60, 64, 67, 0.15);
-      }
-      .dismissButton:disabled {
-        background-color: #fff;
-        border: 1px solid #f1f3f4;
-        color: #3c4043;
-      }
-    </style>
-    <style>
-      .gm-style .gm-style-mtc label,
-      .gm-style .gm-style-mtc div {
-        font-weight: 400;
-      }
-      .gm-style .gm-style-mtc ul,
-      .gm-style .gm-style-mtc li {
-        box-sizing: border-box;
-      }
-    </style>
-    <style>
-      .gm-control-active > img {
-        box-sizing: content-box;
-        display: none;
-        left: 50%;
-        pointer-events: none;
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
-      }
-      .gm-control-active > img:nth-child(1) {
-        display: block;
-      }
-      .gm-control-active:hover > img:nth-child(1),
-      .gm-control-active:active > img:nth-child(1) {
-        display: none;
-      }
-      .gm-control-active:hover > img:nth-child(2),
-      .gm-control-active:active > img:nth-child(3) {
-        display: block;
-      }
-    </style>
-   
-    <style>
-      .gm-ui-hover-effect {
-        opacity: 0.6;
-      }
-      .gm-ui-hover-effect:hover {
-        opacity: 1;
-      }
-    </style>
-    <style>
-      .gm-style .gm-style-cc span,
-      .gm-style .gm-style-cc a,
-      .gm-style .gm-style-mtc div {
-        font-size: 10px;
-        box-sizing: border-box;
-      }
-    </style>
-    <style>
-      @media print {
-        .gm-style .gmnoprint,
-        .gmnoprint {
-          display: none;
-        }
-      }
-      @media screen {
-        .gm-style .gmnoscreen,
-        .gmnoscreen {
-          display: none;
-        }
-      }
-    </style>
-    <style>
-      .gm-style-pbc {
-        transition: opacity ease-in-out;
-        background-color: rgba(0, 0, 0, 0.45);
-        text-align: center;
-      }
-      .gm-style-pbt {
-        font-size: 22px;
-        color: white;
-        font-family: Roboto, Arial, sans-serif;
-        position: relative;
-        margin: 0;
-        top: 50%;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
-      }
-    </style>
-    <style>
-      .gm-style img {
-        max-width: none;
-      }
-      .gm-style {
-        font: 400 11px Roboto, Arial, sans-serif;
-        text-decoration: none;
-      }
-    </style>
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-   
-    <script type="text/javascript">
-      document.documentElement.className = "js";
-    </script>
-   
-    <meta name="robots" content="noindex, follow" />
-
-    <title>Contact us</title>
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="article" />
-   
-    <meta property="og:site_name" content="Elegant Themes" />
-    
-    <meta
-      property="article:modified_time"
-      content="2018-07-20T04:38:35+00:00"
-    />
-    <meta name="twitter:card" content="summary_large_image" />
-    
-    <meta name="twitter:label1" content="Est. reading time" />
-    <meta name="twitter:data1" content="10 minutes" />
- 
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com/" />
-    
-    <meta content="Divi v.4.9.2" name="generator" />
-    <link
-      rel="stylesheet"
-      id="wp-block-library-css"
-      href="{% static 'css/contact us_files/style.min.css' %}"
-      type="text/css"
-      media="all"
-    />
-    <link
-      rel="stylesheet"
-      id="wc-block-vendors-style-css"
-      href="{% static 'css/contact us_files/vendors-style.css' %}"
-      type="text/css"
-      media="all"
-    />
-    <link
-      rel="stylesheet"
-      id="wc-block-style-css"
-      href="{% static 'css/contact us_files/style.css' %}"
-      type="text/css"
-      media="all"
-    />
-    <link
-      rel="stylesheet"
-      id="woocommerce-layout-css"
-      href="{% static 'css/contact us_files/woocommerce-layout.css' %}"
-      type="text/css"
-      media="all"
-    />
-    
-    <link
-      rel="stylesheet"
-      id="woocommerce-smallscreen-css"
-      href='{% static 'css/contact us_files/woocommerce-smallscreen.css' % }'
-      {% comment %} href="{% static 'css/contact us_files/woocommerce-smallscreen.css' %}" {% endcomment %}
-      type="text/css"
-      media="only screen and (max-width: 768px)"
-    />
-    <link
-      rel="stylesheet"
-      id="woocommerce-general-css"
-      href="{%static 'css/contact us_files/woocommerce.css'%}"
-      type="text/css"
-      media="all"
-    />
-    <style id="woocommerce-inline-inline-css" type="text/css">
-      .woocommerce form .form-row .required {
-        visibility: visible;
-      }
-    </style>
-    <link
-      rel="stylesheet"
-      id="divi-fonts-css"
-      href="{% static 'css/contact us_files/css(1)'%}"
-      type="text/css"
-      media="all"
-    />
-    <link
-      rel="stylesheet"
-      id="divi-style-css"
-      href="{% static 'css/contact us_files/style(1).css ' %}"
-      type="text/css"
-      media="all"
-    />
-    <link
-      rel="stylesheet"
-      id="et-builder-googlefonts-cached-css"
-      href="{% static 'css/contact us_files/css(2) '%}"
-      type="text/css"
-      media="all"
-    />
-    <link
-      rel="stylesheet"
-      id="dashicons-css"
-      href="{% static 'css/contact us_files/dashicons.min.css'%}"
-      type="text/css"
-      media="all"
-    />
-    {% comment %} <script
-      type="text/javascript"
-      src="{% static 'css/contact us_files/jquery.min.js.download ' %}"
-      id="jquery-core-js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="{% static 'css/contact us_files/jquery-migrate.min.js.download' %}"
-      id="jquery-migrate-js"
-    ></script> {% endcomment %}
-    
-    <noscript
-      ><style>
-        .woocommerce-product-gallery {
-          opacity: 1 !important;
-        }
-      </style></noscript
-    >
-   
-    <link
-      rel="stylesheet"
-      id="et-core-unified-214191-cached-inline-styles"
-      href="{% static 'css/contact us_files/et-core-unified-214191-16155840169603.min.css'%}"
-      onerror="et_core_page_resource_fallback(this, true)"
-      onload="et_core_page_resource_fallback(this)"
-    />
-    <style>
-      [data-columns]::before {
-        visibility: hidden;
-        position: absolute;
-        font-size: 1px;
-      }
-    </style>
-    <style id="fit-vids-style">
-      .fluid-width-video-wrapper {
-        width: 100%;
-        position: relative;
-        padding: 0;
-      }
-      .fluid-width-video-wrapper iframe,
-      .fluid-width-video-wrapper object,
-      .fluid-width-video-wrapper embed {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-    </style>
-    {% comment %} <script
-      type="text/javascript"
-      charset="UTF-8"
-      src="{% static 'css/contact us_files/common.js.download'%}"
-    ></script>
-    <script
-      type="text/javascript"
-      charset="UTF-8"
-      src="{% static 'css/contact us_files/util.js.download'%}"
-    ></script>
-    
-    <script
-      type="text/javascript"
-      charset="UTF-8"
-      src="{% static './contact us_files/marker.js.download'%}"
-    ></script> {% endcomment %}
-    {% comment %} <script
-      type="text/javascript"
-      charset="UTF-8"
-      src="./contact us_files/onion.js.download"
-    ></script>
-    <script
-      type="text/javascript"
-      charset="UTF-8"
-      src="./contact us_files/controls.js.download"
-    ></script> {% endcomment %}
-  </head>
-  <body
-    class="page-template-default page page-id-214191 theme-Divi woocommerce-js et_pb_button_helper_class et_header_style_left et_pb_footer_columns4 et_cover_background et_pb_gutter windows et_pb_gutters3 et_pb_pagebuilder_layout et_no_sidebar et_divi_theme et-db et_minified_js et_minified_css chrome"
-    style="overflow-x: hidden; margin: 0%; padding: 0%;"
-  >
-    <div
-      id="page-container"
-      style="overflow-y: hidden;"
-      class="et-animated-content"
-    >      
-      <div id="et-main-area">
-        <div id="main-content">
-          <article
-            id="post-214191"
-            class="post-214191 page type-page status-publish hentry"
-          >
-            <div class="entry-content" style="overflow-x: hidden; margin: 0%; padding: 0%;"
->
-              <div id="et-boc" class="et-boc">
-                <div class="et-l et-l--post">
-                  <div class="et_builder_inner_content et_pb_gutters3">
-                    <div
-                      class="et_pb_section et_pb_section_0 et_pb_with_background et_section_regular"
-                    >
-                      <div
-                        class="et_pb_row et_pb_row_0 et_pb_equal_columns et_pb_gutters3"
-                      >
-                        <div
-                          class="et_pb_column et_pb_column_2_3 et_pb_column_0 et_pb_css_mix_blend_mode_passthrough"
-                        >
-                          <div
-                            class="et_pb_with_border et_pb_module et_pb_text et_pb_text_0 et_pb_text_align_left et_pb_bg_layout_dark"
-                          >
-                            <div class="et_pb_text_inner" style="padding-top: 0%; margin-top: 0%;">
-                              <h1>Contact Us</h1>
-                            </div>
-                          </div>
-                          <div
-                            class="et_pb_module et_pb_text et_pb_text_1 et_pb_text_align_left et_pb_bg_layout_dark"
-                          >
-                            <div class="et_pb_text_inner">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit. Nullam lectus erat consectetur eu sapien
-                              eget, rhoncus consectetur sem.
-                            </div>
-                          </div>
-                          <div
-                            class="et_pb_button_module_wrapper et_pb_button_0_wrapper et_pb_module"
-                          >
-                            <botton
-                              class="et_pb_button et_pb_custom_button_icon et_pb_button_0 et_pb_bg_layout_dark"
-                              href=""
-                              data-icon=""                              
-                              >Send A Message</button
-                            >
-                          </div>
-                        </div>
-                        <div
-                          class="et_pb_column et_pb_column_1_3 et_pb_column_1 et_pb_css_mix_blend_mode_passthrough et-last-child" style="background-color: gray;"
-                        >
-                          <div
-                            class="et_pb_module et_pb_text et_pb_text_2 et_pb_text_align_left et_pb_bg_layout_light"
-                          >
-                            <div class="et_pb_text_inner" >
-                              <h2 class="ot-heading">Contact Info</h2>
-                            </div>
-                          </div>
-                          <div
-                            class="et_pb_module et_pb_blurb et_pb_blurb_0 et_pb_text_align_left et_pb_blurb_position_left et_pb_bg_layout_dark et_had_animation"
-                            style=""
-                          >
-                            <div class="et_pb_blurb_content">
-                              <div class="et_pb_main_blurb_image">
-                                <span class="et_pb_image_wrap"
-                                  ><span
-                                    class="et-waypoint et_pb_animation_off et-pb-icon et-animated"
-                                    ></span
-                                ></span>
-                              </div>
-                              <div class="et_pb_blurb_container">
-                                <h4 class="et_pb_module_header">
-                                  <span>Our Office</span>
-                                </h4>
-                                <div class="et_pb_blurb_description">
-                                  1234 Divi St. #1000, San Francisc, CA 93251
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div
-                            class="et_pb_module et_pb_blurb et_pb_blurb_1 et_pb_text_align_left et_pb_blurb_position_left et_pb_bg_layout_dark et_had_animation"
-                            style=""
-                          >
-                            <div class="et_pb_blurb_content">
-                              <div class="et_pb_main_blurb_image">
-                                <span class="et_pb_image_wrap"
-                                  ><span
-                                    class="et-waypoint et_pb_animation_off et-pb-icon et-animated"
-                                    ></span
-                                ></span>
-                              </div>
-                              <div class="et_pb_blurb_container">
-                                <h4 class="et_pb_module_header">
-                                  <span>Open Office Hours</span>
-                                </h4>
-                                <div class="et_pb_blurb_description">
-                                  M-F:&nbsp;8am – 6pm<br />
-                                  S-S: 10am – 4pm
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div
-                            class="et_pb_module et_pb_blurb et_pb_blurb_2 et_pb_text_align_left et_pb_blurb_position_left et_pb_bg_layout_dark et_had_animation"
-                            style=""
-                          >
-                            <div class="et_pb_blurb_content">
-                              <div class="et_pb_main_blurb_image">
-                                <span class="et_pb_image_wrap"
-                                  ><span
-                                    class="et-waypoint et_pb_animation_off et-pb-icon et-animated"
-                                    ></span
-                                ></span>
-                              </div>
-                              <div class="et_pb_blurb_container">	
-                                <h4 class="et_pb_module_header">
-                                  <span>Get in Touch</span>
-                                </h4>
-                                <div class="et_pb_blurb_description">
-                                  <!-- divibuild.com<br /> -->
-                                  +91 63551 15277
-                                </div>
-                              </div>
-                            </div>
-                          </div>                         
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="et_pb_section et_pb_section_1 et_section_regular et_had_animation"
-                      style=""
-                    >
-                      <div class="et_pb_row et_pb_row_1">
-                        <div
-                          class="et_pb_column et_pb_column_2_3 et_pb_column_2 et_pb_css_mix_blend_mode_passthrough"
-                        >
-                          <div
-                            class="et_pb_module et_pb_text et_pb_text_3 et_pb_text_align_left et_pb_bg_layout_light"
-                          >
-                            <div class="et_pb_text_inner">
-                              <h2  style="color: #262051">
-                                Call:
-                                <span style="white-space: nowrap"
-                                  ><a href="tel:+916355115277"  style="color: #262051"
-                                    >+91 63551 15277</a
-                                  ></span
-                                >
-                              </h2>
-                              <h4>
-                                We Can’t Wait to Make Your Ideas a Reality
-                              </h4>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      class="et_pb_section et_pb_section_2 et_pb_with_background et_section_regular"
-                    >
-                      <div class="et_pb_row et_pb_row_2">
-                        <div
-                          class="et_pb_column et_pb_column_1_2 et_pb_column_4 et_pb_css_mix_blend_mode_passthrough"
-                        >
-                          <div
-                            class="et_pb_module et_pb_text et_pb_text_4 et_pb_text_align_left et_pb_bg_layout_light"
-                          >
-                            <div class="et_pb_text_inner">
-                              <h2>Get In Touch</h2>
-                            </div>
-                          </div>
-                          <div
-                            class="et_pb_module et_pb_divider et_pb_divider_0 et_pb_divider_position_center et_pb_space"
-                          >
-                            <div class="et_pb_divider_internal"></div>
-                          </div>
-                          <div
-                            id="et_pb_contact_form_0"
-                            class="et_pb_module et_pb_contact_form_0 et_pb_contact_form_container clearfix"
-                            data-form_unique_num="0"
-                          >
-                            <div class="et-pb-contact-message"></div>
-                            <div class="et_pb_contact">
-                              <form
-                                class="et_pb_contact_form clearfix"
-                                method="post"
-                                action="/saveFeedback"
-                              >
+{% extends 'base.html' %} {% block content %} {% load static %}
+<div id="content" class="site-content">
+	<div class="page-header flex-middle">
+		<div class="container">
+			<div class="inner flex-middle">
+				<h1 class="page-title">Contact Us</h1>
+				<ul id="breadcrumbs" class="breadcrumbs none-style">
+				</ul>
+			</div>
+		</div>
+	</div>
+	<section class="contact-page">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="contact-left">
+						<div class="ot-heading">
+							{% comment %} <span>// contact details</span> {% endcomment %}
+							<h2 class="main-heading">Contact us</h2>
+						</div>
+						<div class="space-5"></div>
+						<p>
+							Give us a call or drop by anytime, we endeavour to answer all
+							enquiries within 24 hours on business days. We will be happy to
+							answer your questions.
+						</p>
+						<div class="contact-info box-style1">
+							<i class="flaticon-world-globe"></i>
+							<div class="info-text">
+								<h6>Our Address:</h6>
+								<p>Rajkot - 360001, Gujarat, India</p>
+							</div>
+						</div>
+						<div class="contact-info box-style1">
+							<i class="flaticon-envelope"></i>
+							<div class="info-text">
+								<h6>Our Mailbox:</h6>
+								<p>indiatradingcorporations@gmail.com</p>
+							</div>
+						</div>
+						<div class="contact-info box-style1">
+							<i class="flaticon-phone-1"></i>
+							<div class="info-text">
+								<h6>Our Phone:</h6>
+								<p>+91 63551 15277</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<form  action="/contact" method="post" class="wpcf7">
                               {% csrf_token %}
-                                <p
-                                  class="et_pb_contact_field et_pb_contact_field_0 et_pb_contact_field_last"
-                                  data-id="name"
-                                  data-type="input"
-                                >
-                                  <label
-                                    for="et_pb_contact_name_0"
-                                    class="et_pb_contact_form_label"
-                                    >Name</label
-                                  >
-                                  <input
-                                    type="text"
-                                    id="et_pb_contact_name_0"
-                                    class="input"
-                                    value=""
-                                    name="name"
-                                    data-required_mark="required"
-                                    data-field_type="input"
-                                    data-original_id="name"
-                                    placeholder="Name"
-                                  />
-                                </p>
-                                <p
-                                  class="et_pb_contact_field et_pb_contact_field_1 et_pb_contact_field_last"
-                                  data-id="email"
-                                  data-type="email"
-                                >
-                                  <label
-                                    for="et_pb_contact_email_0"
-                                    class="et_pb_contact_form_label"
-                                    >Email Address</label
-                                  >
-                                  <input
-                                    type="text"
-                                    id="et_pb_contact_email_0"
-                                    class="input"
-                                    value=""
-                                    name="email"
-                                    data-required_mark="required"
-                                    data-field_type="email"
-                                    data-original_id="email"
-                                    placeholder="Email Address"
-                                  />
-                                </p>
-                                <p
-                                  class="et_pb_contact_field et_pb_contact_field_2 et_pb_contact_field_last"
-                                  data-id="message"
-                                  data-type="text"
-                                >
-                                  <label
-                                    for="et_pb_contact_message_0"
-                                    class="et_pb_contact_form_label"
-                                    >Message</label
-                                  >
-                                  <textarea
-                                    name="message"
-                                    id="et_pb_contact_message_0"
-                                    class="et_pb_contact_message input"
-                                    data-required_mark="required"
-                                    data-field_type="text"
-                                    data-original_id="message"
-                                    placeholder="Message"
-                                  ></textarea>
-                                </p>  
-                            <input type="hidden" name="next" value="{{ request.path }}">
-                              
-                                <div class="et_contact_bottom_container">
-                                  <button
-                                    type="submit"
-                                    name="et_builder_submit_button"
-                                    class="et_pb_contact_submit et_pb_button et_pb_custom_button_icon"
-                                    data-icon=""
-                                  >
-                                    Send Message
-                                  </button>
-                                </div>                              
-                              </form>
-                            </div>
-                          </div>
-                        </div>
-                        
-                        {% comment %} <div
-                          class=" mt-5 et_pb_column et_pb_column_1_2 et_pb_column_5 et_pb_css_mix_blend_mode_passthrough et-last-child"
-                        >
-                          <div
-                            class="et_pb_module et_pb_accordion et_pb_accordion_0"
-                          > {% endcomment %}
-                          
-                          
-  <script>
-        $( document ).ready(function() {
 
-  const faqHeaders = document.querySelectorAll(".faqs-container .faq-header");
-
-  faqHeaders.forEach((header, i) => {
-    header.addEventListener("click", () => {
-      header.nextElementSibling.classList.toggle("active");
-
-      const open = header.querySelector(".open");
-      const close = header.querySelector(".close");
-
-      if (header.nextElementSibling.classList.contains("active")) {
-        open.classList.remove("active");
-        close.classList.add("active");        
-      } else {
-        open.classList.add("active");
-        close.classList.remove("active");
-      }
-    });
-  });
-      });
-
-</script>
-<style>
-  .faqs-container {
-    font-family: "Roboto", sans-serif;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  .content p{
-        font-family: "Roboto", sans-serif;
-         display: flex;
-
-    align-items: center;
-    position: relative;
-    cursor: pointer;
-  }
-  .faqs-container .questions-container {
-    box-shadow: 0 4px 8px -3px rgba(0, 0, 0, 0.3);
-  }
-
-  .h2 {
-    padding: 4px 32px;
-    font-size: 28px;
-  }
-
-  .faqs-container .faq-header {
-    display: flex;
-    background: #f1f3f4;
-    color: #f1faee;
-    align-items: center;
-    position: relative;
-    cursor: pointer;
-  }
-
-  .faqs-container .faq-header .open,
-  .faqs-container .faq-header .close {
-    position: absolute;
-    right: 0;
-    padding: 0 32px;
-    font-size: 22px;
-    font-weight: bold;
-    transform: translateY(-8px);
-    opacity: 0;
-    transition: all 500ms;
-  }
-
-  .faqs-container .faq-header .open.active,
-  .faqs-container .faq-header .close.active {
-    opacity: 1;
-    transform: translateY(0);
-    color: #201d3c;
-  }
-
-  .h3 {
-    font-size: 20px;
-    padding: 0 32px;
-  }
-
-  .faqs-container .content {
-    padding: 0 32px;
-    background: #f1f3f4;
-    line-height: 2;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 500ms;
-  }
-
-  .faqs-container .content.active {
-    max-height: 600px;
-  }
-</style>
-<div class="faqs-container" style="float:right;">
-  <h2 class="h2 et_pb_module_header" style="color: black;font-size: 36px; font-family: 'Rubik',Helvetica,Arial,Lucida,sans-serif;font-weight: 700;"> <span> Frequently Asked Questions </span></h2>
-
-  <div class="questions-container" style="padding: 20px;">
-    <div class="content-container">
-      <div class="faq-header" style="padding: 10px;">
-        <h3 class="h3">How do I purchase a membership?</h3>
-        <span class="open active">+</span>
-        <span class="close">-</span>
-      </div>
-
-      <div class="content">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet,
-          veniam!
-        </p>
-
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-          voluptatem voluptatibus temporibus nemo amet tempore aperiam pariatur
-          laboriosam qui vel!
-        </p>
-      </div>
-    </div>
-
-    <div class="content-container">
-      <div class="faq-header" style="padding: 10px;">
-        <h3 class="h3">Lorem ipsum dolor sit amet consectetu?</h3>
-        <span class="open active" >+</span>
-        <span class="close">-</span>
-      </div>
-
-      <div class="content">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-          voluptatem voluptatibus temporibus nemo amet tempore aperiam pariatur
-          laboriosam qui vel!
-        </p>
-      </div>
-    </div>
-    <div class="content-container">
-      <div class="faq-header" style="padding: 10px;">
-        <h3 class="h3">Which platforms are supported?</h3>
-        <span class="open active" >+</span>
-        <span class="close">-</span>
-      </div>
-
-      <div class="content">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-          voluptatem voluptatibus temporibus nemo amet tempore aperiam pariatur
-          laboriosam qui vel!
-        </p>
-      </div>
-    </div>
-
-    <div class="content-container">
-      <div class="faq-header" style="padding: 10px;">
-        <h3 class="h3">How to cancel the subscription?</h3>
-        <span class="open active">+</span>
-        <span class="close">-</span>
-      </div>
-
-      <div class="content">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet,
-          veniam!
-        </p>
-
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-          voluptatem voluptatibus temporibus nemo amet tempore aperiam pariatur
-          laboriosam qui vel!
-        </p>
-      </div>
-    </div>
-  </div>
+						<div class="main-form">
+							<h2>Ready to Get Started?</h2>
+							<p class="font14">
+								Your email address will not be published. Required fields are
+								marked *
+							</p>
+							<p>
+								<input
+									type="text"
+									name="name"
+									value=""
+									size="40"
+									class=""
+									aria-required="true"
+									aria-invalid="false"
+									placeholder="Your Name *"
+									required
+								/>
+							</p>
+							<p>
+								<input
+									type="email"
+									name="email"
+									value=""
+									size="40"
+									class=""
+									aria-required="true"
+									aria-invalid="false"
+									placeholder="Your Email *"
+									required
+								/>
+							</p>
+							<p>
+								<textarea
+									name="message"
+									cols="40"
+									rows="10"
+									class=""
+									aria-invalid="false"
+									placeholder="Message..."
+									required
+								></textarea>
+                                 <input type="hidden" name="next" value="{{ request.path }}">
+							</p>
+							<p>
+								<button type="submit" class="octf-btn octf-btn-light">
+									Send Message
+								</button>
+							</p>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
 </div>
-  
+	<section class="faq">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<div class="ot-heading">
+						<h2 class="main-heading" style="margin-top:-60px;" >Read Most <br />Frequent Questions</h2>
+					</div>
+					<div class="space-25"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="ot-accordions">
+						<div class="acc-item">
+							<span class="acc-toggle"
+								>How To Choose A Good QA Consultant?
+								<i class="down flaticon-download-arrow"></i
+								><i class="up flaticon-up-arrow"></i>
+							</span>
+							<div class="acc-content">
+								<p>
+									Google has said for years that the most important single
+									factor to them is high quality content. Now more than ever,
+									they have the ability.
+								</p>
+							</div>
+						</div>
+						<div class="acc-item">
+							<span class="acc-toggle"
+								>How to Create a Chatbot to Fit Your Needs?
+								<i class="down flaticon-download-arrow"></i
+								><i class="up flaticon-up-arrow"></i>
+							</span>
+							<div class="acc-content">
+								<p>
+									We help ambitious businesses like yours generate more profits
+									by building awareness, driving web traffic, connecting with
+									customers, and growing overall sales. Give us a call.
+								</p>
+							</div>
+						</div>
+						<div class="acc-item">
+							<span class="acc-toggle"
+								>What is off page SEO link building?
+								<i class="down flaticon-download-arrow"></i
+								><i class="up flaticon-up-arrow"></i>
+							</span>
+							<div class="acc-content">
+								<p>
+									Google has said for years that the most important single
+									factor to them is high quality content. Now more than ever,
+									they have the ability.
+								</p>
+							</div>
+						</div>
+						<div class="acc-item">
+							<span class="acc-toggle"
+								>How can I order web design for my website?
+								<i class="down flaticon-download-arrow"></i
+								><i class="up flaticon-up-arrow"></i>
+							</span>
+							<div class="acc-content">
+								<p>
+									Google has said for years that the most important single
+									factor to them is high quality content. Now more than ever,
+									they have the ability.
+								</p>
+							</div>
+						</div>
+						<div class="acc-item">
+							<span class="acc-toggle"
+								>Best SEO Practices for Page Layouts
+								<i class="down flaticon-download-arrow"></i
+								><i class="up flaticon-up-arrow"></i>
+							</span>
+							<div class="acc-content">
+								<p>
+									Google has said for years that the most important single
+									factor to them is high quality content. Now more than ever,
+									they have the ability.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="ot-accordions">
+						<div class="acc-item">
+							<span class="acc-toggle"
+								>How Does Off Site SEO Work?
+								<i class="down flaticon-download-arrow"></i
+								><i class="up flaticon-up-arrow"></i>
+							</span>
+							<div class="acc-content">
+								<p>
+									Google has said for years that the most important single
+									factor to them is high quality content. Now more than ever,
+									they have the ability.
+								</p>
+							</div>
+						</div>
+						<div class="acc-item">
+							<span class="acc-toggle"
+								>Why is SEO Link Building Important?
+								<i class="down flaticon-download-arrow"></i
+								><i class="up flaticon-up-arrow"></i>
+							</span>
+							<div class="acc-content">
+								<p>
+									We help ambitious businesses like yours generate more profits
+									by building awareness, driving web traffic, connecting with
+									customers, and growing overall sales. Give us a call.
+								</p>
+							</div>
+						</div>
+						<div class="acc-item">
+							<span class="acc-toggle"
+								>Why is Researching Keywords Important?
+								<i class="down flaticon-download-arrow"></i
+								><i class="up flaticon-up-arrow"></i>
+							</span>
+							<div class="acc-content">
+								<p>
+									Google has said for years that the most important single
+									factor to them is high quality content. Now more than ever,
+									they have the ability.
+								</p>
+							</div>
+						</div>
+						<div class="acc-item">
+							<span class="acc-toggle"
+								>Best SEO Practices for Page Layouts
+								<i class="down flaticon-download-arrow"></i
+								><i class="up flaticon-up-arrow"></i>
+							</span>
+							<div class="acc-content">
+								<p>
+									Google has said for years that the most important single
+									factor to them is high quality content. Now more than ever,
+									they have the ability.
+								</p>
+							</div>
+						</div>
+						<div class="acc-item">
+							<span class="acc-toggle"
+								>Best SEO Practices for High Quality Content
+								<i class="down flaticon-download-arrow"></i
+								><i class="up flaticon-up-arrow"></i>
+							</span>
+							<div class="acc-content">
+								<p>
+									Google has said for years that the most important single
+									factor to them is high quality content. Now more than ever,
+									they have the ability.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-                            {% comment %} <div
-                              class="et_pb_toggle et_pb_module et_pb_accordion_item et_pb_accordion_item_0 et_pb_toggle_open"
-                            >
-                              <h5 class="et_pb_toggle_title">
-                                Donec rutrum congue leo eget malesuada?
-                              </h5>
-                               <div class="et_pb_toggle_content clearfix">
-                                Nulla quis lorem ut libero malesuada feugiat.
-                                Vestibulum ac diam sit amet quam vehicula
-                                elementum sed sit amet dui. Quisque velit nisi,
-                                pretium ut lacinia in, elementum id enim. Sed
-                                porttitor lectus nibh. Mauris blandit aliquet
-                                elit, eget tincid
-                              </div> 
-                            </div>
-                            <div
-                              class="et_pb_toggle et_pb_module et_pb_accordion_item et_pb_accordion_item_1 et_pb_toggle_close"
-                            >
-                              <h5 class="et_pb_toggle_title">
-                                Vivamus suscipit tortor eget felis porttitor
-                                volutpat?
-                              </h5>
-                               <div class="et_pb_toggle_content clearfix">
-                                Nulla quis lorem ut libero malesuada feugiat.
-                                Vestibulum ac diam sit amet quam vehicula
-                                elementum sed sit amet dui. Quisque velit nisi,
-                                pretium ut lacinia in, elementum id enim. Sed
-                                porttitor lectus nibh. Mauris blandit aliquet
-                                elit, eget tincidunt nibh pulvinar a. Nulla
-                                porttitor accumsan tincidunt.
-                              </div>
-                            </div>
-                            <div
-                              class="et_pb_toggle et_pb_module et_pb_accordion_item et_pb_accordion_item_2 et_pb_toggle_close"
-                            >
-                              <h5 class="et_pb_toggle_title">
-                                Curabitur non nulla sit amet nisl tempus?
-                              </h5>
-                              <div class="et_pb_toggle_content clearfix">
-                                Nulla quis lorem ut libero malesuada feugiat.
-                                Vestibulum ac diam sit amet quam vehicula
-                                elementum sed sit amet dui. Quisque velit nisi,
-                                pretium ut lacinia in, elementum id enim. Sed
-                                porttitor lectus nibh. Mauris blandit aliquet
-                                elit, eget tincidunt nibh pulvinar a. Nulla
-                                porttitor accumsan tincidunt.
-                              </div> 
-                            </div>
-                            <div
-                              class="et_pb_toggle et_pb_module et_pb_accordion_item et_pb_accordion_item_3 et_pb_toggle_close"
-                            >
-                              <h5 class="et_pb_toggle_title">
-                                Pellentesque in ipsum id orci porta dapibus?
-                              </h5>
-                               <div class="et_pb_toggle_content clearfix">
-                                Nulla quis lorem ut libero malesuada feugiat.
-                                Vestibulum ac diam sit amet quam vehicula
-                                elementum sed sit amet dui. Quisque velit nisi,
-                                pretium ut lacinia in, elementum id enim. Sed
-                                porttitor lectus nibh. Mauris blandit aliquet
-                                elit, eget tincidunt nibh pulvinar a. Nulla
-                                porttitor accumsan tincidunt.
-                              </div> 
-                            </div>
-                            <div
-                              class="et_pb_toggle et_pb_module et_pb_accordion_item et_pb_accordion_item_4 et_pb_toggle_close"
-                            >
-                              <h5 class="et_pb_toggle_title">
-                                Curabitur non nulla sit amet nisl?
-                              </h5>
-                               <div class="et_pb_toggle_content clearfix">
-                                Nulla quis lorem ut libero malesuada feugiat.
-                                Vestibulum ac diam sit amet quam vehicula
-                                elementum sed sit amet dui. Quisque velit nisi,
-                                pretium ut lacinia in, elementum id enim. Sed
-                                porttitor lectus nibh. Mauris blandit aliquet
-                                elit, eget tincidunt nibh pulvinar a. Nulla
-                                porttitor accumsan tincidunt.
-                              </div>                             </div>{% endcomment %}
-
-                          {% comment %} </div>
-                        </div> {% endcomment %}
-
-                      </div>
-                    </div>
-                                    
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </div>
-{% endblock content %}
-
-    <script type="text/javascript">
-      var et_animation_data = [
-        {
-          class: "et_pb_blurb_0",
-          style: "slideRight",
-          repeat: "once",
-          duration: "1000ms",
-          delay: "0ms",
-          intensity: "10%",
-          starting_opacity: "0%",
-          speed_curve: "ease-in-out",
-        },
-        {
-          class: "et_pb_blurb_1",
-          style: "slideRight",
-          repeat: "once",
-          duration: "1000ms",
-          delay: "0ms",
-          intensity: "10%",
-          starting_opacity: "0%",
-          speed_curve: "ease-in-out",
-        },
-        {
-          class: "et_pb_blurb_2",
-          style: "slideRight",
-          repeat: "once",
-          duration: "1000ms",
-          delay: "0ms",
-          intensity: "10%",
-          starting_opacity: "0%",
-          speed_curve: "ease-in-out",
-        },
-        {
-          class: "et_pb_section_1",
-          style: "slideTop",
-          repeat: "once",
-          duration: "1000ms",
-          delay: "0ms",
-          intensity: "10%",
-          starting_opacity: "0%",
-          speed_curve: "ease-in-out",
-        },
-      ];
-    </script>
-   
-<style>
-  @import url("https://fonts.googleapis.com/css?family=Rubik&display=swap");
-
-  body {
-    background: #f6f6f6;
-  }
-
-  .box {
-    width: 320px;
-    margin: 100px auto;
-    background: #fff;
-    border-radius: 7px;
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
-  }
-
-  .box .heading {
-    background: #7800cf;
-    border-radius: 7px 7px 0px 0px;
-    padding: 10px;
-    color: #fff;
-    text-align: center;
-    font-family: "Rubik";
-  }
-
-  .faqs {
-    padding: 0px 20px 20px;
-  }
-
-  ::-webkit-details-marker {
-    float: right;
-    margin-top: 3px;
-  }
-
-  details {
-    background: #f6f6f6;
-    padding: 10px 20px;
-    border-radius: 7px;
-    margin-top: 20px;
-    font-family: "Rubik";
-    font-size: 14px;
-    letter-spacing: 1px;
-    cursor: pointer;
-  }
-
-  details summary {
-    outline: none;
-  }
-</style>
+	{% endblock content %}
+</div>

@@ -1,11 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-<link
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
-	rel="stylesheet"
-	id="bootstrap-css"
-/>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
 <style>
 	header {
 		background: url(static/images/header-bg.jpg) no-repeat bottom center;
@@ -33,118 +27,16 @@
 		color: #eeeeee;
 		font-weight: 600;
 	}
-	.color {
-		color: #007bff;
-		font-weight: 700;
+	h5{
+		font-size: 20px;
+		line-height: 1.2 !important;
 	}
-	.btn-default {
-		color: #007bff;
-
-		font-family: "Open Sans", sans-serif;
-		background-color: transparent;
-		border: 1px solid;
-		border-radius: 4px;
-		margin: 0 8px;
-		font-size: 18px;
-		transition: all 0.5s;
-	}
-	.btn-default:hover,
-	.btn-default:focus,
-	.btn-default.focus,
-	.btn-default:active,
-	.btn-default.active {
-		background-color: #007bff;
-		border: 1px solid;
-		color: #eeeeee;
-	}
-	/* About Section */
-	#about-section {
-		padding: 100px 0;
-		background-color: #f6f6f6;
-	}
-	#about-section h4 {
-		border-bottom: 1px solid #007bff;
-		padding-bottom: 20px;
-		display: inline-block;
-	}
-	#about-section p {
-		margin-top: 20px;
-		margin-bottom: 30px;
-	}
-	.section-title {
-		padding-bottom: 50px;
-	}
-	#about-section hr {
-		border-bottom: 1px solid #007bff;
-	}
-	#about-section i.far {
-		font-size: 36px;
-		margin-right: 20px;
-		color: #007bff;
-		padding-bottom: 10px;
-		display: block;
-	}
-	#about-section i.fas {
-		font-size: 36px;
-		margin-right: 20px;
-		color: #007bff;
-		padding-bottom: 10px;
-		display: block;
-	}
-	#works-section {
-		padding: 100px 0;
-		background-color: #f6f6f6;
-	}
-	#works-section hr {
-		border-bottom: 1px solid #007bff;
-	}
-	#works-section {
-		padding: 100px 0;
-		background-color: #f6f6f6;
-	}
-
-	.gallery-title {
-		font-size: 36px;
-		color: #42b32f;
-		text-align: center;
-		font-weight: 500;
-		margin-bottom: 70px;
-	}
-	.gallery-title:after {
-		content: "";
-		position: absolute;
-		width: 7.5%;
-		left: 46.5%;
-		height: 45px;
-		border-bottom: 1px solid #5e5e5e;
-	}
-	.filter-button {
-		font-size: 18px;
-		border: 1px solid #007bff;
-		border-radius: 5px;
-		text-align: center;
-		color: #000000;
-		margin-bottom: 30px;
-	}
-	.filter-button:hover {
-		font-size: 18px;
-		border: 1px solid #007bff;
-		border-radius: 5px;
-		text-align: center;
-		color: #ffffff;
-		background-color: #007bff;
-	}
-	.btn-default:active .filter-button:active {
-		background-color: #007bff;
-		color: white;
-	}
-
-	.port-image {
-		width: 100%;
-	}
-
-	.gallery_product {
-		margin-bottom: 30px;
+	p{
+		color: #6d6d6d;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.875;
+    font-weight: 400;
 	}
 </style>
 <header class="text-center" name="home">
@@ -153,126 +45,133 @@
 		<p>An award winning multipurpose company</p>
 	</div>
 </header>
-<div id="about-section">
+<section class="service-page">
 	<div class="container">
-		<div class="section-title">
-			<h2>About Us</h2>
-			<hr />
-		</div>
-		<div class="space"></div>
 		<div class="row">
-			<div class="col-md-4">
-				<i class="far fa-building"></i>
-				<h4>Who We Are</h4>
+			<div class="col-md-6 col-sm-8 mb-4 mb-sm-0">
+				<div class="ot-heading mb-0">
+					<h2 class="main-heading" style="font-size: 36px !important; font-weight:800 !important;		">
+						We Offer a Wide <br />Variety of Services
+					</h2>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-4 text-sm-right align-self-end">
+				<div class="ot-button">
+					<a href="{% url 'products:productpage' %}?type=Agriculture" class="octf-btn octf-btn-primary"
+						>Our Products</a
+					>
+				</div>
+				<div class="space-10"></div>
+			</div>
+		</div>
+		<div class="space-55"></div>
+		<div class="row">
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="icon-box-s2 s1 pb-60">
+					<div class="icon-main"><i class="far fa-building"></i></div>
+					<div class="content-box">
+						<h5>Who We Are</h5>
+						<p>
+							We carry more than just good coding skills. Our experience makes
+							us stand out from other web development.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="icon-box-s2 s1 pb-60">
+					<div class="icon-main"><i class="fas fa-cogs"></i></i></div>
+					<div class="content-box">
+						<h5>What We Do</h5>
+						<p>
+							Create complex enterprise software, ensure reliable software
+							integration, modernise your legacy system.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="icon-box-s2 s1 pb-60">
+					<div class="icon-main">	<i class="fas fa-globe"></i></div>
+					<div class="content-box">
+						<h5>Why Choose Us</h5>
+						<p>
+							Build the product you need on time with an experienced team that
+							uses a clear and effective design process.
+						</p>
+					</div>
+				</div>
+			</div>
 
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed
-					dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum
-					dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh
-					ante facilisis bibendum.
-				</p>
-			</div>
-			<div class="col-md-4">
-				<i class="fas fa-cogs"></i>
-				<h4>What We Do</h4>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed
-					dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum
-					dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh
-					ante facilisis bibendum.
-				</p>
-			</div>
-			<div class="col-md-4">
-				<i class="fas fa-globe"></i>
-				<h4>Why Choose Us</h4>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed
-					dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum
-					dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh
-					ante facilisis bibendum.
-				</p>
-			</div>
 		</div>
 	</div>
-</div>
-<!-- Services Section -->
+</section>
 
-<div id="works-section">
-	<div class="container">
-		<!-- Container -->
-		<div class="section-title">
-			<h2>Our Awards</h2>
-			<hr />
-			<div class="clearfix"></div>
-		</div>
+ <section class="portfolio-grid ">
+                <div class="container ">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <div class="ot-heading">
+                                {% comment %} <span>// latest case studies</span> {% endcomment %}
+                                <h2 class="main-heading ">Introduce Our Awards</h2>
+                            </div>
+                            <div class="space-5"></div>
+                            {% comment %} <p>Software development outsourcing is just a tool to achieve business goals. But there is no way<br>to get worthwhile results without cooperation and trust between a client company.</p> {% endcomment %}
+                        </div>
+                    </div>
+                    <div class="row  mt-3">
+                        <div class="col-lg-12">
+                            <div class="project-filter-wrapper">
+                                <ul class="project_filters">
+							{% for category in categories %}
+									<li><a
+										href="#"
+										class="filterGroup btn-click {% if request.GET.type == category.categoryName %}selected{% endif %}"
+										data-filter=".{{ category.categoryName }}"
+										>{{ category.categoryName }}</a
+									></li>
 
-		<div class="row">
-			<div align="center">
-				{% for award in award %}
-				<a
-					href="#"
-					data-filter=".{{ award.awardCategory }}"
-					class="filter-button btn-click btn btn-default"
-					>{{ award.awardCategory }}</a
-				>{% endfor %}{% comment %}
-				<button class="btn btn-default filter-button" data-filter="all">
-					All
-				</button>
-				<button class="btn btn-default filter-button" data-filter="hdpe">
-					Agriculture
-				</button>
-				<button class="btn btn-default filter-button" data-filter="sprinkle">
-					Fabric
-				</button>
-				<button class="btn btn-default filter-button" data-filter="spray">
-					Industries
-				</button>
-				{% endcomment %}
-			</div>
-			<br />
-			{% for award in award %}
-			<div
-				class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe"
-			>
-				<img
-					src="{{ award.awardImage.url }}"
-					style="width: 300px; height: 300px"
-					class="img-responsive"
-					alt="Project Title"
-				/>
-			</div>
-			{% endfor %}
-		</div>
-	</div>
-</div>
+                                      	{% endfor %}
+                                </ul>
+							 <div
+					class="projects-grid projects-style-1 projects-col3"
+					style="top: 50px"
+				>
+					{% for award in awards %}
+					<div class="project-item {{ award.awardCategory }}">
+						<div class="projects-box">
+							<div class="projects-thumbnail">
+								<a href="#">
+									<img
+										src="{{ award.awardImage.url }}"
+										style="width: 350px; height: 300px"
+										alt=""
+									/>
+								</a>
+							</div>
+							<div
+								class="portfolio-info"
+								style="opacity: 1; background-color: transparent"
+							>
+								<a class="overlay" href="#"></a>
+								
+							</div>
+							<div class="portfolio-info">
+								<a class="overlay" href="#"></a>
+								
+							</div>
+						</div>
+					</div>
+					{% endfor %}	
+				</div>
+                            <div class="space-60"></div>
+							
+							
+                           
 
-<script src="https://code.jquery.com/jquery-migrate-3.3.2.min.js"></script>
-
-<script>
-	$(document).ready(function () {
-		$(".filter-button").click(function () {
-			var value = $(this).attr("data-filter");
-
-			if (value == "all") {
-				//$('.filter').removeClass('hidden');
-				$(".filter").show("1000");
-			} else {
-				//            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
-				//            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
-				$(".filter")
-					.not("." + value)
-					.hide("3000");
-				$(".filter")
-					.filter("." + value)
-					.show("3000");
-			}
-		});
-
-		if ($(".filter-button").removeClass("active")) {
-			$(this).removeClass("active");
-		}
-		$(this).addClass("active");
-	});
-</script>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
 {% endblock content %}

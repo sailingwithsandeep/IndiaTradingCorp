@@ -42,55 +42,64 @@ class ProductPage(ListView):
 class AwardList(ListView):
     model = Awards
     template_name = "products/about.html"
-    context_object_name = 'award'
 
     def get_context_data(self, *args, **kwargs):
         context = super(AwardList, self).get_context_data(**kwargs)
-        context['award'] = Awards.objects.all().order_by('id')
+        context['awards'] = Awards.objects.all().order_by('id')
+        context['categories'] = Category.objects.all().order_by('id')
+        context['products'] = Products.objects.all().order_by('id')
+
         return context
 
 
-class ContactUsView(CreateView):
-    model = ContactUs
-    template_name = "products/contact.html"
-    form_class = ContactForm
-    success_url = "/contact"
+# class ContactUsView(CreateView):
+#     model = ContactUs
+#     template_name = "products/contact.html"
+#     form_class = ContactForm
+#     success_url = "/contact"
 
-    def get_success_url(self, *args):
-        messages.success(
-            self.request, ("Thanks for contacting with us!"))
+#     def get_success_url(self, *args):
+#         messages.success(
+#             self.request, ("Thanks for contacting with us!"))
 
 def saveFeedback(request):
-    str_name = request.POST.get('name')
-    str_email = request.POST.get('email')
-    str_message = request.POST.get('message')
+    category = Category.objects.all().order_by('id')
+    context = {'categories': category}
     try:
-        validate_email(str_email)
-
         if request.method == 'POST':
+            str_name = request.POST.get('name')
+            str_email = request.POST.get('email')
+            str_message = request.POST.get('message')
+
+            validate_email(str_email)
+
             print("post")
             if str_email and str_name and str_message:
                 print('all feild')
-                feedback = ContactUs(name=str_name,contactEmail=str_email,message=str_message)
+                feedback = ContactUs(
+                    name=str_name, contactEmail=str_email, message=str_message)
                 feedback.save()
                 messages.error(request, "Thanks for contacting with us!")
 
                 # return to previous page
                 next = request.POST.get('next', '/')
-                return HttpResponseRedirect(next)   
+                return HttpResponseRedirect(next)
             else:
-                print("missing")   
+                print("missing")
                 messages.error(request, "Please enter all feilds!")
 
-                 # return to previous page
+                # return to previous page
                 next = request.POST.get('next', '/')
                 return HttpResponseRedirect(next)
+        else:
+            return render(request, 'products/contact.html', context)
     # if invalid email
     except ValidationError as e:
         messages.error(request, "Please enter valid email address!")
         # return to previous page
         next = request.POST.get('next', '/')
         return HttpResponseRedirect(next)
+
 
 def insertEmail(request):
     str_email = request.POST.get('email')
@@ -119,6 +128,6 @@ def insertEmail(request):
         next = request.POST.get('next', '/')
         return HttpResponseRedirect(next)
 
-    
+
 def errorPage(request, *args, **kwargs):
     return render(request, '404.html', status=404)
