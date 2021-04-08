@@ -1,9 +1,15 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
 <div id="content" class="site-content">
-	<div class="page-header flex-middle">
+	<div class="page-header flex-middle" style="    background-image: url(../../static/images/1-mk.jpg) !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+	 height: 500px;
+    position: relative;
+    background-color: white;">
 		<div class="container">
 			<div class="inner flex-middle">
-				<h1 class="page-title">Contact Us</h1>
+				{% comment %} <h1 class="page-title">Contact Us</h1> {% endcomment %}
 				<ul id="breadcrumbs" class="breadcrumbs none-style">
 				</ul>
 			</div>
@@ -14,7 +20,7 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="contact-left">
-						<div class="ot-heading">
+						<div class="ot-heading"	>
 							{% comment %} <span>// contact details</span> {% endcomment %}
 							<h2 class="main-heading">Contact us</h2>
 						</div>
@@ -106,6 +112,7 @@
 			</div>
 		</div>
 	</section>
+	
 </div>
 	<section class="faq">
 		<div class="container">
@@ -269,6 +276,10 @@
 			</div>
 		</div>
 	</section>
-
+<div class="no-padding">
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.9191599510314!2d70.76496921495502!3d22.318896885313897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959c99fab3b176d%3A0x3b0bd6688769a252!2sThe%20Spire!5e0!3m2!1sen!2sin!4v1617861496236!5m2!1sen!2sin" height="500" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </div>
 	{% endblock content %}
 </div>

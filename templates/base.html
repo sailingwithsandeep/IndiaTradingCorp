@@ -38,9 +38,9 @@
 
 <body class="royal_preloader">
     {% if messages %} {% for message in messages %}
-    <div class="alert alert-dismissible fade show " id="aleart-danger" role="alert" style="background-color: #201d3c;">
+    <div class="alert alert-dismissible fade show " id="aleart-danger" role="alert" style="background-color: #43baff;">
         <strong style="color: #fff"> {{ message }} </strong>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="color: #fff !important;">
                 <span aria-hidden="true">&times;</span>
             </button>
     </div>
@@ -100,7 +100,7 @@
                                                 <a href="{% url 'products:home' %}#services">Services</a> {% endif %}
                                             </li> -->
                                            
-                                            <li class="menu-item-has-children"><a href="#">Products</a>
+                                            <li class="menu-item-has-children"><a href="{% url 'products:productpage' %}?type=Agriculture">Products</a>
                                                 <ul class="sub-menu">
                                                     {% for category in categories %}
                                                     <li><a href="{% url 'products:productpage' %}?type={{ category.categoryName }}">{{ category.categoryName }}</a></li>
@@ -912,12 +912,12 @@
             {% endcomment %}
 
             </div>
-
+            
             <footer id="site-footer" class="site-footer footer-v1 pt-5 pb-2">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-12 col-12 m-auto">
-                            <img src="images/itc logo-01.png" width="300px" height="100px" alt="" class="lazyloaded" data-ll-status="loaded">
+                            <img src="images/itc logo-01.png" width="300px" height="100px" alt="" id="logofooter"   class="lazyloaded" data-ll-status="loaded">
                         </div>
                         {% comment %} <div class="col-lg-2 col-md-2 col-sm-12 col-12 m-auto">
                             <button class="btn text-white btn-info" >Download Brochure</button>

@@ -9,6 +9,43 @@
 	}
 </style>
 {% endcomment %}
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+	<div class="carousel-inner">
+		{% for category in categories %}
+		<div
+			class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}"
+		>
+			<img
+				class="d-block w-100"
+				src="{{ category.productImg.url }}"
+				alt="First slide"
+			/>
+		</div>
+		{% endfor %}
+	</div>
+	<a
+		id="tati_slider_prev"
+		class="carousel-control-prev"
+		href="#carouselExampleControls"
+		role="button"
+		data-slide="prev"
+	>
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>
+	</a>
+	<a
+		id="tati_slider_next"
+		class="carousel-control-next"
+		href="#carouselExampleControls"
+		role="button"
+		data-slide="next"
+	>
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+	</a>
+</div>
+
 <section class="portfolio-grid">
 	<div class="container">
 		<div class="row">
@@ -131,5 +168,4 @@
 	</div>
 </section>
 
-<script></script>
 {% endblock content %}

@@ -1,32 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
 <style>
-	header {
-		background: url(static/images/header-bg.jpg) no-repeat bottom center;
-		background-size: cover;
-		color: #cfcfcf;
-		position: relative;
-		height: 100%;
-	}
-	header p {
-		color: rgba(255, 255, 255, 0.5);
-		font-size: 18px;
-		font-weight: 300;
-		margin-bottom: 60px;
-		padding: 0 4px;
-	}
-	.intro-text {
-		position: relative;
-		padding-top: 250px;
-		padding-right: 0;
-		padding-left: 0;
-		padding-bottom: 200px;
-	}
-	.intro-text H1 {
-		font-size: 60px;
-		color: #eeeeee;
-		font-weight: 600;
-	}
+
 	h5{
 		font-size: 20px;
 		line-height: 1.2 !important;
@@ -39,12 +14,20 @@
     font-weight: 400;
 	}
 </style>
-<header class="text-center" name="home">
-	<div class="intro-text">
-		<h1>We are <span class="color">Corporation</span></h1>
-		<p>An award winning multipurpose company</p>
+<div class="page-header flex-middle" style="background-image: url(../../static/images/2.jpg) !important;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    position: relative;">
+		<div class="container">
+			<div class="inner flex-middle">
+				{% comment %} <h1 class="page-title">Contact Us</h1> {% endcomment %}
+				<ul id="breadcrumbs" class="breadcrumbs none-style">
+				</ul>
+			</div>
+		</div>
 	</div>
-</header>
 <section class="service-page">
 	<div class="container">
 		<div class="row">
@@ -56,11 +39,11 @@
 				</div>
 			</div>
 			<div class="col-md-6 col-sm-4 text-sm-right align-self-end">
-				<div class="ot-button">
+				{% comment %} <div class="ot-button">
 					<a href="{% url 'products:productpage' %}?type=Agriculture" class="octf-btn octf-btn-primary"
 						>Our Products</a
 					>
-				</div>
+				</div> {% endcomment %}
 				<div class="space-10"></div>
 			</div>
 		</div>
@@ -80,7 +63,7 @@
 			</div>
 			<div class="col-lg-4 col-md-6 col-sm-6">
 				<div class="icon-box-s2 s1 pb-60">
-					<div class="icon-main"><i class="fas fa-cogs"></i></i></div>
+					<div class="icon-main"><i class="fas fa-cogs"></i></div>
 					<div class="content-box">
 						<h5>What We Do</h5>
 						<p>
@@ -106,14 +89,76 @@
 		</div>
 	</div>
 </section>
+<section class="service-page">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-sm-8 mb-4 mb-sm-0">
+				<div class="ot-heading mb-0">
+					<h2 class="main-heading" style="font-size: 36px !important; font-weight:800 !important;		">
+						Our Goals
+					</h2>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-4 text-sm-right align-self-end">
+				{% comment %} <div class="ot-button">
+					<a href="{% url 'products:productpage' %}?type=Agriculture" class="octf-btn octf-btn-primary"
+						>Our Products</a
+					>
+				</div> {% endcomment %}
+				<div class="space-10"></div>
+			</div>
+		</div>
+		<div class="space-55"></div>
+		<div class="row">
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="icon-box-s2 s1 pb-60">
+					<div class="icon-main"><i class="fas fa-hourglass-half"></i></div>
+					<div class="content-box">
+						<h5>Who We Done</h5>
+						<p>
+							We carry more than just good coding skills. Our experience makes
+							us stand out from other web development.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="icon-box-s2 s1 pb-60">
+					<div class="icon-main"><i class="fas fa-stopwatch"></i></div>
+					<div class="content-box">
+						<h5>What We Are Doing</h5>
+						<p>
+							Create complex enterprise software, ensure reliable software
+							integration, modernise your legacy system.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="icon-box-s2 s1 pb-60">
+					<div class="icon-main">	<i class="fas fa-rocket"></i></div>
+					<div class="content-box">
+						<h5>What We Will Be Doing</h5>
+						<p>
+							Build the product you need on time with an experienced team that
+							uses a clear and effective design process.
+						</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
 
  <section class="portfolio-grid ">
                 <div class="container ">
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <div class="ot-heading">
+                    <div class="row ">
+                        <div class="col-md-12 ">
+                            <div class="ot-heading ">
                                 {% comment %} <span>// latest case studies</span> {% endcomment %}
-                                <h2 class="main-heading ">Introduce Our Awards</h2>
+                                <h2 class="main-heading " style="font-size: 36px !important; font-weight:800 !important;		">Introduce Our Awards</h2>
                             </div>
                             <div class="space-5"></div>
                             {% comment %} <p>Software development outsourcing is just a tool to achieve business goals. But there is no way<br>to get worthwhile results without cooperation and trust between a client company.</p> {% endcomment %}
@@ -121,10 +166,10 @@
                     </div>
                     <div class="row  mt-3">
                         <div class="col-lg-12">
-                            <div class="project-filter-wrapper">
-                                <ul class="project_filters">
+                            <div class="project-filter-wrapper ">
+                                <ul class="project_filters ">
 							{% for category in categories %}
-									<li><a
+									<li class="float-left float-md-left"><a
 										href="#"
 										class="filterGroup btn-click {% if request.GET.type == category.categoryName %}selected{% endif %}"
 										data-filter=".{{ category.categoryName }}"
