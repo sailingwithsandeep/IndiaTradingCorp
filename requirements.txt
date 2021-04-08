@@ -4,3 +4,5 @@ Django==3.1.7
 django-modeladmin-reorder==0.3.1
 pytz==2021.1
 sqlparse==0.4.1
+Pillow
+django_forms_bootstrap

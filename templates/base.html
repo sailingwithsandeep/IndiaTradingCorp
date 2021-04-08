@@ -985,10 +985,10 @@
         <script src="{%static 'js/scripts.js'%}"></script>
         <script src="{%static 'js/header-mobile.js'%}"></script>
         <script src="{%static 'js/royal_preloader.min.js'%}"></script>
-      <script src="{%static 'js/jquery.counterup.js'%}"></script>
-<script src="{%static 'js/jquery.isotope.js'%}"></script>
-<script src="{%static 'js/modernizr.custom.js'%}"></script>
-<script src="{%static 'js/waypoints.js'%}"></script>
+        <script src="{%static 'js/jquery.counterup.js'%}"></script>
+    <script src="{%static 'js/jquery.isotope.js'%}"></script>
+    <script src="{%static 'js/modernizr.custom.js'%}"></script>
+    <script src="{%static 'js/waypoints.js'%}"></script>
 
 
         
@@ -1016,7 +1016,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> {% endcomment %} {% comment %}
         <script src="{% static 'js/jquery.zoom.min.js' %}"></script> {% endcomment %} {% comment %}
         <script src="{% static 'js/main.js' %}"></script> {% endcomment %}
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <script>
             window.jQuery = window.$ = jQuery;
             (function($) {
@@ -1037,7 +1037,7 @@
                 $('#WAButton').floatingWhatsApp({
                     phone: '916355115277', //WhatsApp Business phone number
                     headerTitle: 'Chat with us on WhatsApp!', //Popup Title
-                    popupMessage: 'Hello i need query on regarding products,', //Popup Message
+                    popupMessage: 'Hello I need query on regarding products,', //Popup Message
                     showPopup: false, //Enables popup display
                     buttonImage: '<img src="static/images/whatsapp.svg" />', //Button Image
                     //headerColor: 'crimson', //Custom header color
@@ -1122,6 +1122,8 @@
                     filter: '.' + url.searchParams.get('type')
                 });
 
+                $("#product_carousel_"+url.searchParams.get('type')).addClass("active");
+
                 $('#filterPrev').click(function(event) {
                     event.preventDefault();
                     // $(this).addClass('animate__animated animate__slideInLeft');
@@ -1166,6 +1168,8 @@
                     $('#filterPrev').addClass('animate__animated animate__zoomIn animate__faster');
                     $('#filterNext').addClass('animate__animated animate__zoomIn animate__faster');
                     // $('#filterGroupTitle').toggleClass('animate__animated animate__slideInLeft');;
+
+        
                 });
                 $('#filterNext').click(function(event) {
                     event.preventDefault();
@@ -1213,6 +1217,8 @@
                     $('#filterPrev').addClass('animate__animated animate__zoomIn animate__faster');
                     $('#filterNext').addClass('animate__animated animate__zoomIn animate__faster');
                     // $('#filterGroupTitle').toggleClass('animate__animated animate__slideInLeft');
+                    //$("#carouselExampleControls").carousel("next");
+                    
                 });
 
                 $('#filterPrev').trigger('click');
