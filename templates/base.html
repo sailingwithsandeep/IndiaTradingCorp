@@ -113,7 +113,7 @@
                                                 <a href="{% url 'products:home' %}#network">Network</a> {% endif %}
                                             </li> -->
                                              <li id="homeMenu" class="">
-                                                <a href="{% url 'products:about' %}?type=Agriculture">About Us</a> 
+                                                <a href="{% url 'products:about' %}">About Us</a> 
                                             </li>
                                              <li id="homeMenu" class="">
                                                 <a href="{% url 'products:savefeedback' %}">Contact Us</a> 
@@ -971,7 +971,7 @@
         <a id="back-to-top" href="#" class="show"><i class="flaticon-up-arrow"></i></a>
 
         <!--Div where the WhatsApp will be rendered-->
-        <div id="WAButton"></div>
+        <div id="WAButton" style="z-index: 9999;"></div>
 
         <!-- jQuery -->
 
@@ -1121,6 +1121,8 @@
                 $('.projects-grid').isotope({
                     filter: '.' + url.searchParams.get('type')
                 });
+
+               
 
                 $("#product_carousel_"+url.searchParams.get('type')).addClass("active");
 

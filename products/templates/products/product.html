@@ -10,22 +10,26 @@
 </style>
 {% endcomment %}
 
-<div id="carouselExampleControls" class="carousel slide" data-ride="false" data-interval="false">
+<div
+	id="carouselExampleControls"
+	class="carousel slide"
+	data-ride="false"
+	data-interval="false"
+>
 	<div class="carousel-inner">
 		{% for category in categories %}
-		<div
-			id="product_carousel_{{category.categoryName}}"
-			class="carousel-item"
-		>
+		<div id="product_carousel_{{category.categoryName}}" class="carousel-item">
 			<img
 				class="d-block w-100"
+				style="height: 350px"
 				src="{{ category.productImg.url }}"
 				alt="{{category.categoryName}}"
 			/>
 		</div>
 		{% endfor %}
 	</div>
-	{% comment %} <a
+	{% comment %}
+	<a
 		id="tati_slider_prev"
 		class="carousel-control-prev"
 		href="#carouselExampleControls"
@@ -44,7 +48,8 @@
 	>
 		<span class="carousel-control-next-icon" aria-hidden="true"></span>
 		<span class="sr-only">Next</span>
-	</a> {% endcomment %}
+	</a>
+	{% endcomment %}
 </div>
 
 <section class="portfolio-grid">

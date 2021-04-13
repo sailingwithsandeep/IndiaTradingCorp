@@ -9,9 +9,9 @@ class Category_admin(admin.ModelAdmin):
     list_display = ['categoryName', 'categoryDescription', 'categoryImg']
 
 
-@admin.register(Subcategory)
-class Subcategory_admin(admin.ModelAdmin):
-    list_display = ['subCategoryName', 'subCategoryImg']
+# @admin.register(Subcategory)
+# class Subcategory_admin(admin.ModelAdmin):
+#     list_display = ['subCategoryName', 'subCategoryImg']
 
 
 @admin.register(Products)
@@ -21,7 +21,7 @@ class Product_admin(admin.ModelAdmin):
 
 @admin.register(Slider)
 class sliderImage_admin(admin.ModelAdmin):
-    list_display = ['Heading', 'Description', 'sliderImage', 'sliderImg']
+    list_display = ['Heading', 'Description',  'sliderImg']
 
 
 @admin.register(Email_Newsletter)
