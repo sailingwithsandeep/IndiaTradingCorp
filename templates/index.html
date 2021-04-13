@@ -51,7 +51,7 @@
 
 	@media screen and (max-width: 1400px) {
 		.column-66,
-		.column-33, {
+		.column-33 {
 			width: 100%;
 			text-align: center;
 		}
@@ -353,11 +353,12 @@
           </div>
         </a>
       </div>
-      {% endfor %}
-    </div> -->
+      {% endfor %} -->
+
 		<!-- product display starts -->
 		<div class="container zigzag" style="background-color: #ffffff">
 			{% for category in categories %} {% if forloop.counter|divisibleby:2%}
+
 			<div class="row">
 				<div class="column-66">
 					<h1 class="xlarge-font" style="color: #7141b1">
@@ -393,7 +394,7 @@
 				</div>
 			</div>
 		</div>
-
+		{% endif %} {% endfor %}
 		<!-- The App Section -->
 		{% comment %}
 		<div class="container zigzag" style="background-color: #ffffff">
@@ -418,7 +419,7 @@
 				</div>
 			</div>
 		</div>
-		{% endcomment %} {% endif %} {% endfor %} {% comment %}
+		{% endcomment %} {% comment %}
 		<div class="row justify-content-center">
 			{% for category in categories %} {% if forloop.counter|divisibleby:2%}
 
