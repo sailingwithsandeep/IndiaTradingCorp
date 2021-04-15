@@ -28,7 +28,7 @@
 			</div>
 		</div>
 	</div>
-	 <h1 class="main-heading text-center mt-5" style="font-size: 45px !important; border-bottom: 5px solid;font-weight:800 !important; color: #7141b1; padding-bottom: 20px;		">
+	 <h1 class="main-heading text-center mt-5" style="font-size: 50px !important; text-decoration:underline; font-weight:800 !important; color: #7141b1; ">
 						About Us
 					</h1> 
 					
@@ -193,10 +193,11 @@
 				>
 					{% for award in awards %}
 					<div class="project-item {{ award.awardCategory }}">
-						<div class="projects-box">
+						<div class="projects-box" style="width: 300px; height: 250px;">
 							<div class="projects-thumbnail">
-								<a href="#">
+								<a href="#" >
 									<img
+
 										src="{{ award.awardImage.url }}"
 										style="width: 300px; height: 300px"
 										alt=""
