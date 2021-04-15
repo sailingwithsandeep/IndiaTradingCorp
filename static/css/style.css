@@ -1907,6 +1907,7 @@ a:active {
 	.header_mobile .mlogo_wrapper .mobile_logo {
 		float: left;
 	}
+	
 
 	#mmenu_toggle {
 		position: absolute;
@@ -8243,4 +8244,3 @@ section {
 	height: 10px;
 	background: rgba(0, 0, 0, 0);
 }
-

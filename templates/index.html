@@ -358,7 +358,11 @@
 		<!-- product display starts -->
 		<div class="container zigzag" style="background-color: #ffffff">
 			{% for category in categories %} {% if forloop.counter|divisibleby:2%}
-
+				<a
+					class=""
+					style="text-decoration: none"
+					href="{% url 'products:productpage' %}?type={{ category.categoryName }}"
+				>
 			<div class="row">
 				<div class="column-66">
 					<h1 class="xlarge-font" style="color: #7141b1">
@@ -376,6 +380,11 @@
 		</div>
 		{% else %}
 		<!-- Clarity Section -->
+			<a
+					class=""
+					style="text-decoration: none"
+					href="{% url 'products:productpage' %}?type={{ category.categoryName }}"
+				>
 		<div class="container zigzag" style="background-color: #ffffff">
 			<div class="row">
 				<div class="column-33">
