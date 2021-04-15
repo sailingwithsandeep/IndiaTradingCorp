@@ -1,181 +1,188 @@
 {% extends 'base.html' %} {% block content %} {% comment %}
 <style>
-	.filterGroup {
-		display: none;
-	}
+  .filterGroup {
+    display: none;
+  }
 
-	.selected {
-		display: block;
-	}
+  .selected {
+    display: block;
+  }
 </style>
 {% endcomment %}
 
 <div
-	id="carouselExampleControls"
-	class="carousel slide"
-	data-ride="false"
-	data-interval="false"
+  id="carouselExampleControls"
+  class="carousel slide"
+  data-ride="false"
+  data-interval="false"
 >
-	<div class="carousel-inner">
-		{% for category in categories %}
-		<div id="product_carousel_{{category.categoryName}}" class="carousel-item">
-			<img
-				class="d-block w-100"
-				style="height: 350px"
-				src="{{ category.productImg.url }}"
-				alt="{{category.categoryName}}"
-			/>
-		</div>
-		{% endfor %}
-	</div>
-	{% comment %}
-	<a
-		id="tati_slider_prev"
-		class="carousel-control-prev"
-		href="#carouselExampleControls"
-		role="button"
-		data-slide="prev"
-	>
-		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-		<span class="sr-only">Previous</span>
-	</a>
-	<a
-		id="tati_slider_next"
-		class="carousel-control-next"
-		href="#carouselExampleControls"
-		role="button"
-		data-slide="next"
-	>
-		<span class="carousel-control-next-icon" aria-hidden="true"></span>
-		<span class="sr-only">Next</span>
-	</a>
-	{% endcomment %}
+  <div class="carousel-inner">
+    {% for category in categories %}
+    <div id="product_carousel_{{category.categoryName}}" class="carousel-item">
+      <img
+        class="d-block w-100"
+        style="height: 350px"
+        src="{{ category.productImg.url }}"
+        alt="{{category.categoryName}}"
+      />
+    </div>
+    {% endfor %}
+  </div>
+  {% comment %}
+  <a
+    id="tati_slider_prev"
+    class="carousel-control-prev"
+    href="#carouselExampleControls"
+    role="button"
+    data-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a
+    id="tati_slider_next"
+    class="carousel-control-next"
+    href="#carouselExampleControls"
+    role="button"
+    data-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  {% endcomment %}
 </div>
 
 <section class="portfolio-grid">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 text-center">
-				<div class="ot-heading">
-					<span> Our latest products</span>
-				</div>
-				<div class="space-5"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div
-				class="col-lg-1 col-2 d-flex align-self-baseline justify-content-center"
-				style="top: 50px"
-			>
-				<a
-					id="filterPrev"
-					href="#"
-					class="btn text-white"
-					style="background-color: #7141b1"
-					data-target="#carouselExampleControls"
-					data-slide="prev"
-					><i class="text-white fa fa-arrow-left d-inline pr-1"></i
-					><span id="prevText"></span
-				></a>
-			</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="ot-heading">
+          <span> Our latest products</span>
+        </div>
+        <div class="space-5"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div
+        class="col-lg-1 col-2 d-flex align-self-baseline justify-content-center"
+        style="margin-top: 100px"
+      >
+        <a
+          id="filterPrev"
+          href="#"
+          class="btn text-white"
+          style="background-color: #7141b1; margin-left: 50px"
+          data-target="#carouselExampleControls"
+          data-slide="prev"
+          ><i class="text-white fa fa-arrow-left d-inline pr-1"></i
+          ><span id="prevText"></span
+        ></a>
+      </div>
 
-			<div id="filterGroupTitle" class="col-lg-10 col-8">
-				<div class="project-filter-wrapper">
-					{% for category in categories %}
-					<ul class="project_filters text-center">
-						<li class="mr-auto ml-auto prview">
-							<a
-								href="#"
-								data-filter=".{{ category.categoryName }}"
-								class="filterGroup btn-click {% if request.GET.type == category.categoryName %}selected{% endif %}"
-								>{{ category.categoryName }}</a
-							>
-						</li>
-					</ul>
-					{% endfor %}
-					<div
-						class="projects-grid projects-style-1 projects-col3"
-						style="top: 50px"
-					>
-						{% for category in categories %}
-						<h6
-							class=" project-item ml-auto mr-auto w-100 text-center {{ category.categoryName }}"
-						>
-							{{ category.categoryDescription }}
-						</h6>
-						{% endfor %}
-					</div>
-				</div>
-				<div class="space-60"></div>
-			</div>
-			<div
-				class="col-lg-1 col-2 d-flex align-self-baseline justify-content-center"
-				style="top: 50px"
-			>
-				<a
-					id="filterNext"
-					href="#"
-					class="btn text-white prview"
-					style="top: 50px; background-color: #7141b1"
-					data-target="#carouselExampleControls"
-					data-slide="next"
-					><span id="nextText"></span
-					><i class="pl-1 text-white fa fa-arrow-right d-inline"></i
-				></a>
-			</div>
-		</div>
-		<div class="row">
-			<div class="offset-1 col-10">
-				<div
-					class="projects-grid projects-style-1 projects-col3"
-					style="top: 50px"
-				>
-					{% for product in products %}
-					<div class="project-item {{ product.category }}">
-						<div class="projects-box">
-							<div class="projects-thumbnail">
-								<a href="#">
-									<img
-										src="{{ product.productImage.url }}"
-										style="width: 300px; height: 200px"
-										alt=""
-									/>
-								</a>
-							</div>
-							<div
-								class="portfolio-info"
-								style="opacity: 1; background-color: transparent"
-							>
-								<a class="overlay" href="#"></a>
-								<div class="portfolio-info-inner">
-									<h5>{{ product.productName }}</h5>
-									{% if product.productDescription != null %}
-									<a class="overlay" href="#"></a>
-									<h5 style="font-size: 15px">
-										<a href="#">{{product.productDescription}}</a>
-									</h5>
-									{%endif%}
-								</div>
-							</div>
-							<div class="portfolio-info">
-								<a class="overlay" href="#"></a>
-								<div class="portfolio-info-inner">
-									<h5>{{ product.productName }}</h5>
-									{% if product.productDescription != null %}
-									<a class="overlay" href="#"></a>
-									<h5 style="font-size: 15px">
-										<a href="#">{{product.productDescription}}</a>
-									</h5>
-									{%endif%}
-								</div>
-							</div>
-						</div>
-					</div>
-					{% endfor %}
-				</div>
-			</div>
-		</div>
-	</div>
+      <div id="filterGroupTitle" class="col-lg-10 col-8" style="">
+        <div class="project-filter-wrapper">
+          {% for category in categories %}
+          <ul class="project_filters text-center" style="margin: 0px">
+            <li class="mr-auto ml-auto prview">
+              <a
+                href="#"
+                data-filter=".{{ category.categoryName }}"
+                class="filterGroup btn-click {% if request.GET.type == category.categoryName %}selected{% endif %}"
+                >{{ category.categoryName }}</a
+              >
+            </li>
+          </ul>
+          {% endfor %}
+          <div
+            class="projects-grid projects-style-1 projects-col3"
+            style="margin-top: 50px"
+          >
+            <div class="space-40"></div>
+
+            {% for category in categories %}
+            <h6
+              class=" project-item ml-auto mr-auto w-100 text-center {{ category.categoryName }}"
+              style="
+                align-content: center;
+                margin-top: 60px;
+                margin-bottom: 20px;
+              "
+            >
+              {{ category.categoryDescription }}
+            </h6>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="space-60"></div>
+      </div>
+      <div
+        class="col-lg-1 col-2 d-flex align-self-baseline justify-content-center"
+        style="margin-top: 100px"
+      >
+        <a
+          id="filterNext"
+          href="#"
+          class="btn text-white prview"
+          style="top: 50px; background-color: #7141b1; margin-right: 50px"
+          data-target="#carouselExampleControls"
+          data-slide="next"
+          ><span id="nextText"></span
+          ><i class="pl-1 text-white fa fa-arrow-right d-inline"></i
+        ></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="offset-1 col-10">
+        <div
+          class="projects-grid projects-style-1 projects-col3"
+          style="top: 50px"
+        >
+          {% for product in products %}
+          <div class="project-item {{ product.category }}">
+            <div class="projects-box">
+              <div class="projects-thumbnail">
+                <a href="#">
+                  <img
+                    src="{{ product.productImage.url }}"
+                    style="width: 300px; height: 200px"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div
+                class="portfolio-info"
+                style="opacity: 1; background-color: transparent"
+              >
+                <a class="overlay" href="#"></a>
+                <div class="portfolio-info-inner">
+                  <h5>{{ product.productName }}</h5>
+                  {% if product.productDescription != null %}
+                  <a class="overlay" href="#"></a>
+                  <h5 style="font-size: 15px">
+                    <a href="#">{{product.productDescription}}</a>
+                  </h5>
+                  {%endif%}
+                </div>
+              </div>
+              <div class="portfolio-info">
+                <a class="overlay" href="#"></a>
+                <div class="portfolio-info-inner">
+                  <h5>{{ product.productName }}</h5>
+                  {% if product.productDescription != null %}
+                  <a class="overlay" href="#"></a>
+                  <h5 style="font-size: 15px">
+                    <a href="#">{{product.productDescription}}</a>
+                  </h5>
+                  {%endif%}
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 {% endblock content %}
